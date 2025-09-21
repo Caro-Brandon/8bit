@@ -1,0 +1,47 @@
+@import url('../css_var/Footer.css');
+
+/* Arranca el footer */
+footer {
+  background-color: var(--color-footer-bg);
+   height: auto;
+  color: var(--color-footer-text);
+}
+
+.footerCompleto {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContenedorLista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--footer-list-margin);
+}
+
+li {
+  font-size: var(--footer-font-size);
+  font-weight: var(--footer-font-weight);
+  list-style: none;
+  margin: var(--li-margin);
+  padding: var(--li-padding);
+}
+
+.texto {
+  width: auto;
+}
+
+ 
+
+.logosinborde {
+  height: var(--logo-height-sinborde);
+  width: var(--logo-width-sinborde);
+}
+
+.ContenedorLista a {
+  color: var(--color-footer-link);
+}

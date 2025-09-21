@@ -1,0 +1,258 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    background: #000 url(../img/fondo/1.jpg) no-repeat center center fixed;
+    background-size: cover;
+     font-family: 'Georgia', serif;
+  }
+
+ /* arranca el main */
+ 
+ /* carrusel / el coso que cambia de imagen */
+.carousel-item img {
+     max-height: 450px; 
+     margin-top: 2.5rem;
+     min-height: 150px;
+     min-width: 100px;
+    object-fit:contain;   
+ 
+    transition: transform 0.5s ease; 
+ }
+ .carousel-item img:hover {
+  transform: scale(0.9); /* se hace más pequeña hacia adentro */
+  border-color: #0d6efd;  
+ 
+ }
+
+.carousel{
+    display: flex;
+    justify-items: center;
+     filter: drop-shadow(10px 10px 100px rgb(94, 3, 205));
+     height: auto; 
+     width: auto;
+  
+}
+.carousel-item{
+    max-height:500px;
+    min-height: 200px;
+ 
+
+ }
+ 
+   /* arranca el contenedorPadre */
+#contenedorPadre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    
+  }
+ .Titulos{   
+  width: 90%;
+    text-align: center;
+    margin: 2rem;
+  font-weight: bold;
+  color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+.precio{
+  font-weight: bold;
+}
+/* BOTON */
+/* Estilo gamer para botones */
+.precio-gamer { 
+  box-shadow: #000;
+  ;
+  color: #0d79fd; /* azul Ubisoft */
+  font-weight: bold;
+  text-decoration: none; /* quita subrayado */
+  font-size: 1.1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.precio-gamer:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+}
+
+.contenedorTarjetasPrincipales1{
+      width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+  
+}
+.card-img-top{
+  height: 250px; 
+  }
+div .estiloDeTarjeta1{ 
+  background-color: #242424;
+  max-width: 25rem; 
+  min-width: 13rem; 
+ 
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 15px; 
+  box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.4); 
+ }
+
+ 
+
+ .estiloDeTarjeta1:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.03);
+  border-color: #0d6efd;  
+  box-shadow: 0px 58px 40px  #003789;
+}
+
+
+
+.contenedorTarjetas2 {
+  width: auto;
+   height: auto;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+ }
+
+div .estiloDeTarjeta2 {
+ 
+  width: 14.5rem; 
+  height: 430px;  
+  color: white;
+  box-shadow: 3px 4px 100px rgba(43, 0, 103, 0.96);
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+.card-img-top2{
+  height: 350px ; 
+ 
+  }
+ 
+.estiloDeTarjeta2:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.03);
+  box-shadow: 0px 58px 40px rgba(0, 0, 0, 0.4);
+}
+.card-title {
+  color: white  ;
+}
+
+.contenedorTarjetasPrincipales3{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+div .estiloDeTarjeta3{ /* entro dentro del div */
+  border: none;
+  background-color: #242424;
+  max-width: 25rem; 
+  min-width: 13rem; 
+  color: white;
+  transition: all 0.1s ease;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 15px; 
+  overflow: hidden;
+  }
+
+
+
+.estiloDeTarjeta3 img:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.03); 
+border-color: #0d6efd;  
+ }
+ /* termina el contenedorPadre */
+
+/*promo*/
+/* promo */
+.promo{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    width: auto;
+    height: auto;
+    margin: 30px;
+    background: linear-gradient(111deg,rgba(75,18,85,.2)25.93%, rgba(14,17,31,.2)63.21%,rgba(69,185,255,.2) 100.02%);
+   }
+  
+        
+  
+   
+  
+  .columna1{
+    width: 630px;
+    min-width: 400px;
+  }
+  .columna2{
+    width: 630px;
+    min-width: 400px;
+  
+   }
+  @media (max-width: 1024px) {
+    .columna1,
+    .columna2 {
+      width: 100%;        
+      min-width: unset;  /* elimina todo valor anterior */
+      
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+    .columna1,
+    .columna2 {
+      width: 95%;         
+      font-size: 0.95rem; 
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .columna1,
+    .columna2 {
+      width: 100%;       
+      border: none;     
+    }
+  }
+   
+  /* imagen de interfaz  */
+  .imgInterfaz{
+    max-height: 200px; 
+    margin-top: 2.5rem;
+    min-height: 200px;
+    min-width: 100px;
+   object-fit:contain;   
+   transition: 0.5s all;
+  }
+  span{
+    color: white;
+  }
+
+ /* termina el main */

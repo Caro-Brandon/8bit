@@ -1,0 +1,19 @@
+/* footer_root.css */
+:root {
+     --color-footer-bg: #090b16;
+    --color-footer-text: white;
+    --color-footer-link: transparent;
+  
+    
+  
+    --logo-height-sinborde: 80px;
+    --logo-width-sinborde: 100px;
+  
+     --footer-font-size: 1rem;
+    --footer-font-weight: bolder;
+  
+     --footer-list-margin: 3rem;
+    --li-margin: 10px;
+    --li-padding: 10px;
+  }
+  

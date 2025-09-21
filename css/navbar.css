@@ -1,0 +1,69 @@
+@import url(../css_var/navb.css);
+  /* logo */
+  .logo {
+    height: var(--logo-size);
+    object-fit: cover;
+    border-radius: 25px;
+  }
+  
+  /* reset básico */
+  * {
+       padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  nav *{
+  margin: 10px;
+  }
+  /* sin la linea undergraund */
+  .sinlinea{
+    text-decoration: none;
+  }
+  li {
+    padding-left: 3.5rem;
+    margin-left: 1rem;
+    padding: 50px;
+  }
+  .iconologin {
+    color: whitesmoke;           
+     border-radius: 50%;         
+    border: 2px solid transparent;
+    transition: all 0.3s ease; 
+       
+  }
+  
+  .iconologin:hover { 
+    padding: 2px;
+    border: 2px solid #0a2cff;   
+    box-shadow: 0 0 10px #0a2cff; 
+   }
+  
+  
+  nav.navbar {
+  display: flex;
+  justify-content: center;    /* centra horizontal */
+  align-items: center;        /* centra vertical */
+  text-align: center;         /* centra texto interno */
+  
+  font-family: var(--font-family-nav);
+  height: 5rem;
+  background: transparent;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: var(--font-size-nav);
+  z-index: 10;
+  width: 100%;    
+  }
+  
+
+
+   
+  
+  
+  
+  /* hasta acá termina el nav */
+
+ 
+  
+  
+  

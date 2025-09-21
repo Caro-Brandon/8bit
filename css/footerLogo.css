@@ -1,0 +1,18 @@
+@import url(../css_var/footer_logo.css);
+
+  /* Iconos de redes en nav */
+  .contenedorRedes {
+    background-color: transparent;
+    color: var(--color-footer-text);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .redes {
+    margin: 25px;
+  }
+  

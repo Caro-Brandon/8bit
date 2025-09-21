@@ -1,0 +1,7 @@
+ :root {
+    /* Texto del footer */
+    --color-footer-text: white;
+    --footer-font-size: 1rem;
+    --footer-font-weight: bolder;
+}
+  
