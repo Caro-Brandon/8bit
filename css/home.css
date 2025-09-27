@@ -6,7 +6,7 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column; 
-    background: #000 url(../img/fondo/1.jpg) no-repeat center center fixed;
+    background: #000 url(../img/fondo/b.jpg) no-repeat center center fixed;
     background-size: cover;
      font-family: 'Georgia', serif;
   }
@@ -24,7 +24,7 @@ body{
     transition: transform 0.5s ease; 
  }
  .carousel-item img:hover {
-  transform: scale(0.9); /* se hace más pequeña hacia adentro */
+  transform: scale(0.9);
   border-color: #0d6efd;  
  
  }
@@ -44,7 +44,7 @@ body{
 
  }
  
-   /* arranca el contenedorPadre */
+/* arranca el contenedorPadre */
 #contenedorPadre{
     display: flex;
     flex-direction: column;
@@ -70,10 +70,9 @@ body{
 /* Estilo gamer para botones */
 .precio-gamer { 
   box-shadow: #000;
-  ;
-  color: #0d79fd; /* azul Ubisoft */
+  color: #0d79fd; 
   font-weight: bold;
-  text-decoration: none; /* quita subrayado */
+  text-decoration: none; 
   font-size: 1.1rem;
   transition: color 0.3s ease, text-shadow 0.3s ease;
   cursor: pointer;
@@ -81,7 +80,7 @@ body{
 
 .precio-gamer:hover {
   color: white;
-  text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+  text-shadow: 0 0 10px #380451;
 }
 
 .contenedorTarjetasPrincipales1{
@@ -98,7 +97,7 @@ body{
   height: 250px; 
   }
 div .estiloDeTarjeta1{ 
-  background-color: #242424;
+   background: transparent;
   max-width: 25rem; 
   min-width: 13rem; 
  
@@ -107,7 +106,7 @@ div .estiloDeTarjeta1{
   border-radius: 20px;
   object-fit: cover;
   margin: 15px; 
-  box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.4); 
+  box-shadow: 20px 10px 100px rgba(0, 0, 0, 0.4); 
  }
 
  
@@ -115,8 +114,8 @@ div .estiloDeTarjeta1{
  .estiloDeTarjeta1:hover {
   transition: 0.3s ease-out;
   transform: scale(1.03);
-  border-color: #0d6efd;  
-  box-shadow: 0px 58px 40px  #003789;
+  border-color: #380451;  
+  box-shadow: 0px 18px 70px  #32047c;
 }
 
 
@@ -219,7 +218,7 @@ border-color: #0d6efd;
     .columna1,
     .columna2 {
       width: 100%;        
-      min-width: unset;  /* elimina todo valor anterior */
+      min-width: unset;  
       
     }
   

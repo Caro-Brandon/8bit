@@ -13,7 +13,7 @@
 <body>
     <header> 
 <!-- arranca el nav -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background: transparent;">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid justify-content-center d-flex align-items-center gap-3">
 
     <a href="home.php">

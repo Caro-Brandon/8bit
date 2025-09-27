@@ -4,7 +4,7 @@
   creo que es mejor usar 
  window.history.back()-->
 <?php
-include("con_db.php");
+require_once "con_db.php";
 if(isset($_POST['boton'])){ 
     if(strlen($_POST['nombreDeUsuario']) >= 1 && 
        strlen($_POST['email']) >= 1 &&

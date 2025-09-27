@@ -17,41 +17,17 @@ header("Expires: 0");
     <link rel="shortcut icon"  href="../img/IconoSinBorde.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-       <style>
-          #cieloCometas {
-            position: absolute; /* flota sobre el contenido */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;      /* zona superior visible */
-            pointer-events: none;
-            z-index: 999;
-          }
-
-          #cometas {
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: transparent;
-            display: block;
-          }
-
-
-
-
-
-      </style>
+  
+   
   </head>
-
+ 
 <body>
+ 
      <!-- incluimos el nav -->
      <?php include '../includes/navbar.php'; ?>   
      
 <main> 
-  <!-- cometas -->
-  <div id="cieloCometas">
-  <canvas id="cometas"></canvas>
-</div>
+ 
       <!--arranca la publicidad  -->
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner ">
@@ -86,7 +62,7 @@ header("Expires: 0");
      <!--arranca los contenedores de tarjetas -->
        <div class="contenedorTarjetasPrincipales1">
         
-        <div class="card bg-transparent estiloDeTarjeta1 ">
+        <div class="card estiloDeTarjeta1 ">
           <a href="" style="text-decoration: none; color: white;"> 
             <img src="../img/juegos/GodOfWar.jpg" class="card-img-top" alt="cambiar nombre">
             <div class="card-body">
@@ -96,7 +72,7 @@ header("Expires: 0");
           </a>
           </div>
 
-          <div class="card bg-transparent estiloDeTarjeta1 ">
+          <div class="card  estiloDeTarjeta1 ">
             <a href="" style="text-decoration: none; color: white;"> 
             <img src="../img/juegos/Halo1.jpg" class="card-img-top" alt="cambiar nombre">
             <div class="card-body">
@@ -106,7 +82,7 @@ header("Expires: 0");
           </a>
           </div>
 
-          <div class="card bg-transparent estiloDeTarjeta1 ">
+          <div class="card  estiloDeTarjeta1 ">
             <a href="" style="text-decoration: none; color: white;"> 
             <img src="../img/juegos/Metro Exodus - Lucas Galan.jpg" class="card-img-top" alt="cambiar nombre">
             <div class="card-body">

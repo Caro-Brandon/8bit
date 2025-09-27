@@ -40,14 +40,14 @@
   
   
   nav.navbar {
-  display: flex;
-  justify-content: center;    /* centra horizontal */
-  align-items: center;        /* centra vertical */
-  text-align: center;         /* centra texto interno */
+   display: flex;
+  justify-content: center;   
+  align-items: center;       
+  text-align: center;         
   
   font-family: var(--font-family-nav);
   height: 5rem;
-  background: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   color: var(--color-text);
   font-weight: bold;
   font-size: var(--font-size-nav);

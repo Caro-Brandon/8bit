@@ -5,7 +5,7 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0"); 
-include("con_db.php"); 
+require_once "con_db.php";
 
 if(isset($_POST['boton'])) {
 
