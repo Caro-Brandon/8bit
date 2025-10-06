@@ -4,15 +4,24 @@
   creo que es mejor usar 
  window.history.back()-->
 <?php
-require_once "con_db.php";
+require_once "includes/config.php";
 if(isset($_POST['boton'])){ 
     if(strlen($_POST['nombreDeUsuario']) >= 1 && 
        strlen($_POST['email']) >= 1 &&
-       strlen($_POST['contraseña']) >= 1)  {
+       strlen($_POST['contraseña']) >= 1)
+         {
 
         $name = trim($_POST['nombreDeUsuario']);
         $email = trim($_POST['email']);
         $contraseña = trim($_POST['contraseña']);
+        $confirmarContraseña = trim($_POST['confirmarContraseña']);
+        
+        // confirma contraseña
+        if($contraseña !== $confirmarContraseña){
+            header("Location: views/register.php?error=Las+contraseñas+no+coinciden");
+
+            exit();
+        }
 
         // Verificar si el email o usuario ya existen
 
@@ -25,16 +34,11 @@ if(isset($_POST['boton'])){
        $resUser = mysqli_query($conex, $checkUser);
 
        if(mysqli_num_rows($resEmail) > 0){
-           echo "<script>
-                   alert('El correo $email ya está en uso. Por favor usa otro.');
-                   window.history.back();
-                 </script>";
+        header("Location: views/register.php?error=El+correo+$email+ya+está+en+uso");
+
            exit();
        } elseif(mysqli_num_rows($resUser) > 0){
-           echo "<script>
-                   alert('El nombre de usuario $name ya está en uso. Por favor usa otro.');
-                   window.history.back();
-                 </script>";
+        header("Location: views/register.php?error=El+usuario+$name+ya+está+en+uso");
            exit();
        }  else {
             // Insertar nuevo usuario
@@ -43,16 +47,18 @@ if(isset($_POST['boton'])){
             $resultado = mysqli_query($conex,$consulta);
 
             if($resultado){
-                echo "<script>alert('Usuario registrado correctamente');</script>";
-                header("Location:views/login.php");
-            } else {
-                echo "<script>alert('Error al registrar el usuario');</script>";
-                header("Location:views/register.php");
+                header("Location: views/login.php?success=Usuario+registrado+correctamente");
+                exit();
+            } 
+            else {
+                header("Location: views/register.php?error=Error+al+registrar+usuario");
+                exit();
             }
         }
 
     } else {
-        echo "<script>alert('Por favor completa todos los campos');</script>";
+        header("Location: views/register.php");
+        exit();
     }
 }
 ?>

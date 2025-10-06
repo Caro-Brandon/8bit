@@ -5,7 +5,7 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0"); 
-require_once "con_db.php";
+require_once "includes/config.php";
 
 if(isset($_POST['boton'])) {
 
@@ -33,7 +33,7 @@ if(isset($_POST['boton'])) {
             $_SESSION['email'] = $row['email'];
 
             // Redirigir al home
-            header("Location: views/home.php");
+            header("Location: views/layout.php");
             exit();
         } 
         else {

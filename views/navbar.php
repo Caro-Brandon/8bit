@@ -1,0 +1,134 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8bit</title>
+    <link rel="shortcut icon" href="/src/img/IconoSinBorde.png" type="image/x-icon" >
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header> 
+<!-- arranca el nav -->
+<!-- arranca el nav -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- Logo (siempre visible) -->
+  <a href="layout.php" class="pe-13">
+    <img src="../img/IconoSinBorde.png" alt="Logo" width="70" height="70" class="logo">
+  </a>
+
+  <!-- Contenido del nav (oculto en pantallas chicas) -->
+  <div class="container-fluid d-flex justify-content-center align-items-center gap-3 p-132px conteNav d-none d-lg-flex" style="padding: 0 25px;">
+    <a href="layout.php" class="text-white sinlinea item">Home</a>
+
+    <div class="d-flex align-items-center gap-3 pe-13 contenedorNav">
+      <span class="text-white item" style="cursor:pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias">
+        Categorías
+      </span>
+      <a href="support.php" class="text-white sinlinea item">Soporte</a>
+      <a href="index.html" class="text-white sinlinea item">8bit</a>
+    </div>
+
+    <div class="search-box">
+      <form action="">
+        <input type="text" name="search" id="srch" placeholder="Search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+    <div class="item">
+      <a href="perfilUsuario">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person iconologin" viewBox="0 0 16 16">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1
+          1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516
+          10.68 10.289 10 8 10s-3.516.68-4.168
+          1.332c-.678.678-.83 1.418-.832 1.664z"/>
+        </svg>
+      </a>
+      <span class="text-white"><?php echo $_SESSION['nombreDeUsuario']; ?></span>
+    </div>
+
+    <a href="carrito" style="color:white" class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1
+        .485.379L2.89 3H14.5a.5.5 0 0 1
+        .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415
+        11H13a.5.5 0 0 1 0 1H4a.5.5 0
+        0 1-.491-.408L2.01 3.607
+        1.61 2H.5a.5.5 0 0
+        1-.5-.5M3.102 4l.84
+        4.479 9.144-.459L13.89
+        4zM5 12a2 2 0 1 0 0 4
+        2 2 0 0 0 0-4m7 0a2 2 0
+        1 0 0 4 2 2 0 0 0 0-4m-7
+        1a1 1 0 1 1 0 2 1 1 0 0
+        1 0-2m7 0a1 1 0 1 1 0 2
+        1 1 0 0 1 0-2"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Botón "Abrir" (solo visible en pantallas chicas) -->
+  <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias" aria-label="Abrir menú">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+</nav>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasCategorias" aria-labelledby="offcanvasCategoriasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasCategoriasLabel">Usuario</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div class="d-flex align-items-center mb-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person me-2" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3
+        0 0 0 0 6m2-3a2 2 0 1 1-4 0
+        2 2 0 0 1 4 0m4 8c0 1-1 1-1
+        1H3s-1 0-1-1 1-4 6-4 6 3 6
+        4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516
+        10.68 10.289 10 8 10s-3.516.68-4.168
+        1.332c-.678.678-.83 1.418-.832 1.664z"/>
+      </svg>
+      <span class="text-white"><?php echo $_SESSION['nombreDeUsuario']; ?></span>
+    </div>
+
+    <div class="d-flex flex-column gap-2 mb-3">
+      <a href="index.html" class="btn btn-outline-light">Soporte</a>
+      <a href="../logout.php" class="btn btn-outline-light">Cerrar sesión</a>
+    </div>
+
+    <hr>
+    <h5 class="offcanvas-title">Categorías</h5>
+    <ul class="list-unstyled mt-3">
+      <li><a class="dropdown-item text-light" href="login.php">Aventura</a></li>
+      <li><a class="dropdown-item text-light" href="#">Acción</a></li>
+      <li><a class="dropdown-item text-light" href="#">Estrategia</a></li>
+      <li><a class="dropdown-item text-light" href="#">Rol (RPG)</a></li>
+      <li><a class="dropdown-item text-light" href="#">Deportes</a></li>
+      <li><a class="dropdown-item text-light" href="#">Puzzle</a></li>
+      <li><a class="dropdown-item text-light" href="#">Mini Juegos</a></li>
+      <li><a class="dropdown-item text-light" href="#">Carreras</a></li>
+    </ul>
+     <hr>
+     <a href="home.php" class="text-white sinlinea item">Soporte</a>
+     <br>
+     <a href="nosotros.php" class="text-white sinlinea item">8bit</a>
+    
+  </div>
+</div>
+
+
+
+    </header> 
+    </body>
+    </html>
+
+
+

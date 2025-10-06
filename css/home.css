@@ -6,44 +6,48 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column; 
-    background: #000 url(../img/fondo/b.jpg) no-repeat center center fixed;
+    background:  url(../img/fondo/a.png) no-repeat center center fixed;
     background-size: cover;
+     
      font-family: 'Georgia', serif;
   }
 
  /* arranca el main */
  
  /* carrusel / el coso que cambia de imagen */
+/* Contenedor del carrusel grande estilo promo */
+/* carrusel / el coso que cambia de imagen */
 .carousel-item img {
-     max-height: 450px; 
-     margin-top: 2.5rem;
-     min-height: 150px;
-     min-width: 100px;
-    object-fit:contain;   
- 
-    transition: transform 0.5s ease; 
+  max-height: 450px; 
+  margin-top: 2.5rem;
+  min-height: 150px;
+  min-width: 100px;  
+  object-fit:contain;
+  background-size: cover;   
+
  }
- .carousel-item img:hover {
-  transform: scale(0.9);
-  border-color: #0d6efd;  
  
- }
 
 .carousel{
-    display: flex;
-    justify-items: center;
-     filter: drop-shadow(10px 10px 100px rgb(94, 3, 205));
-     height: auto; 
-     width: auto;
-  
+ display: flex;
+ justify-items: center;
+  filter: drop-shadow(10px 10px 100px rgb(94, 3, 205));
+  height: auto; 
+  width: auto;
+
 }
 .carousel-item{
-    max-height:500px;
-    min-height: 200px;
- 
+ max-height:500px;
+ min-height: 200px;
 
- }
- 
+
+}
+
+
+
+
+
+
 /* arranca el contenedorPadre */
 #contenedorPadre{
     display: flex;
@@ -84,7 +88,7 @@ body{
 }
 
 .contenedorTarjetasPrincipales1{
-      width: auto;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
@@ -94,11 +98,11 @@ body{
   
 }
 .card-img-top{
-  height: 250px; 
+  height: 220px; 
   }
 div .estiloDeTarjeta1{ 
    background: transparent;
-  max-width: 25rem; 
+  max-width: 22rem; 
   min-width: 13rem; 
  
   color: white;
@@ -118,39 +122,43 @@ div .estiloDeTarjeta1{
   box-shadow: 0px 18px 70px  #32047c;
 }
 
-
-
 .contenedorTarjetas2 {
-  width: auto;
-   height: auto;
-  margin: 0;
+   max-width: 1450px;        /* ancho máximo */
+  min-width: 420px;         /* ancho mínimo para móviles */
+  height: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+   align-items: center;
   text-align: center;
-
- }
+  margin: 10px;           /* centrado horizontal */
+}
 
 div .estiloDeTarjeta2 {
- 
-  width: 14.5rem; 
-  height: 430px;  
+  width: 14.5rem;
+  height: 430px;
   color: white;
   box-shadow: 3px 4px 100px rgba(43, 0, 103, 0.96);
-  margin: 10px;
-  transition: all 0.3s ease;
+   transition: all 0.3s ease;
 }
-.card-img-top2{
-  height: 350px ; 
- 
-  }
- 
+
+.card-img-top2 {
+  height: 350px;
+}
+
 .estiloDeTarjeta2:hover {
   transition: 0.3s ease-out;
   transform: scale(1.03);
   box-shadow: 0px 58px 40px rgba(0, 0, 0, 0.4);
 }
+
+.card-title {
+  color: white;
+}
+
+
+
+ 
+
 .card-title {
   color: white  ;
 }
@@ -165,10 +173,10 @@ div .estiloDeTarjeta2 {
   flex-wrap: wrap;
 }
 
-div .estiloDeTarjeta3{ /* entro dentro del div */
+div .estiloDeTarjeta3{  
   border: none;
   background-color: #242424;
-  max-width: 25rem; 
+  max-width: 22rem; 
   min-width: 13rem; 
   color: white;
   transition: all 0.1s ease;
@@ -188,68 +196,165 @@ border-color: #0d6efd;
  /* termina el contenedorPadre */
 
 /*promo*/
-/* promo */
-.promo{ 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; 
-    width: auto;
-    height: auto;
-    margin: 30px;
-    background: linear-gradient(111deg,rgba(75,18,85,.2)25.93%, rgba(14,17,31,.2)63.21%,rgba(69,185,255,.2) 100.02%);
-   }
-  
-        
-  
+.promoCarousel1 {
+  width: 100%;
+  max-width: 1450px;
+  height: 500px;
+  margin:30px auto;
+  background: url(../img/carousel/1.jpeg);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+   background-size: cover;
+  position: relative;
+   overflow: hidden;
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+.promoCarousel2 {
+  width: 100%;
+  max-width: 1450px;
+  height: 500px;
+  margin:30px auto;
+  background: url(../img/carousel/2.jpg);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+   background-size: cover;
+  position: relative;
+   overflow: hidden;
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.promoCarousel3 {
+  width: 100%;
+  max-width: 1450px;
+  height: 500px;
+  margin:30px auto;
+  background: url(../img/carousel/3.png);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+   background-size: cover;
+  position: relative;
+   overflow: hidden;
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.promo-texto-carousel{
+  color: #fff;
+  max-width: 500px;
+}
+.promo-contenido-carousel{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent, rgba(0,0,0,1) 0%,transparent);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 100px;
    
-  
-  .columna1{
-    width: 630px;
-    min-width: 400px;
-  }
-  .columna2{
-    width: 630px;
-    min-width: 400px;
-  
-   }
-  @media (max-width: 1024px) {
-    .columna1,
-    .columna2 {
-      width: 100%;        
-      min-width: unset;  
-      
-    }
-  
-  }
-  
-  @media (max-width: 768px) {
-    .columna1,
-    .columna2 {
-      width: 95%;         
-      font-size: 0.95rem; 
-    }
+}
+ 
+
+ 
+
+
+/* PROMO ESTILO UBISOFT */
+.promoUbisoft {
+   width: 100%;
+  max-width: 1450px;
+  height: 400px;
+  margin: 40px auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background:  url(../img/publi.png) no-repeat center center fixed;
+  background-size: cover; /* ajusta para cubrir todo */
     
+}
+
+
+/* Capa oscura que cubre la mitad derecha */
+.promo-contenido {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent, rgba(0,0,0,1) 0%,transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Texto */
+.promo-texto {
+  color: #fff;
+  max-width: 500px;
+}
+
+.promo-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.promo-texto p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #d0d0d0;
+}
+
+.botonPromo {
+  display: inline-block;
+  background: #7a00ff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.botonPromo:hover {
+  background: #a64bff;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .promoUbisoft {
+    flex-direction: column;
+    height: auto;
+    background-position: top;
   }
-  
-  @media (max-width: 480px) {
-    .columna1,
-    .columna2 {
-      width: 100%;       
-      border: none;     
-    }
+
+  .promo-contenido {
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    padding: 30px 20px;
   }
+
+  .promo-texto h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .botonPromo {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}
+/* promo */
+
    
-  /* imagen de interfaz  */
-  .imgInterfaz{
-    max-height: 200px; 
-    margin-top: 2.5rem;
-    min-height: 200px;
-    min-width: 100px;
-   object-fit:contain;   
-   transition: 0.5s all;
-  }
+ 
   span{
     color: white;
   }

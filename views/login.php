@@ -7,21 +7,29 @@
     <link rel="shortcut icon" href="../img/IconoSinBorde.png" type="image/x-icon" >
     <link rel="stylesheet" href="../css/Loginn.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <style>
+    .mensaje-error {
+        margin:15px;
+      background-color: #f8d7da;  
+    color: #842029;           
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 9999;    
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    font-family: Arial, sans-serif;
+}
+
+   </style>
 </head>
  
 <body>
-  
- 
 <form action="../loginRegis.php" method="POST" class="login__form">
     <h1 class="login__title">Inicio de sesión</h1>
     
-    <?php
-    if(isset($_GET['error'])){
-        $error = htmlspecialchars($_GET['error']);
-        echo "<script>alert('$error');</script>";
-    }
-    ?>
+   
+
 
     <div class="login__content">
         <div class="login__box">
@@ -42,6 +50,26 @@
         </div>
     </div>
 
+        <?php
+        if(isset($_GET['error'])){ // solo entra si hay error
+            $error = $_GET['error'];
+        ?>
+        <div class="mensaje-error"><?php echo $error; ?></div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var mensaje = document.querySelector(".mensaje-error");
+            if(mensaje){
+                // Desaparece después de 3 segundos
+                setTimeout(function(){
+                    mensaje.style.opacity = "0";
+                }, 3000);
+            }
+        });
+        </script>
+
+        <?php } ?>
+
     <button type="submit" name="boton" class="login__button">Iniciar sesión</button>
 
     <p class="login__register">
@@ -52,8 +80,7 @@
            
    
  
-  
-
+ 
   
 </body>
 </html> 
