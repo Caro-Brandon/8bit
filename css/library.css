@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+ background:linear-gradient(to top, rgba(0,0,0,10), rgba(0,0,0,0)), url(../img/nosotros/2.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+}
+.titulo{
+    margin-top: 20px;
+    color: violet;
+    font-weight: bold;
+    font-size: 30px;
+}
+.Biblioteca{
+    height: 100%;
+    display: flex;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+ }
+.contenedor-img{
+    background-color: transparent;
+    border: 2px solid black;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    max-width: 150 0px;
+}
+.Contenedor_juego_texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-img .imagenJuego{
+  
+    min-width: 150px;
+    height: 250px;
+    padding: 20px;
+}

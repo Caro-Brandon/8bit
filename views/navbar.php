@@ -11,14 +11,15 @@
   </a>
 
    <div class="container-fluid d-flex justify-content-center align-items-center gap-3 p-132px conteNav d-none d-lg-flex" style="padding: 0 25px;">
-    <a href="index.php" class="text-white sinlinea item">Home</a>
 
     <div class="d-flex align-items-center gap-3 pe-13 contenedorNav">
       <span class="text-white item" style="cursor:pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias">
         Categorías
       </span>
+      <a href="library.php" class="text-white sinlinea item">Biblioteca</a>
       <a href="support.php" class="text-white sinlinea item">Soporte</a>
       <a href="about_us.php" class="text-white sinlinea item">8bit</a>
+       
     </div>
 
     <div class="search-box">
