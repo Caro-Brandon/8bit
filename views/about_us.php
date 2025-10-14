@@ -1,6 +1,4 @@
- 
-
-<!-- Favicons -->
+ <!-- Favicons -->
 <link href="assets-bootrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Fonts -->

@@ -40,7 +40,7 @@
       <span class="text-white"><?php echo $_SESSION['nombreDeUsuario']; ?> </span>
     </div>
 
-    <a href="carrito" style="color:white" class="item">
+    <a href="cart.php" style="color:white" class="item">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1
         .485.379L2.89 3H14.5a.5.5 0 0 1
@@ -107,7 +107,7 @@
      <hr>
      <a href="home.php" class="text-white sinlinea item">Soporte</a>
      <br>
-     <a href="nosotros.php" class="text-white sinlinea item">8bit</a>
+     <a href="about_us.php" class="text-white sinlinea item">8bit</a>
     
   </div>
 </div>
