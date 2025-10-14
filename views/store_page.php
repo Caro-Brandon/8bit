@@ -66,7 +66,9 @@
             </div>
 
             <div class="d-flex flex-column gap-3">
-              <button class="btn btn-success fw-bold">Comprar</button>
+            <button class="btn btn-success fw-bold" style="width: 100%;">
+            <a href="cart.php" class="sinlinea" style="color: white; text-decoration: none; display: block; width: 100%;">Comprar</a>
+            </button>
               <button class="btn btn-danger w-100 fw-bold"><i class="bi bi-cart-fill me-2"></i>Añadir al carrito</button>
             </div>
           </div>

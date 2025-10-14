@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+  }
+  
+   .payment-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;     
+    min-height: 50vh;  
+    padding: 240px 0;
+    flex-wrap: wrap;
+    }
+  
+   .payment-container {
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  h2 {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+  }
+  
+  .amount-display {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+   .btn-paypal, .btn-mercadolibre {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-paypal {
+    background: linear-gradient(90deg, #ff6a00, #ff3300);
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+  }
+  
+  .btn-mercadolibre {
+    background: linear-gradient(90deg, #ffe600, #ffd100);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 230, 0, 0.4);
+  }
+  
+  .btn-paypal img, .btn-mercadolibre img {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+  }
+  
+  .btn-paypal:hover {
+    background: linear-gradient(90deg, #ff3300, #ff6a00);
+    transform: scale(1.04);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.6);
+  }
+  
+  .btn-mercadolibre:hover {
+    background: linear-gradient(90deg, #ffd100, #ffe600);
+    transform: scale(1.04);
+    box-shadow: 0 6px 20px rgba(255, 230, 0, 0.6);
+  }
+  
+  .btn-paypal:active, .btn-mercadolibre:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 480px) {
+    .payment-container {
+      padding: 25px;
+    }
+.btn-paypal, .btn-mercadolibre {
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+  
