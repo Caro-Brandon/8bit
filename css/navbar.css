@@ -6,7 +6,6 @@
     border-radius: 25px;
   }
   
-  /* reset básico */
   * {
     font-weight: 12;
     padding: 0;
@@ -14,10 +13,9 @@
     box-sizing: border-box;
   }
   nav *{
-  margin: 5px;
+   margin: 5px;
   }
 
-  /* sin la linea undergraund */
   .sinlinea{
     text-decoration: none;
   }
@@ -46,13 +44,13 @@
   justify-content:center;
   align-items:center;       
   text-align: center;   
-
+ 
    }
 .item{
  padding-right: 20px;
 }
   nav.navbar {
- 
+  background: transparent ;
   display: flex;
   justify-content:center;
   align-items:center;       
@@ -108,14 +106,6 @@ header .search-box{
   background-color: transparent;
 
 }
-
- 
-
-
-
-   
-  
-  
   
   /* hasta acá termina el nav */
 

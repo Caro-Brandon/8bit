@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if(!isset($_SESSION['nombreDeUsuario'])){
   echo "<script>
           alert('Debes iniciar sesión primero');
-          window.location.href='../views/login.php'; // ruta correcta desde layout
+          window.location.href='views/login.php'; // ruta correcta desde layout
         </script>";
   exit();
 }

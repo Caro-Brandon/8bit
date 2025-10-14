@@ -51,7 +51,7 @@
     </div>
 
         <?php
-        if(isset($_GET['error'])){ // solo entra si hay error
+        if(isset($_GET['error'])){ 
             $error = $_GET['error'];
         ?>
         <div class="mensaje-error"><?php echo $error; ?></div>

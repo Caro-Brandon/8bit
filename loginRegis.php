@@ -33,7 +33,7 @@ if(isset($_POST['boton'])) {
             $_SESSION['email'] = $row['email'];
 
             // Redirigir al home
-            header("Location: views/layout.php");
+            header("Location: index.php");
             exit();
         } 
         else {

@@ -1,0 +1,858 @@
+/* css de bootstrap con store_page */
+body 
+{
+  background: linear-gradient(180deg, #05080d 0%, #0b0f16 50%, #090c13 100%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+.titulo{
+    padding-bottom: 5px;
+}
+.hero
+{
+  background: url('../img/store_page/residentevil5.png') center/cover no-repeat;
+  width: 100vw; 
+  height: 110vh; 
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 80px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  border-radius: 0;
+}
+
+.hero .overlay 
+{
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content 
+{
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 0 15px;
+  
+}
+
+.hero h1 
+{
+  font-family: 'Rajdhani', sans-serif;
+  color: #ff3b3b;
+  font-size: 3rem;
+  text-shadow: 0 0 15px rgba(255, 60, 60, 0.6);
+  margin-top: 100px;
+}
+
+.hero p 
+{
+  font-size: 1.3rem;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+.border-video 
+{
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 73%;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  margin-top: -53rem;
+}
+
+.carousel-inner img 
+{
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.carousel-inner img:hover 
+{
+  transform: scale(1.05);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon 
+{
+  background-image: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before 
+{
+  font-family: "bootstrap-icons";
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.carousel-control-prev-icon::before 
+{
+  content: "\f284";
+}
+
+.carousel-control-next-icon::before 
+{
+  content: "\f285";
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover 
+{
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.description .card 
+{
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.description .card:hover 
+{
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+#precio 
+{
+  margin-right: 170px;
+  display: inline-block; 
+  vertical-align: middle;
+  font-size: 2rem;
+}
+.btn-fav 
+{
+  background: none;
+  border: none;
+  color: #ff3b5f;
+  font-size: 1.8rem;
+  transition: transform 0.2s ease, color 0.3s ease;
+  margin-left: 160px;
+}
+
+.btn-fav:hover 
+{
+  transform: scale(1.15);
+  color: #ff6b85;
+}
+
+.btn-danger 
+{
+  background: linear-gradient(90deg, #ff2d2d, #ff6a6a);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+
+.btn-danger:hover 
+{
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 59, 95, 0.4);
+}
+
+.btn-success 
+{
+  background: linear-gradient(90deg, #28a745, #5cd65c);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  
+}
+
+.btn-success:hover
+{
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(72, 201, 176, 0.5);
+}
+
+.hero-leon 
+{
+  position: relative;
+  width: 100vw; 
+  height: 95vh; 
+  overflow: hidden;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  border-radius: 0;
+}
+
+.hero-leon .hero-image 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  filter: brightness(65%);
+  transition: transform 1s ease;
+}
+
+.hero-leon .hero-overlay 
+{
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 40px 50px;
+  max-width: 550px;
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+}
+
+.hero-leon .hero-overlay h2 
+{
+  font-size: 2.3rem;
+  color: #ff2d2d;
+  margin-bottom: 20px;
+}
+
+.hero-leon .hero-overlay p 
+{
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero-leon .hero-overlay .quote 
+{
+  margin-top: 10px;
+  font-style: italic;
+  color: #ffb3b3;
+  font-size: 0.95rem;
+}
+
+.hero-ashley 
+{
+  position: relative;
+  width: 100vw;
+  height: 110vh;
+  overflow: hidden;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  border-radius: 0;
+
+}
+
+.hero-ashley .hero-image 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  filter: brightness(65%);
+  transition: transform 1s ease;
+}
+
+.hero-ashley .hero-overlay
+{
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 40px 50px;
+  max-width: 550px;
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+}
+
+.hero-ashley .hero-overlay h2 
+{
+  font-size: 2.3rem;
+  color: #ff2d2d;
+  margin-bottom: 20px;
+}
+
+.hero-ashley .hero-overlay p 
+{
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero-ashley .hero-overlay .quote 
+{
+  margin-top: 10px;
+  font-style: italic;
+  color: #ffb3b3;
+  font-size: 0.95rem;
+}
+
+.hero-leon 
+{
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-bottom: -100px;
+}
+
+.hero-ashley 
+{
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-top: -100px;
+}
+
+#valoracion-jugadores 
+{
+  margin-left: 235px;
+  margin-top: 90px;
+}
+
+.rating-box 
+{
+  background-color: #11151c;
+  border-radius: 15px;
+  max-width: 800px;
+  margin-left: 235px;
+}
+
+.stars 
+{
+  font-size: 1.6rem;
+}
+
+.progress 
+{
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.requirements 
+{
+  background-color: #11151c;
+  border-radius: 15px;
+}
+
+
+.game-cards 
+{
+  background-color: #11151c;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.game-card 
+{
+  background-color: #0b0f16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+    max-width: 260px;
+  margin: 0 auto;
+}
+
+.game-card:hover 
+{
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.game-card img 
+{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.game-card .card-title 
+{
+  color: #fff;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.game-card .card-price 
+{
+  color: #ff2d2d;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.game-card .btn-success 
+{
+  background: linear-gradient(90deg, #28a745, #5cd65c);
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.game-card .btn-success:hover 
+{
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(72, 201, 176, 0.4);
+}
+
+#gameCarousel 
+{
+  position: relative;
+}
+
+.carousel-inner 
+{
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon 
+{
+  background-image: none;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before 
+{
+  font-family: "bootstrap-icons";
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.carousel-control-prev-icon::before 
+{
+  content: "\f284";
+}
+
+.carousel-control-next-icon::before 
+{
+  content: "\f285";
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover 
+{
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.review-card 
+{
+  background-color: #11151c;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.reviews .review-card 
+{
+  margin-bottom: 40px;
+  background-color: #11151c;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  padding: 20px;
+}
+
+.avatar 
+{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.footer 
+{
+  background-color: #0a0d13;
+  border-top: 1px solid #222;
+}
+
+.review-container 
+{
+  background-color: #11151c;
+  color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 1295px;
+}
+
+.review-title 
+{
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+#commentForm 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group input,
+.form-group textarea 
+{
+  width: 100%;
+  background-color: #1a1533;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder 
+{
+  color: #b5b2d1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus 
+{
+  background-color: #221c47;
+  outline: none;
+}
+
+.form-footer 
+{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.stars 
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.stars input 
+{
+  display: none;
+}
+
+.stars label 
+{
+  font-size: 22px;
+  color: #55506b;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-left: 3px;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label 
+{
+  color: #fff;
+}
+
+.submit-btn 
+{
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover 
+{
+  background-color: #fff;
+  color: #0b0820;
+}
+
+@media (max-width: 768px) 
+{
+  .hero 
+  {
+    background: url('../img/store_page/residentevil5.png') center top / contain no-repeat;
+    height: 88vh;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hero-content 
+  {
+    text-align: center;
+    padding: 0 18px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero h1 
+  {
+    font-size: 1.9rem;
+    margin-top: 55px;
+    line-height: 1.3;
+  }
+
+  .hero p 
+  {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+  }
+
+  .border-video 
+  {
+    width: 95%;
+    max-width: 600px;
+    margin: 10px auto 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  iframe,
+  video 
+  {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .carousel-inner img 
+  {
+    width: 92%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon 
+  {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+  }
+
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: transparent;
+  }
+
+  .hero-leon,
+  .hero-ashley 
+  {
+    height: 90vh;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .hero-leon .hero-overlay,
+  .hero-ashley .hero-overlay 
+  {
+    position: relative;
+    margin: 25px auto;
+    padding: 22px;
+    max-width: 90%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+  }
+
+  .hero-leon .hero-overlay h2,
+  .hero-ashley .hero-overlay h2 
+  {
+    font-size: 1.5rem;
+  }
+
+  .hero-leon .hero-overlay p,
+  .hero-ashley .hero-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .review-container,
+  .rating-box 
+  {
+    margin: 0 auto 25px auto;
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .review-title 
+  {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .game-card 
+  {
+    width: 95%;
+    margin: 0 auto 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .game-card img 
+  {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .footer 
+  {
+    text-align: center;
+    padding: 35px 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  #valoracion-jugadores,
+  .rating-box 
+  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #precio 
+  {
+    margin: 10px 0;
+    font-size: 1.5rem;
+  }
+
+  .btn-fav 
+  {
+    font-size: 1.4rem;
+    margin: 10px auto 0;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 400px) 
+{
+  .hero
+  {
+    height: 82vh;
+    background-size: cover;
+  }
+
+  .hero-content 
+  {
+    padding: 0 12px;
+  }
+
+  .hero h1 
+  {
+    font-size: 1.5rem;
+  }
+
+  .hero p 
+  {
+    font-size: 0.9rem;
+  }
+
+  .border-video 
+  {
+    width: 100%;
+  }
+
+  .carousel-inner img 
+  {
+    width: 100%;
+  }
+
+  .footer 
+  {
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (min-width: 1600px) 
+{
+  .hero 
+  {
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .hero h1 
+  {
+    font-size: 3rem;
+  }
+
+  .hero p 
+  {
+    font-size: 2.6rem;
+    
+  }
+
+  .border-video 
+  {
+    max-width: 62%;
+  }
+
+  .hero-leon .hero-overlay,
+  .hero-ashley .hero-overlay 
+  {
+    max-width: 700px;
+    padding: 60px 80px;
+  }
+
+  .ratings h4 
+  {
+    margin-bottom: 2rem;
+  }
+
+  .rating-box 
+  {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

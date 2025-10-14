@@ -14,8 +14,6 @@ body{
 
  /* arranca el main */
  
- /* carrusel / el coso que cambia de imagen */
-/* Contenedor del carrusel grande estilo promo */
 /* carrusel / el coso que cambia de imagen */
 .carousel-item img {
   max-height: 450px; 
@@ -123,14 +121,14 @@ div .estiloDeTarjeta1{
 }
 
 .contenedorTarjetas2 {
-   max-width: 1450px;        /* ancho máximo */
-  min-width: 420px;         /* ancho mínimo para móviles */
+   max-width: 1450px;       
+  min-width: 420px;         
   height: auto;
   display: flex;
   justify-content: center;
    align-items: center;
   text-align: center;
-  margin: 10px;           /* centrado horizontal */
+  margin: 10px;           
 }
 
 div .estiloDeTarjeta2 {
@@ -232,7 +230,7 @@ border-color: #0d6efd;
   max-width: 1450px;
   height: 500px;
   margin:30px auto;
-  background: url(../img/carousel/3.png);
+  background: url(../img/carousel/residEvil4.jpeg);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -275,8 +273,7 @@ border-color: #0d6efd;
   justify-content: flex-start;
 
   background:  url(../img/publi.png) no-repeat center center fixed;
-  background-size: cover; /* ajusta para cubrir todo */
-    
+  background-size: cover; 
 }
 
 

@@ -7,5 +7,6 @@ if(!$conex){
 }
 
  
-   
-?>
+ 
+session_start();
+ ?>

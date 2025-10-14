@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8bit</title>
-    <link rel="shortcut icon" href="/src/img/IconoSinBorde.png" type="image/x-icon" >
-    <link rel="stylesheet" href="../css/footerLogo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+ 
+    <!-- <link rel="stylesheet" href="../css/footerLogo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"> -->
  
 <div class="container contenedorRedes" >
     <a href="pagina">
@@ -49,5 +41,4 @@
 </div>
 
 
-</body>
-</html>
+ 

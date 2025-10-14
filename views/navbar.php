@@ -1,35 +1,24 @@
+
  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8bit</title>
-    <link rel="shortcut icon" href="/src/img/IconoSinBorde.png" type="image/x-icon" >
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <header> 
+
+  
 <!-- arranca el nav -->
 <!-- arranca el nav -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <!-- Logo (siempre visible) -->
-  <a href="layout.php" class="pe-13">
-    <img src="../img/IconoSinBorde.png" alt="Logo" width="70" height="70" class="logo">
+  <a href="index.php" class="pe-13">
+    <img src="img/IconoSinBorde.png" alt="Logo" width="70" height="70" class="logo">
   </a>
 
-  <!-- Contenido del nav (oculto en pantallas chicas) -->
-  <div class="container-fluid d-flex justify-content-center align-items-center gap-3 p-132px conteNav d-none d-lg-flex" style="padding: 0 25px;">
-    <a href="layout.php" class="text-white sinlinea item">Home</a>
+   <div class="container-fluid d-flex justify-content-center align-items-center gap-3 p-132px conteNav d-none d-lg-flex" style="padding: 0 25px;">
+    <a href="index.php" class="text-white sinlinea item">Home</a>
 
     <div class="d-flex align-items-center gap-3 pe-13 contenedorNav">
       <span class="text-white item" style="cursor:pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias">
         Categorías
       </span>
       <a href="support.php" class="text-white sinlinea item">Soporte</a>
-      <a href="index.html" class="text-white sinlinea item">8bit</a>
+      <a href="about_us.php" class="text-white sinlinea item">8bit</a>
     </div>
 
     <div class="search-box">
@@ -48,7 +37,7 @@
           1.332c-.678.678-.83 1.418-.832 1.664z"/>
         </svg>
       </a>
-      <span class="text-white"><?php echo $_SESSION['nombreDeUsuario']; ?></span>
+      <span class="text-white"><?php echo $_SESSION['nombreDeUsuario']; ?> </span>
     </div>
 
     <a href="carrito" style="color:white" class="item">
@@ -71,8 +60,7 @@
     </a>
   </div>
 
-  <!-- Botón "Abrir" (solo visible en pantallas chicas) -->
-  <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias" aria-label="Abrir menú">
+   <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategorias" aria-controls="offcanvasCategorias" aria-label="Abrir menú">
   <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -101,7 +89,7 @@
 
     <div class="d-flex flex-column gap-2 mb-3">
       <a href="index.html" class="btn btn-outline-light">Soporte</a>
-      <a href="../logout.php" class="btn btn-outline-light">Cerrar sesión</a>
+      <a href="logout.php" class="btn btn-outline-light">Cerrar sesión</a>
     </div>
 
     <hr>
@@ -126,9 +114,4 @@
 
 
 
-    </header> 
-    </body>
-    </html>
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
