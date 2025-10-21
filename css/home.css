@@ -194,52 +194,31 @@ border-color: #0d6efd;
  /* termina el contenedorPadre */
 
 /*promo*/
-.promoCarousel1 {
-  width: 100%;
-  max-width: 1450px;
-  height: 500px;
-  margin:30px auto;
-  background: url(../img/carousel/1.jpeg);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-   background-size: cover;
-  position: relative;
-   overflow: hidden;
-   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-}
-.promoCarousel2 {
-  width: 100%;
-  max-width: 1450px;
-  height: 500px;
-  margin:30px auto;
-  background: url(../img/carousel/2.jpg);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-   background-size: cover;
-  position: relative;
-   overflow: hidden;
-   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-}
-
+.promoCarousel1,
+.promoCarousel2,
 .promoCarousel3 {
   width: 100%;
   max-width: 1450px;
   height: 500px;
-  margin:30px auto;
-  background: url(../img/carousel/residEvil4.jpeg);
+  margin: 30px auto;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-   background-size: cover;
+  background-size: cover;  
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-   overflow: hidden;
-   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
+
+.promo-contenido-carousel {
+  position: relative;
+  z-index: 1;
+  padding-left: 30px;
+}
+
 
 .promo-texto-carousel{
   color: #fff;

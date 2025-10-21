@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                url(../img/nosotros/1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  
+   }
+ .editar-panel {
+    width: 100%;      
+    min-height: 100vh;
+     display: flex;
+    justify-content: center;  
+    align-items: center;    
+      
+ 
+}
+
+ .editar-panel .caja-editar {
+    width: 800px;
+    background-color: rgba(50, 0, 50, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128,0,255,0.5);
+}
+
+ 
+.editar-panel .titulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(128, 0, 255);
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+
+ 
+.editar-panel form {
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+.editar-panel form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+ 
+.editar-panel form input[type="text"],
+.editar-panel form input[type="number"],
+.editar-panel form textarea {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+ .editar-panel form button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: rgb(128, 0, 255);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.volver{
+    
+    color: rgb(234, 210, 255);
+    text-decoration: none;
+    
+}
+.volver:hover{
+    color: rgb(160, 50, 255);
+    text-decoration: none;
+    
+}
+
+.editar-panel form button:hover {
+    background-color: rgb(160, 50, 255);
+}
+
+#imagenes-container input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#agregar-img {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color:rgb(128, 0, 255) ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#agregar-img:hover {
+    background-color: rgb(76, 22, 92);
+}
+
+/* Contenedor de imágenes */
+#imagenes-container .img-item,
+#nuevas-imagenes .img-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+ 
+ .btn-eliminar {
+    background-color: rgb(200, 0, 0);
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(255, 50, 50);
+}
+
+ .editar-panel small {
+    display: block;
+    color: #ffcc00;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+ .editar-panel hr {
+    margin: 25px 0;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+ .img-item select {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+
+.img-item select:focus {
+    box-shadow: 0 0 5px rgba(255,255,255,0.7);
+}

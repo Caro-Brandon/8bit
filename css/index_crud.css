@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                url(../img/nosotros/1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .crud {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .caja-crud {
+    width: 100%;
+    max-width: 1500px;
+  }
+  .titulo {
+    margin-top: 20px;
+    color: rgb(96, 28, 116);
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+
+  /* formulario  */
+/* Contenedor principal del CRUD */
+.crud-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Caja principal */
+  .crud-panel .caja-crud {
+    width: 100%;
+    max-width: 1500px;
+    background-color: rgba(50, 0, 50, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+  
+  /* Título */
+  .crud-panel .titulo {
+    margin-top: 20px;
+    color: rgb(96, 28, 116);
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón */
+  .crud-panel .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(96, 28, 116);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .crud-panel .btn:hover {
+    background-color: rgb(128, 0, 255);
+  }
+  
+  /* Tabla de juegos */
+  .crud-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .crud-panel th,
+  .crud-panel td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .crud-panel th {
+    background-color: rgba(96, 28, 116, 0.7);
+    font-size: 18px;
+  }
+  
+  .crud-panel tr:hover {
+    background-color: rgba(128, 0, 255, 0.3);
+  }
+  
+  .crud-panel td img,
+  .crud-panel td video {
+    border-radius: 5px;
+    max-width: 120px;
+    height: auto;
+  }
+  
+  /* Formulario */
+  .crud-panel form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(80, 0, 80, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .crud-panel form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .crud-panel form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .crud-panel form input[type="text"],
+  .crud-panel form input[type="number"],
+  .crud-panel form input[type="date"],
+  .crud-panel form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  .crud-panel form textarea {
+    resize: vertical;
+  }
+  
+  .crud-panel form button {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: rgb(96, 28, 116);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .crud-panel form button:hover {
+    background-color: rgb(128, 0, 255);
+  }
+  

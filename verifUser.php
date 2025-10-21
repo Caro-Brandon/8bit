@@ -13,8 +13,7 @@ if(!isset($_SESSION['nombreDeUsuario'])){
 }
 
 
-// Evitar caché del navegador
-header("Cache-Control: no-cache, must-revalidate");
+ header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
 ?>

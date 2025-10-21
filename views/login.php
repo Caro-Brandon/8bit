@@ -27,15 +27,19 @@
 <body>
 <form action="../loginRegis.php" method="POST" class="login__form">
     <h1 class="login__title">Inicio de sesión</h1>
-    
-   
-
 
     <div class="login__content">
         <div class="login__box">
             <i class="bx bx-lock-alt"></i>
             <div class="login__box-input">
-                <input type="email" name="usuario" required class="login__input" placeholder=" ">
+                <input 
+                    type="email" 
+                    name="usuario" 
+                    required 
+                    class="login__input" 
+                    placeholder=" "
+                    value="<?php if(isset($_GET['usuario'])) echo htmlspecialchars($_GET['usuario']); ?>"
+                >
                 <label for="" class="login__label">Gmail</label>
             </div>
         </div>
@@ -43,32 +47,32 @@
         <div class="login__box">
             <i class="ri-lock-2-line login__icon"></i>
             <div class="login__box-input">
-                <input type="password" name="contraseña" required class="login__input" placeholder=" ">
+                <input 
+                    type="password" 
+                    name="contraseña" 
+                    required 
+                    class="login__input" 
+                    placeholder=" "
+                    value="<?php if(isset($_GET['contraseña'])) echo htmlspecialchars($_GET['contraseña']); ?>"
+                >
                 <label for="" class="login__label">Contraseña</label>
                 <i class="ri-eye-off-line login__eye"></i>
             </div>
         </div>
     </div>
 
-        <?php
-        if(isset($_GET['error'])){ 
-            $error = $_GET['error'];
-        ?>
-        <div class="mensaje-error"><?php echo $error; ?></div>
-
+    <?php if(isset($_GET['error'])) { ?>
+        <div class="mensaje-error"><?php echo $_GET['error']; ?></div>
         <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var mensaje = document.querySelector(".mensaje-error");
+            const mensaje = document.querySelector(".mensaje-error");
             if(mensaje){
                 // Desaparece después de 3 segundos
-                setTimeout(function(){
-                    mensaje.style.opacity = "0";
-                }, 3000);
+                setTimeout(() => mensaje.style.opacity = "0", 3000);
             }
         });
         </script>
-
-        <?php } ?>
+    <?php } ?>
 
     <button type="submit" name="boton" class="login__button">Iniciar sesión</button>
 
@@ -77,6 +81,17 @@
     </p>
 </form>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("usuario")) {
+        document.querySelector("[name='usuario']").value = params.get("usuario");
+    }
+    if (params.has("contraseña")) {
+        document.querySelector("[name='contraseña']").value = params.get("contraseña");
+    }
+});
+</script>
            
    
  

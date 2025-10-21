@@ -2,99 +2,108 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/store_page.css">
  
+<?php
+if(!isset($_GET['id'])) { echo "<p>Juego no seleccionado</p>"; exit; }
+$idJuego = (int)$_GET['id'];
 
-<div class="body">
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content text-center">
-        <h1 class="titulo">Resident Evil 4 Remake</h1>
-        <p class="titulo">Revive el horror. Sobrevive la pesadilla.</p>
+ $juego = $conex->query("
+    SELECT v.*, i.url AS imagen_portada
+    FROM videojuego v
+    LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo='portada'
+    WHERE v.idVideoJuego = $idJuego
+")->fetch_assoc();
+if(empty($juego['imagen_portada'])) $juego['imagen_portada'] = 'img/fondo/negro.jpg';
+
+
+$video = $conex->query("
+    SELECT url FROM video_juego WHERE idVideoJuego = $idJuego LIMIT 1
+")->fetch_assoc();
+
+$imagenes = [];
+$resImg = $conex->query("SELECT url FROM imagenes_juego WHERE idVideoJuego = $idJuego AND tipo='galeria' ORDER BY orden");
+while($row = $resImg->fetch_assoc()) $imagenes[] = $row['url'];
+if(empty($imagenes)) $imagenes = [$juego['imagen_portada']];
+?>
+
+  <div class="body" >
+
+<section class="hero" style="background-image: url('<?= htmlspecialchars($juego['imagen_portada']) ?>');">
+    <div class="overlay"></div>
+    <div class="hero-content text-center text-light">
+        <h1 class="titulo"><?= htmlspecialchars($juego['nombreDelJuego']) ?></h1>
+     </div>
+</section>
+
+<section class="container py-5 mt-5">
+    <div class="mb-5">
+        <div class="ratio ratio-16x9 shadow-lg border-video">
+            <iframe src="<?= htmlspecialchars($video['url']) ?>" title="<?= htmlspecialchars($juego['nombreDelJuego']) ?> Trailer" allowfullscreen></iframe>
         </div>
-    </section>
+    </div>
 
-<section class="container py-5 mt-5   ">
-    <section class="mb-5 mt-5 ">
-      <div class="ratio ratio-16x9 shadow-lg border-video">
-        <iframe src="img/store_page/Resident Evil 4 - 2nd Trailer  PS5 Games - PlayStation (1080p, h264).mp4"
-          title="Resident Evil 4 Remake Trailer" allowfullscreen></iframe>
-      </div>
-    </section>
+    <div id="carouselImages" class="carousel slide mb-5" data-bs-interval="false">
+    <div class="carousel-inner">
+        <?php
+        $active = 'active';
+         $grupos = array_chunk($imagenes, 3);
 
-    <section class="carousel-container mb-5">
-      <div id="carouselImages" class="carousel slide" data-bs-interval="false">
-        <div class="carousel-inner">
-          <?php
-          $imagenes = [
-            ['residentevil4.png', 'residentevil4.2.png', 'residentevil4.3.png'],
-            ['residentevil4.4.png', 'residentevil4.5.png', 'residentevil4.6.png'],
-            ['residentevil4.7.png', 'residentevil4.8.png', 'residentevil4.9.png']
-          ];
-          $active = 'active';
-          foreach ($imagenes as $grupo) {
-            echo '<div class="carousel-item ' . $active . '"><div class="row">';
-            foreach ($grupo as $img) {
-              echo '<div class="col-md-4"><img src="img/store_page/' . $img . '" class="d-block w-100 rounded"></div>';
-            }
-            echo '</div></div>';
-            $active = '';
-          }
-          ?>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
-
-    <section class="description mb-5 p-4 rounded shadow-lg">
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card bg-dark text-light h-100 p-4 shadow-lg">
-            <h2 class="fw-bold text-danger mb-3">Resident Evil 4 Remake</h2>
-            <p>Sobrevive al horror en una reimaginación moderna del clásico de acción y supervivencia...</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card bg-dark text-light h-100 p-4 shadow-lg d-flex flex-column justify-content-between">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-              <button class="btn btn-fav"><i class="bi bi-heart"></i></button>
-              <h3 class="text-white fw-bold mb-0" id="precio">$59.99 USD</h3>
+        foreach ($grupos as $grupo): ?>
+            <div class="carousel-item <?= $active ?>">
+                <div class="row g-2">
+                    <?php foreach ($grupo as $img): ?>
+                        <div class="col-md-4">
+                            <img src="<?= htmlspecialchars($img) ?>" class="d-block w-100 rounded">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
+        <?php $active = ''; endforeach; ?>
+    </div>
 
-            <div class="d-flex flex-column gap-3">
-            <button class="btn btn-success fw-bold" style="width: 100%;">
-            <a href="cart.php" class="sinlinea" style="color: white; text-decoration: none; display: block; width: 100%;">Comprar</a>
-            </button>
-              <button class="btn btn-danger w-100 fw-bold"><i class="bi bi-cart-fill me-2"></i>Añadir al carrito</button>
+    
+</div>
+
+
+</section>
+
+
+<section class="container py-5 mt-5">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card bg-dark text-light h-100 p-4 shadow-lg">
+                <h2 class="fw-bold text-danger mb-3"><?= htmlspecialchars($juego['nombreDelJuego']) ?></h2>
+                <p><?= htmlspecialchars($juego['descripcion']) ?></p>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="hero-leon">
-      <img src="img/store_page/residentevil4.9.png" alt="Leon S. Kennedy" class="hero-image">
-      <div class="hero-overlay">
-        <h2>LEON S. KENNEDY</h2>
-        <p>Un agente de élite con un pasado marcado por el horror...</p>
-        <p class="quote">"El miedo te mantiene con vida... pero el valor te hace avanzar."</p>
-      </div>
-    </section>
+        <div class="col-md-6">
+            <div class="card bg-dark text-light h-100 p-4 shadow-lg d-flex flex-column justify-content-between">
+                <div  class="d-flex align-items-center justify-content-between mb-4">
+                     <h3 class="text-white fw-bold mb-0"  id="precio">$<?= htmlspecialchars($juego['precio'])?></h3>
+                </div>
 
-    <section class="hero-ashley">
-      <img src="img/store_page/Ashley.png" alt="Ashley Graham" class="hero-image">
-      <div class="hero-overlay">
-        <h2>ASHLEY GRAHAM</h2>
-        <p>La hija del presidente de los Estados Unidos...</p>
-        <p class="quote">"Incluso en la oscuridad más profunda, una chispa de esperanza puede iluminar el camino."</p>
-      </div>
-    </section>
+                <div class="d-flex flex-column gap-3">
+                <a href="cart.php?add=<?= $idJuego ?>" 
+                  class="btn btn-success fw-bold text-white text-center w-100">
+                  Comprar
+                </a>
 
-    <section class="ratings mb-5">
+                <a href="cart.php?add=<?= $idJuego ?>" 
+                  class="btn btn-danger w-100 fw-bold"
+                  onclick="alert('¡Juego agregado al carrito!');">
+                  <i class="bi bi-cart-fill me-2"></i>Añadir al carrito
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    
+
+    <section class="container ratings mb-5">
       <h4 class="fw-bold text-uppercase mb-4" id="valoracion-jugadores">Valoraciones de jugadores</h4>
       <div class="rating-box p-4 shadow-lg rounded">
         <div class="d-flex mb-3">
@@ -126,7 +135,7 @@
       </div>
     </section>
 
-    <section class="requirements mb-5 p-4 rounded shadow-lg">
+    <section class=" container requirements mb-5 p-4 rounded shadow-lg">
       <h4 class="text-uppercase mb-4 fw-bold">Requisitos del sistema</h4>
       <div class="row">
         <div class="col-md-6 mb-4 mb-md-0">
@@ -152,7 +161,7 @@
       </div>
     </section>
 
-    <section class="game-cards mb-5">
+    <section class="container game-cards mb-5">
       <h4 class="text-uppercase mb-4 fw-bold text-center">Más juegos</h4>
       <?php
       $juegos = [
@@ -180,7 +189,7 @@
       </div>
     </section>
 
-    <section class="reviews mb-5">
+    <section class="container reviews mb-5">
       <h4 class="text-uppercase mb-4 fw-bold">Opiniones de jugadores</h4>
       <?php
       $opiniones = [
@@ -205,7 +214,7 @@
       ?>
     </section>
 
-    <div class="review-container">
+    <div class="container review-container">
       <h3 class="review-title">Deja tu comentario</h3>
       <form id="commentForm" action="#" method="post">
         <div class="form-group">

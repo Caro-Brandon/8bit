@@ -1,62 +1,31 @@
+<link rel="stylesheet" href="css/library.css">
 
-    <link rel="stylesheet" href="css/library.css">
-    <section class="Biblioteca">
-      <div class="Caja-Biblioteca">
-        <div> 
-            <span class="titulo">Tus juegos disponibles</span>
-            <div class="contenedor-img">
-                <!-- Imagenes de Juegos -->
-                        <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-                        
-
-                        <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-
-                         <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-                         
-                         <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-
-                         <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-
-                         <div class="Contenedor_juego_texto">
-                            <a href="juego">
-                            <img class="imagenJuego"  src="img/generos/pelea.jpg" alt="juego1">
-                            <p>Nombre del juego</p>
-                            </a>
-                        </div>
-
-                        
-                        
-                        
-                    
-
-                
-            </div>
+<section class="biblioteca">
+  <div class="caja-biblioteca">
+    <span class="titulo">Tus juegos disponibles</span>
+    
+    <div class="contenedor-img">
+      <!-- Imagenes de Juegos -->
+      
+      <a href="emulator/EmulatorJS-main" style="text-decoration:none">
+         <div class="card bg-transparent estiloDeTarjeta2">
+        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
+        <div class="card-body">
+          <h5 class="card-title">Forza Horizon 5</h5>
+         </div>
         </div>
-            
-      </div>
-    </section>
+      </a>
+
+      <div class="card bg-transparent estiloDeTarjeta2">
+        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
+        <div class="card-body">
+          <h5 class="card-title">Forza Horizon 5</h5>
+         </div>
+        </div>
+      
+
+    </div>
+
+  </div>
+
+</section>

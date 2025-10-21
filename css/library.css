@@ -1,31 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
- background:linear-gradient(to top, rgba(0,0,0,10), rgba(0,0,0,0)), url(../img/nosotros/2.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  color: white;
-  font-weight: bold;
-}
-.titulo{
-    margin-top: 20px;
-    color: violet;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), 
+                url(../img/fondo/negro.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
     font-weight: bold;
-    font-size: 30px;
-}
-.Biblioteca{
-    height: 100%;
-    display: flex;
-    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+ 
+  
+  .biblioteca {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 20px;
- }
-.contenedor-img{
+    padding: 20px;
+  }
+  
+  .caja-biblioteca {
+    width: 100%;
+    max-width: 1500px;
+  }
+  .titulo {
+    margin-top: 20px;
+    color: rgb(96, 28, 116);
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+  .contenedor-img {
     background-color: transparent;
     border: 2px solid black;
     backdrop-filter: blur(20px);
@@ -33,20 +44,60 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
-    max-width: 150 0px;
-}
-.Contenedor_juego_texto{
+    padding: 20px;
+    gap: 20px;
+  }
+  
+
+  .estiloDeTarjeta2 {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 16.5rem;
+    height: 460px; 
+    color: white;
+    box-shadow: 3px 4px 80px rgba(50, 3, 115, 0.9);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .estiloDeTarjeta2:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 4px 30px rgba(120, 20, 255, 0.9);
+  }
+  
+  .card-img-top2 {
+    width: 100%;
+    height: 340px; 
+    object-fit: cover;
+  }
+  
+  
+  .card-body {
+    background-color: rgba(255, 255, 255, 0.05); 
+    flex: 0 0 120px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.contenedor-img .imagenJuego{
+    padding: 10px;
+    backdrop-filter: blur(5px);
+  }
   
-    min-width: 150px;
-    height: 250px;
-    padding: 20px;
-}
+   .card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+   .precio-gamer {
+    color: violet;
+    font-size: 17px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .precio-gamer:hover {
+    color: white;
+  }
+  

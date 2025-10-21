@@ -16,112 +16,107 @@
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
 
  
-  <!--arranca la publicidad  -->
+<?php
+$result = $conex->query("
+SELECT v.idVideoJuego, v.nombreDelJuego, v.descripcion, v.rutaJuego, i.url AS imagen
+FROM videojuego v
+LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+ORDER BY v.fechaDeLanzamiento DESC
+LIMIT 3
+");
+
+
+$juegos = [];
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        if(empty($row['imagen'])) {
+            $row['imagen'] = 'img/portada_default.jpg';
+        }
+        $juegos[] = $row;
+    }
+}
+
+
+while(count($juegos) < 3) {
+    $juegos[] = [
+        'nombreDelJuego' => $juegos[0]['nombreDelJuego'],
+        'descripcion' => $juegos[0]['descripcion'],
+        'rutaJuego' => $juegos[0]['rutaJuego'],
+        'imagen' => $juegos[0]['imagen']
+    ];
+}
+?>
+
 <!-- Carrusel con 3 slides -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  
-   
-
-  <!-- Contenido del carrusel -->
   <div class="carousel-inner">
-
-    <div class="carousel-item active">
-      <div class="promoCarousel1">
-      <div class="promo-contenido-carousel" >
-           <div class="promo-texto-carousel">
-            <h2>Counter-Strike 2</h2>
-            <p>Juego shooter, no se qué más poner.</p>
-            <a href="store_page.php" class="botonPromo">Ver más</a>
+    <?php foreach($juegos as $index => $juego): ?>
+      <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+        <div class="promoCarousel<?php echo $index+1; ?>" 
+             style="background-image: url('<?php echo htmlspecialchars($juego['imagen']); ?>');">
+          <div class="promo-contenido-carousel">
+            <div class="promo-texto-carousel">
+              <h2><?php echo htmlspecialchars($juego['nombreDelJuego']); ?></h2>
+              <p><?php echo htmlspecialchars($juego['descripcion']); ?></p>
+              <a href="store_page.php?id=<?php echo $juego['idVideoJuego']; ?>" class="botonPromo">Ver más</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="promoCarousel2">
-        <div class="promo-contenido-carousel">
-          <div class="promo-texto-carousel">
-            <h2>Hollow  Knigth</h2>
-            <p>Juego aventura, no se qué más poner.</p>
-            <a href="store_page.php" class="botonPromo">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="promoCarousel3">
-        <div class="promo-contenido-carousel">
-          <div class="promo-texto-carousel">
-            <h2>Resident Evil 4</h2>
-            <p>Juego sdawdsadwa, no se qué más poner.</p>
-            <a href="store_page.php" class="botonPromo">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <?php endforeach; ?>
   </div>
 
- <div class="carousel-indicators">
+  <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
   </div>  
 </div>
+
         <!-- termina la publicidad -->
            
    <!-- arranca el contenedor padre  -->
     <div id="contenedorPadre">
       
     
-      <div  class="Titulos">
-        <h1>Mas populares</h1>
-      </div>
-     <!--arranca los contenedores de tarjetas -->
-       <div class="contenedorTarjetasPrincipales1">
-        
-        <div class="card estiloDeTarjeta1 ">
-          <a href="store_page.php" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/GodOfWar.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God of War</h5>
-              <a href="store_page.php" class="precio-gamer">$49.99 USD</a>
-            </div>
-          </a>
-          </div>
+    <div class="Titulos">
+      <h1>Más populares</h1>
+    </div>
 
-          <div class="card  estiloDeTarjeta1 ">
-            <a href="store_page.php" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/Halo1.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God of War</h5>
-              <a href="store_page.php" class="precio-gamer">$49.99 USD</a>
-          </div>
-          </a>
-          </div>
+    <!-- contenedor de tarjetas -->
+    <div class="contenedorTarjetasPrincipales1">
+    <?php
+      // consulta 4 juegos aleatorios
+      $query = "
+        SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
+        FROM videojuego v
+        LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+        ORDER BY RAND()
+        LIMIT 4
+      ";
+      $result = $conex->query($query);
 
-          <div class="card  estiloDeTarjeta1 ">
-            <a href="store_page.php" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/Metro Exodus - Lucas Galan.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God of War</h5>
-              <a href="store_page.php" class="precio-gamer">$49.99 USD</a> 
+      if ($result && $result->num_rows > 0):
+        while ($row = $result->fetch_assoc()):
+          $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+    ?>
+          <div class="card estiloDeTarjeta1">
+            <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;"> 
+              <img src="<?= $img ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+              <div class="card-body">
+                <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 2)) ?> pesos</span>
+              </div>
+            </a>
           </div>
-          </a>
-          </div>
+    <?php
+        endwhile;
+      else:
+        echo "<p>No se encontraron juegos.</p>";
+      endif;
+    ?>
+    </div>
 
-          <div class="card estiloDeTarjeta1 ">
-          <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/GodOfWar.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God of War</h5>
-              <a href="store_page.php" class="precio-gamer">$49.99 USD</a>
-            </div>
-          </a>
-          </div>
-
-       </div>
 
     
 
@@ -136,7 +131,7 @@
             <h5 class="card-title">Forza Horizon 5</h5>
             <a href="store_page.php" class="precio-gamer">$59.99 USD</a>
         </div>
-    </div>
+     </div>
 
      <div class="card bg-transparent estiloDeTarjeta2">
         <img src="img/juegos/Marvel_spiderman.jpg" class="card-img-top2" alt="Marvel Spiderman">
