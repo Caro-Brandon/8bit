@@ -19,7 +19,15 @@
       <a href="library.php" class="text-white sinlinea item">Biblioteca</a>
       <a href="support.php" class="text-white sinlinea item">Soporte</a>
       <a href="about_us.php" class="text-white sinlinea item">8bit</a>
-      <a href="Index_crud.php" class="text-white sinlinea item">Crud</a>
+              <?php
+        if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
+            echo '<a href="Index_crud.php" class="text-white sinlinea item">Crud</a>';
+        } else {
+            echo '<a href="admin.php" class="text-white sinlinea item">¿Querés ser admin?</a>';
+        }
+        ?>
+
+
 
        
     </div>
@@ -69,7 +77,6 @@
 
 </nav>
 
-<!-- Offcanvas -->
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasCategorias" aria-labelledby="offcanvasCategoriasLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasCategoriasLabel">Usuario</h5>

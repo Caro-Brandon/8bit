@@ -42,13 +42,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($nombre) || empty($genero) || empty($descripcion) || empty($rutaJuego) || $precio <= 0) {
         echo "<script>alert('Por favor completa todos los campos obligatorios.');</script>";
     } else {
-        mysqli_query($conex, "UPDATE videojuego SET 
+            mysqli_query($conex, "UPDATE videojuego SET 
             nombreDelJuego='$nombre',
             genero='$genero',
             descripcion='$descripcion',
             rutaJuego='$rutaJuego', 
             precio='$precio'
-            WHERE idVideoJuego=$idJuego");
+             WHERE idVideoJuego=$idJuego");
+    
 
         if(!empty($videoURL)) {
             if($video) {

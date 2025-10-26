@@ -6,11 +6,69 @@ body
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
+.contenedorTarjetasPrincipales1{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+
+}
+.card-img-top{
+  height: 220px; 
+  }
+div .estiloDeTarjeta1{ 
+   background: transparent;
+  max-width: 22rem; 
+  min-width: 13rem; 
+ 
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 15px; 
+  box-shadow: 20px 10px 100px rgba(0, 0, 0, 0.4); 
+ }
+
+ 
+
+ .estiloDeTarjeta1:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.03);
+  border-color: #380451;  
+  box-shadow: 0px 18px 70px  #32047c;
+}
 nav {
   background-color: #000 !important;
 }
-.titulo{
-    padding-bottom: 5px;
+.Titulos{   
+  width: 90%;
+    text-align: center;
+    margin: 2rem;
+  font-weight: bold;
+  color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+.precio{
+  font-weight: bold;
+}
+/* BOTON */
+.precio-gamer { 
+  box-shadow: #000;
+  color: #8e17cd; 
+  font-weight: bold;
+  text-decoration: none; 
+  font-size: 1.1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.precio-gamer:hover {
+  color: white;
+  text-shadow: 0 0 10px #380451;
 }
 .hero
 {
@@ -83,44 +141,9 @@ nav {
   transition: transform 0.3s ease;
 }
 
-.carousel-inner img:hover 
-{
-  transform: scale(1.05);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon 
-{
-  background-image: none;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 1);
-  border-radius: 50%;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-control-prev-icon::before,
-.carousel-control-next-icon::before 
-{
-  font-family: "bootstrap-icons";
-  font-size: 1.6rem;
-  color: #fff;
-}
-
-.carousel-control-prev-icon::before 
-{
-  content: "\f284";
-}
-
-.carousel-control-next-icon::before 
-{
-  content: "\f285";
-}
-
+  
+ 
+ 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover 
 {
@@ -378,6 +401,7 @@ nav {
   overflow: hidden;
     max-width: 260px;
   margin: 0 auto;
+ 
 }
 
 .game-card:hover 
@@ -526,9 +550,8 @@ nav {
   gap: 18px;
 }
 
-.form-group input,
-.form-group textarea 
-{
+.form-group input
+ {
   width: 100%;
   background-color: #1a1533;
   color: #fff;
@@ -538,18 +561,36 @@ nav {
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
-
-.form-group input::placeholder,
-.form-group textarea::placeholder 
-{
+ 
+.form-group input::placeholder
+ {
   color: #b5b2d1;
 }
+ 
 
-.form-group input:focus,
-.form-group textarea:focus 
-{
-  background-color: #221c47;
+.form-group input:focus
+ {
+  background-color: #dad7ee;
   outline: none;
+}
+.form-group textarea {
+  width: 100%;
+  background-color: #1a1533; 
+  color: #fff; 
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.form-group textarea:focus {
+  background-color: #8492c1;
+  outline: none;
+}
+
+.form-group textarea::placeholder {
+  color: #b5b2d1;
 }
 
 .form-footer 

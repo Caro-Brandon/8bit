@@ -67,7 +67,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const mensaje = document.querySelector(".mensaje-error");
             if(mensaje){
-                // Desaparece después de 3 segundos
+               
                 setTimeout(() => mensaje.style.opacity = "0", 3000);
             }
         });

@@ -1,8 +1,6 @@
  
  <!-- home.php -->
 
-     <!-- pongo esto pero luego el q lo lea lo cambia
-      ya que cambie las rutas(le quito un ../ ya que los toma desde los controladores como x eje el index) -->
     <link rel="stylesheet" href="css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   

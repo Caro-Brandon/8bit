@@ -2,6 +2,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/store_page.css">
  
+
 <?php
 if(!isset($_GET['id'])) { echo "<p>Juego no seleccionado</p>"; exit; }
 $idJuego = (int)$_GET['id'];
@@ -79,10 +80,16 @@ if(empty($imagenes)) $imagenes = [$juego['imagen_portada']];
         <div class="col-md-6">
             <div class="card bg-dark text-light h-100 p-4 shadow-lg d-flex flex-column justify-content-between">
                 <div  class="d-flex align-items-center justify-content-between mb-4">
+                <button class="btn btn-fav" id="btn-fav" type="button">
+                  <i class="bi bi-heart"></i>
+                </button>
+
+
                      <h3 class="text-white fw-bold mb-0"  id="precio">$<?= htmlspecialchars($juego['precio'])?></h3>
                 </div>
-
+                      
                 <div class="d-flex flex-column gap-3">
+                  
                 <a href="cart.php?add=<?= $idJuego ?>" 
                   class="btn btn-success fw-bold text-white text-center w-100">
                   Comprar
@@ -102,38 +109,40 @@ if(empty($imagenes)) $imagenes = [$juego['imagen_portada']];
 
 
     
-
-    <section class="container ratings mb-5">
-      <h4 class="fw-bold text-uppercase mb-4" id="valoracion-jugadores">Valoraciones de jugadores</h4>
-      <div class="rating-box p-4 shadow-lg rounded">
-        <div class="d-flex mb-3">
-          <h1 class="display-4 fw-bold text-warning mb-0 me-3">4.8</h1>
-          <div>
-            <div class="stars text-warning mb-1">★★★★★</div>
-            <p class="text-secondary mb-0">Basado en 12,534 reseñas</p>
-          </div>
+<?php include 'rating.php'; ?>  
+<section class="container ratings mb-5">
+  <h4 class="fw-bold text-uppercase mb-4" id="valoracion-jugadores">Valoraciones de jugadores</h4>
+  <div class="rating-box p-4 shadow-lg rounded">
+    <div class="d-flex mb-3">
+      <h1 class="display-4 fw-bold text-warning mb-0 me-3"><?= $average ?></h1>
+      <div>
+        <div class="stars text-warning mb-1">
+            <?php
+            $fullStars = floor($average);
+            $halfStar = ($average - $fullStars) >= 0.5 ? 1 : 0;
+            echo str_repeat('★', $fullStars);
+            if ($halfStar) echo '½';
+            echo str_repeat('☆', 5 - $fullStars - $halfStar);
+            ?>
         </div>
-
-        <?php
-        $ratings = [
-          ['5★', 80, 'bg-warning'],
-          ['4★', 15, 'bg-success'],
-          ['3★', 3, 'bg-info'],
-          ['2★', 1, 'bg-primary'],
-          ['1★', 1, 'bg-danger']
-        ];
-        foreach ($ratings as [$star, $porc, $color]) {
-          echo '<div class="d-flex align-items-center mb-2">
-                  <span class="me-2">' . $star . '</span>
-                  <div class="progress flex-grow-1">
-                    <div class="progress-bar ' . $color . '" style="width:' . $porc . '%"></div>
-                  </div>
-                  <span class="ms-2">' . $porc . '%</span>
-                </div>';
-        }
-        ?>
+        <p class="text-secondary mb-0">Basado en <?= $totalRatings ?> reseñas</p>
       </div>
-    </section>
+    </div>
+
+    <?php
+    $colors = [5 => 'bg-warning', 4 => 'bg-success', 3 => 'bg-info', 2 => 'bg-primary', 1 => 'bg-danger'];
+    for ($i = 5; $i >= 1; $i--):
+    ?>
+      <div class="d-flex align-items-center mb-2">
+        <span class="me-2"><?= $i ?>★</span>
+        <div class="progress flex-grow-1">
+          <div class="progress-bar <?= $colors[$i] ?>" style="width: <?= $percentages[$i] ?>%"></div>
+        </div>
+        <span class="ms-2"><?= $percentages[$i] ?>%</span>
+      </div>
+    <?php endfor; ?>
+  </div>
+</section>
 
     <section class=" container requirements mb-5 p-4 rounded shadow-lg">
       <h4 class="text-uppercase mb-4 fw-bold">Requisitos del sistema</h4>
@@ -163,82 +172,158 @@ if(empty($imagenes)) $imagenes = [$juego['imagen_portada']];
 
     <section class="container game-cards mb-5">
       <h4 class="text-uppercase mb-4 fw-bold text-center">Más juegos</h4>
-      <?php
-      $juegos = [
-        ['minecraft.jfif', 'Minecraft', '$47.999,00'],
-        ['reddeadredemption2.jfif', 'Read Dead Redemption 2', '$63.999,00'],
-        ['Cuphead.png', 'Cuphead', '$79.999,00'],
-        ['gta V.jpg', 'Grand Theft Auto V', '$111.999,00'],
-        ['rocket league.jpg', 'Rocket League', '$129.999,00'],
-        ['Silksong.jfif', 'Hollow Night: Silksong', '$47.999,00'],
-        ['Fall guys.jpg', 'Fall Guys', '$63.999,00'],
-        ['FC26.avif', 'FC 26', '$79.999,00']
-      ];
-      ?>
+
       <div class="d-flex justify-content-center flex-wrap gap-4">
-        <?php foreach ($juegos as [$img, $nombre, $precio]) : ?>
-          <div class="card game-card shadow-lg">
-            <img src="img/store_page/<?= $img ?>" class="card-img-top" alt="<?= $nombre ?>">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold"><?= $nombre ?></h5>
-              <p class="card-price"><?= $precio ?></p>
-              <button class="btn btn-success fw-bold w-100">Consigue el juego</button>
-            </div>
+      <div class="contenedorTarjetasPrincipales1">
+    <?php
+       $query = "
+        SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
+        FROM videojuego v
+        LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+        ORDER BY RAND()
+        LIMIT 3
+      ";
+      $result = $conex->query($query);
+
+      if ($result && $result->num_rows > 0):
+        while ($row = $result->fetch_assoc()):
+          $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+    ?>
+          <div class="card estiloDeTarjeta1">
+            <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;"> 
+              <img src="<?= $img ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+              <div class="card-body">
+                <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 2)) ?> pesos</span>
+              </div>
+            </a>
           </div>
-        <?php endforeach; ?>
+    <?php
+        endwhile;
+      else:
+        echo "<p>No se encontraron juegos.</p>";
+      endif;
+    ?>
+    </div>
       </div>
     </section>
 
-    <section class="container reviews mb-5">
-      <h4 class="text-uppercase mb-4 fw-bold">Opiniones de jugadores</h4>
-      <?php
-      $opiniones = [
-        ['https://cdn-icons-png.flaticon.com/512/147/147144.png', 'Carlos Martinez', 'Un remake espectacular...', '★★★★★'],
-        ['https://cdn-icons-png.flaticon.com/512/145/145867.png', 'Luciano Garcia', 'La ambientación es increíble...', '★★★★☆'],
-        ['https://cdn-icons-png.flaticon.com/512/145/145852.png', 'Andrea Rodriguez', 'Capcom volvió a superar...', '★★★★★'],
-        ['https://cdn-icons-png.flaticon.com/512/147/147142.png', 'Sebastián Torres', 'Me encantó la jugabilidad...', '★★★★★'],
-        ['https://cdn-icons-png.flaticon.com/512/147/147140.png', 'Diego Fernández', 'Los gráficos son impresionantes...', '★★★★☆'],
-        ['https://cdn-icons-png.flaticon.com/512/147/147136.png', 'Mariana Lopez', 'No me gustó mucho...', '★★☆☆☆']
-      ];
-      foreach ($opiniones as [$avatar, $nombre, $texto, $stars]) {
-        echo "
-          <div class='review-card p-4 d-flex align-items-start'>
-            <img src='$avatar' class='avatar me-3'>
-            <div>
-              <h6 class='fw-bold mb-1'>$nombre</h6>
-              <p class='mb-1 text-light'>$texto</p>
-              <span class='text-warning'>$stars</span>
-            </div>
-          </div>";
-      }
-      ?>
-    </section>
 
-    <div class="container review-container">
-      <h3 class="review-title">Deja tu comentario</h3>
-      <form id="commentForm" action="#" method="post">
-        <div class="form-group">
-          <input type="text" id="nombre" name="nombre" placeholder="Nombre *" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" placeholder="Correo electrónico *" required>
-        </div>
-        <div class="form-group">
-          <textarea id="comentario" name="comentario" rows="4" placeholder="Tu calificación *" required></textarea>
-        </div>
-        <div class="form-footer">
-          <div class="stars">
-            <?php for ($i = 5; $i >= 1; $i--): ?>
-              <input type="radio" name="rating" id="star<?= $i ?>" value="<?= $i ?>"><label for="star<?= $i ?>">★</label>
-            <?php endfor; ?>
-          </div>
-          <button type="submit" class="submit-btn">Entregar</button>
-        </div>
-      </form>
+<?php include 'coment.php'; ?>  
+
+<?php if(isset($_SESSION['IDusuario'])): ?>
+<div class="container review-container mb-5">
+  <h3 class="review-title text-light">Deja tu comentario</h3>
+  <form method="post" action="coment.php?id=<?= intval($_GET['id']) ?>">
+    <div class="form-group mb-3">
+      <textarea 
+        name="comentario" 
+        rows="4" 
+        placeholder="Tu comentario..." 
+        class="form-control bg-dark text-white border-secondary" 
+        style="color: white; background-color: #222; border-radius: 10px; resize: none;"
+        required
+      ></textarea>
     </div>
-  </section>
 
-  
+    <div class="form-footer mt-2">
+      <div class="stars mb-3">
+        <?php for ($i = 5; $i >= 1; $i--): ?>
+          <input type="radio" name="rating" id="star<?= $i ?>" value="<?= $i ?>">
+          <label for="star<?= $i ?>">★</label>
+        <?php endfor; ?>
+      </div>
+      <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>
+<?php else: ?>
+  <p class="text-light">Debes <a href="login.php">iniciar sesión</a> para dejar un comentario.</p>
+<?php endif; ?>
+
+<section class="container reviews mb-5">
+  <h4 class="text-uppercase mb-4 fw-bold">Opiniones de jugadores</h4>
+
+  <?php if(mysqli_num_rows($opinionesQuery) === 0): ?>
+    <p class="text-light">No hay comentarios todavía. ¡Sé el primero en opinar!</p>
+  <?php endif; ?>
+
+  <?php while($opinion = mysqli_fetch_assoc($opinionesQuery)): ?>
+    <div class='review-card p-4 d-flex align-items-start justify-content-between'>
+      <div class="d-flex">
+        <img src='https://cdn-icons-png.flaticon.com/512/147/147144.png' class='avatar me-3'>
+        <div>
+          <h6 class='fw-bold mb-1'><?= htmlspecialchars($opinion['nombreDeUsuario']) ?></h6>
+          <?php if($opinion['comentario']): ?>
+            <p class='mb-1 text-light'><?= htmlspecialchars($opinion['comentario']) ?></p>
+          <?php endif; ?>
+          <?php if($opinion['rating'] !== NULL): ?>
+            <span class='text-warning'>
+              <?= str_repeat('★', $opinion['rating']) . str_repeat('☆', 5 - $opinion['rating']) ?>
+            </span>
+          <?php endif; ?>
+          <br>
+          <small class='text-white'><?= $opinion['fecha'] ?></small>
+        </div>
+      </div>
+
+      <?php if (isset($_SESSION['IDusuario']) && $_SESSION['IDusuario'] == $opinion['IDusuario']): ?>
+        <form method="post" action="coment.php?id=<?= intval($_GET['id']) ?>" 
+              onsubmit="return confirm('¿Seguro que deseas eliminar este comentario?');" class="ms-3">
+          <input type="hidden" name="delete_id" value="<?= $opinion['idOpinion'] ?>">
+          <button type="submit" name="delete" class="btn btn-danger btn-sm">🗑️</button>
+        </form>
+      <?php endif; ?>
+    </div>
+  <?php endwhile; ?>
+</section>
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnFav = document.getElementById('btn-fav');
+  const icono = btnFav.querySelector('i');
+  const id = Number(<?= $idJuego ?>);
+  const nombre = "<?= addslashes($juego['nombreDelJuego']) ?>";
+  const imagen = "<?= addslashes($juego['imagen_portada']) ?>";
+
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+  favoritos = favoritos.filter(j => j.id && j.nombre && j.imagen);
+
+  const isFavorito = favoritos.some(f => Number(f.id) === id);
+  if (isFavorito) {
+    icono.classList.remove('bi-heart');
+    icono.classList.add('bi-heart-fill');
+    icono.style.color = 'yellow';
+  }
+
+  btnFav.addEventListener('click', () => {
+    const index = favoritos.findIndex(f => Number(f.id) === id);
+    if (index === -1) {
+      favoritos.push({id, nombre, imagen});
+      icono.classList.remove('bi-heart');
+      icono.classList.add('bi-heart-fill');
+      icono.style.color = 'yellow';
+    } else {
+      favoritos.splice(index, 1);
+      icono.classList.remove('bi-heart-fill');
+      icono.classList.add('bi-heart');
+      icono.style.color = '';
+    }
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  });
+});
+</script>
+
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>

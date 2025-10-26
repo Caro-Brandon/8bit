@@ -1,5 +1,6 @@
 <?php
 include 'verifUser.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

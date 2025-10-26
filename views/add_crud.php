@@ -7,12 +7,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $videoURL = trim(mysqli_real_escape_string($conex, $_POST['video']));
     $rutaJuego = trim(mysqli_real_escape_string($conex, $_POST['rutaJuego'])); 
     $fecha = date('Y-m-d'); 
+    $creador = isset($_SESSION['nombreDeUsuario']) ? $_SESSION['nombreDeUsuario'] : 'anónimo';
 
     if(empty($nombre) || empty($genero) || empty($descripcion) || $precio <= 0 || empty($rutaJuego)) {
         echo "<script>alert('Por favor completa todos los campos obligatorios, incluida la ruta del juego.');</script>";
     } else {
-        mysqli_query($conex, "INSERT INTO videojuego (nombreDelJuego, genero, descripcion, precio, fechaDeLanzamiento, rutaJuego) 
-                              VALUES ('$nombre','$genero','$descripcion','$precio','$fecha','$rutaJuego')");
+        mysqli_query($conex, "INSERT INTO videojuego (nombreDelJuego, genero, descripcion, precio, fechaDeLanzamiento, rutaJuego, creador) 
+        VALUES ('$nombre','$genero','$descripcion','$precio','$fecha','$rutaJuego','$creador')");
+
         $idJuego = mysqli_insert_id($conex);
 
         if(!empty($videoURL)) {
