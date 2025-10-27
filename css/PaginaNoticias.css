@@ -26,38 +26,7 @@ a:hover, a:visited, a:active
   content: "\e023";
 }
 
-.navbar 
-{
-  background-color: #000;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3);
-}
-
-.logo 
-{
-  width: 80px;
-  height: auto;
-  transition: transform 0.2s ease, filter 0.3s ease;
-}
-
-.logo:hover 
-{
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #ff2d2d);
-}
-
-.navbar .nav-link i 
-{
-  font-size: 1.1rem;
-  color: inherit;
-  transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-item .nav-link 
-{
-  padding: 0.5rem 0.75rem;
-}
-
+ 
 
 .hero 
 {

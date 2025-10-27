@@ -252,7 +252,22 @@ $(document).ready(function(){
   });
 });
 </script>
-  
+           
+        <!-- PROMO ESTILO UBISOFT -->
+<div class="promoUbisoft">
+  <div class="promo-contenido">
+    <div class="promo-texto">
+      <h2>8bit Noticias</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Corporis explicabo maxime, officia quisquam pariatur ratione 
+      modi asperiores voluptas dolorem.</p>
+      <a href="noticias.php" class="botonPromo">Ir a noticias</a>
+    </div>
+  </div>
+</div>
+<!-- FIN PROMO -->
+
+   
  
       <div  class="Titulos">
         <h1>Sagas</h1>
@@ -476,6 +491,7 @@ $(document).ready(function(){
         
          
     </div>
+    
     <!-- termina el contenedor padre -->
 
 

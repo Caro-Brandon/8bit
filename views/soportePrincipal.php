@@ -8,36 +8,12 @@
     <link rel="icon" href="src/img/IconoSinBorde.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/Soporte.css"/>
+    <link rel="stylesheet" href="css/Soporte.css"/>
     <script src="src/js/Soporte.js" defer></script>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg border-0">
-        <div class="container-fluid px-3">
-            <a class="navbar-brand d-flex align-items-center me-3" href="#">
-                <img src="src/img/IconoSinBorde.png" alt="GameStore Logo" class="logo"/>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../Store page/storepage.html">Juegos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../PaginaNoticias/PaginaNoticias.html">Noticias</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-circle"></i></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-cart-fill"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+ 
     <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center text-light">
         <div class="container">
             <p class="subtitle mb-1">Asistencia de Teko</p>

@@ -17,7 +17,7 @@
         Categorías
       </span>
       <a href="library.php" class="text-white sinlinea item">Biblioteca</a>
-      <a href="support.php" class="text-white sinlinea item">Soporte</a>
+      <a href="soportePrincipal.php" class="text-white sinlinea item">Soporte</a>
       <a href="about_us.php" class="text-white sinlinea item">8bit</a>
               <?php
         if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {

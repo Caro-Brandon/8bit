@@ -7,24 +7,7 @@ body
   font-family: "Poppins", sans-serif;
 }
 
-.navbar 
-{
-  background-color: #000;
-  border: none;
-  box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3);
-}
-
-.logo 
-{
-  width: 80px;
-  transition: transform 0.2s ease, filter 0.3s ease;
-}
-
-.logo:hover 
-{
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #ff2d2d);
-}
+ 
 
 .hero-section 
 {
