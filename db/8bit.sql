@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2025 a las 04:26:33
+-- Tiempo de generación: 27-10-2025 a las 20:54:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -32,6 +32,14 @@ CREATE TABLE `biblioteca` (
   `IDusuario` int(11) NOT NULL,
   `idVideoJuego` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `biblioteca`
+--
+
+INSERT INTO `biblioteca` (`idBiblioteca`, `IDusuario`, `idVideoJuego`) VALUES
+(1, 4, 9),
+(2, 4, 12);
 
 -- --------------------------------------------------------
 
@@ -102,22 +110,21 @@ INSERT INTO `imagenes_juego` (`idImagen`, `idVideoJuego`, `url`, `tipo`, `orden`
 --
 
 CREATE TABLE `opinion` (
+  `idOpinion` int(11) NOT NULL,
   `IDusuario` int(11) NOT NULL,
-  `comentario` text DEFAULT NULL
+  `idVideoJuego` int(11) NOT NULL,
+  `comentario` text DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `puntuacion`
+-- Volcado de datos para la tabla `opinion`
 --
 
-CREATE TABLE `puntuacion` (
-  `idPuntuacion` int(11) NOT NULL,
-  `IDusuario` int(11) NOT NULL,
-  `meGusta` tinyint(1) DEFAULT 0,
-  `noMeGusta` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `opinion` (`idOpinion`, `IDusuario`, `idVideoJuego`, `comentario`, `rating`, `fecha`) VALUES
+(19, 4, 12, 'probando', NULL, '2025-10-24 19:14:50'),
+(23, 24, 10, '1', 4, '2025-10-27 16:30:19');
 
 -- --------------------------------------------------------
 
@@ -153,12 +160,12 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`IDusuario`, `nombreDeUsuario`, `email`, `contraseña`, `fechaRegistro`, `saldo`, `rol`) VALUES
 (1, 'pepe', 'prueba123@prueba', 'tortaza', '2025-09-19', 0.00, 'user'),
 (3, '123', '123@123', '$2y$10$uKfEl6vcgtdWjmGbYNpvUOs7RWsVCHg6cvkCZXesLNTiFMBv4HLfu', '2025-09-19', 0.00, 'user'),
-(4, '1', '1@1', '1', '2025-09-19', 0.00, 'user'),
+(4, '1', '1@1', '1', '2025-09-19', 0.00, 'admin'),
 (5, '4', '4@4', '4', '2025-09-19', 0.00, 'user'),
 (6, 'rodri', 'rodrigo@gmail.com', 'rodri', '2025-09-19', 0.00, 'user'),
 (7, 'prueba2', 'prueba2@2', '2', '2025-09-19', 0.00, 'user'),
 (8, 'probando', 'Probando@1', 'probando', '2025-09-20', 0.00, 'user'),
-(9, 'Messi', 'verdad@verdad', 'verdad', '2025-09-21', 0.00, 'user'),
+(9, 'Messi', 'verdad@verdad', 'verdad', '2025-09-21', 0.00, 'admin'),
 (10, 'prueba123', '098@098', '098', '2025-09-21', 0.00, 'user'),
 (11, '1233', '122@123', '123', '2025-09-21', 0.00, 'user'),
 (12, 'queonda', 'prueba1234@prueba', 'nse', '2025-09-21', 0.00, 'user'),
@@ -172,7 +179,8 @@ INSERT INTO `usuario` (`IDusuario`, `nombreDeUsuario`, `email`, `contraseña`, `
 (20, '333', '333@333', '333', '2025-10-02', 0.00, 'user'),
 (21, '12', '12@12', '12', '2025-10-02', 0.00, 'user'),
 (22, 'MataAbuelas3k', '609@609', '6969', '2025-10-04', 0.00, 'user'),
-(23, 'NoLousaran', 'EstegmailNuncaLoVanAusar@gmaul.com', 'noseusa', '2025-10-20', 0.00, 'user');
+(23, 'NoLousaran', 'EstegmailNuncaLoVanAusar@gmaul.com', 'noseusa', '2025-10-20', 0.00, 'user'),
+(24, 'nuevo', 'usuarioNuevo@gmail.com', '123', '2025-10-27', 0.00, 'admin');
 
 -- --------------------------------------------------------
 
@@ -187,18 +195,19 @@ CREATE TABLE `videojuego` (
   `nombreDelJuego` varchar(255) NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `fechaDeLanzamiento` date NOT NULL,
-  `rutaJuego` varchar(255) NOT NULL
+  `rutaJuego` varchar(255) NOT NULL,
+  `creador` varchar(255) NOT NULL DEFAULT 'desconocido'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `videojuego`
 --
 
-INSERT INTO `videojuego` (`idVideoJuego`, `genero`, `descripcion`, `nombreDelJuego`, `precio`, `fechaDeLanzamiento`, `rutaJuego`) VALUES
-(9, 'pelea', 'Mortal Kombat es un juego de lucha clásico donde varios guerreros combaten en un torneo mortal usando artes marciales y poderes especiales, famoso por su violencia y los icónicos fatalities.', 'Mortal Kombat', 100000.00, '2025-10-20', 'emulator/games/Mortal_Kombat_Europe_Beta_.sfc'),
-(10, 'disparos', 'Metal Slug 2 es un juego de acción de disparos de desplazamiento lateral lanzado en 1998, donde los jugadores combaten al Ejército Rebelde del General Morden y a los invasores alienígenas', 'metal slug 2', 100000.00, '2025-10-20', 'emulator/games/Metal_slug_2.sfc'),
-(11, 'combate', 'El juego arcade Alien vs. Predator de 1994 es un juego de lucha de desplazamiento lateral, o beat \'em up, donde hasta tres jugadores controlan a diferentes personajes, como Dutch Schaefer y la cyborg Linn Kurosawa, para luchar contra hordas de aliens', 'aliens vs predator', 100000.00, '2025-10-20', 'emulator/games/aliens_vs_depredator.sfc'),
-(12, 'aventura', 'El juego sigue la aventura de Mario y Luigi mientras rescatan a la Princesa Peach de Bowser en el Reino Dinosaurio', 'super mario advance 2', 50000.00, '2025-10-20', 'emulator/games/Super_Mario_Advance_2.gba');
+INSERT INTO `videojuego` (`idVideoJuego`, `genero`, `descripcion`, `nombreDelJuego`, `precio`, `fechaDeLanzamiento`, `rutaJuego`, `creador`) VALUES
+(9, 'pelea', 'Mortal Kombat es un juego de lucha clásico donde varios guerreros combaten en un torneo mortal usando artes marciales y poderes especiales, famoso por su violencia y los icónicos fatalities.', 'Mortal Kombat', 100000.00, '2025-10-20', 'emulator/games/Mortal_Kombat_Europe_Beta_.sfc', ''),
+(10, 'disparos', 'Metal Slug 2 es un juego de acción de disparos de desplazamiento lateral lanzado en 1998, donde los jugadores combaten al Ejército Rebelde del General Morden y a los invasores alienígenas', 'metal slug 2', 100000.00, '2025-10-20', 'emulator/games/Metal_slug_2.sfc', ''),
+(11, 'combate', 'El juego arcade Alien vs. Predator de 1994 es un juego de lucha de desplazamiento lateral, o beat \'em up, donde hasta tres jugadores controlan a diferentes personajes, como Dutch Schaefer y la cyborg Linn Kurosawa, para luchar contra hordas de aliens', 'aliens vs predator', 100000.00, '2025-10-20', 'emulator/games/aliens_vs_depredator.sfc', ''),
+(12, 'aventura', 'El juego sigue la aventura de Mario y Luigi mientras rescatan a la Princesa Peach de Bowser en el Reino Dinosaurio', 'super mario advance 2', 50000.00, '2025-10-20', 'emulator/games/Super_Mario_Advance_2.gba', '');
 
 -- --------------------------------------------------------
 
@@ -259,14 +268,9 @@ ALTER TABLE `imagenes_juego`
 -- Indices de la tabla `opinion`
 --
 ALTER TABLE `opinion`
-  ADD KEY `FK_Opinion_Usuario` (`IDusuario`);
-
---
--- Indices de la tabla `puntuacion`
---
-ALTER TABLE `puntuacion`
-  ADD PRIMARY KEY (`idPuntuacion`),
-  ADD KEY `FK_Puntuacion_Usuario` (`IDusuario`);
+  ADD PRIMARY KEY (`idOpinion`),
+  ADD KEY `FK_Opinion_Usuario` (`IDusuario`),
+  ADD KEY `fk_opinion_videojuego` (`idVideoJuego`);
 
 --
 -- Indices de la tabla `tipodedescuento`
@@ -301,7 +305,7 @@ ALTER TABLE `video_juego`
 -- AUTO_INCREMENT de la tabla `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
@@ -322,28 +326,28 @@ ALTER TABLE `imagenes_juego`
   MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT de la tabla `puntuacion`
+-- AUTO_INCREMENT de la tabla `opinion`
 --
-ALTER TABLE `puntuacion`
-  MODIFY `idPuntuacion` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `opinion`
+  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `videojuego`
 --
 ALTER TABLE `videojuego`
-  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `video_juego`
 --
 ALTER TABLE `video_juego`
-  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -373,13 +377,8 @@ ALTER TABLE `imagenes_juego`
 -- Filtros para la tabla `opinion`
 --
 ALTER TABLE `opinion`
-  ADD CONSTRAINT `FK_Opinion_Usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `puntuacion`
---
-ALTER TABLE `puntuacion`
-  ADD CONSTRAINT `FK_Puntuacion_Usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_Opinion_Usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_opinion_videojuego` FOREIGN KEY (`idVideoJuego`) REFERENCES `videojuego` (`idVideoJuego`);
 
 --
 -- Filtros para la tabla `tipodedescuento`
