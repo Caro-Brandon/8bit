@@ -1,0 +1,623 @@
+body 
+{
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar 
+{
+  background-color: #000;
+  border: none;
+  box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3);
+}
+
+.logo 
+{
+  width: 80px;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.logo:hover 
+{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #ff2d2d);
+}
+
+.hero-section 
+{
+  background: linear-gradient(to bottom, rgba(30, 0, 60, 0.95) 0%, rgba(0, 0, 0, 1) 95%), url("../img/Fondo.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 100px;
+}
+
+.subtitle 
+{
+  color: #d3c9ff;
+  font-size: 1.7rem;
+}
+
+.main-title 
+{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.search-accordion 
+{
+  max-width: 700px;
+  margin-top: 150px;
+}
+
+.search-accordion .accordion-button 
+{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.search-accordion .accordion-button:hover 
+{
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-accordion .accordion-body 
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+.search-suggestions ul li 
+{
+  cursor: pointer;
+  padding: 5px 0;
+  transition: color 0.2s ease;
+}
+
+.search-suggestions ul li:hover 
+{
+  color: #ff2d2d;
+}
+
+.search-suggestions a 
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+.form-control, .form-select 
+{
+  background-color: #f5f5f5;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus, .form-select:focus 
+{
+  border-color: #ff2d2d;
+  box-shadow: 0 0 5px #ff2d2d;
+}
+
+.btn-primary 
+{
+  background-color: #ff2d2d;
+  border: none;
+}
+
+.btn-primary:hover 
+{
+  background-color: #ff5050;
+}
+
+.ir-section 
+{
+  background-color: transparent;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ir-card 
+{
+  background: linear-gradient(135deg, rgba(30, 0, 60, 0.85), rgba(0, 0, 0, 0.8));
+   border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ir-card:hover 
+{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.ir-title 
+{
+  font-weight: 600;
+  color: #fff;
+}
+
+.ir-section h3.ir-title 
+{
+    font-size: 2.2rem;
+}
+
+.preguntasfrecuentes-section
+{
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.faq-title 
+{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.faq-grid 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item 
+{
+  background-color: #0b0f16;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.25s ease;
+}
+
+.faq-item:hover 
+{
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.faq-question 
+{
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 14px 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.faq-question::after 
+{
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  font-size: 1rem;
+  color: #aaa;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.faq-item.active .faq-question::after 
+{
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+.faq-question:hover 
+{
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.faq-answer 
+{
+  max-height: 0;
+  overflow: hidden;
+  background-color: #11151c;
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0 16px;
+  transition: max-height 0.35s ease, padding 0.25s ease;
+}
+
+.faq-item.active .faq-answer 
+{
+  max-height: 300px;
+  padding: 12px 16px 16px;
+}
+
+.empresas-section 
+{
+  background-color: #000;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.empresas-title 
+{
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.empresas-desc 
+{
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 80px;
+}
+
+.logos-slider 
+{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logos-track 
+{
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+}
+
+.empresa-logo 
+{
+  width: 220px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.empresa-logo:hover 
+{
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scrollLogos 
+{
+  from 
+  {
+    transform: translateX(0);
+  }
+  to 
+  {
+    transform: translateX(-50%);
+  }
+}
+
+
+.games-section .game-card 
+{
+  width: 100%;
+  padding-top: 120%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.games-section .game-card:hover 
+{
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.games-section .section-title 
+{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.noticias-section 
+{
+  margin-top: 40px;
+}
+
+.noticias-section .section-title 
+{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: left;
+}
+
+.noticias-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+.noticias-card 
+{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #1b1b1b;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.noticias-card:hover 
+{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.noticias-card .overlay 
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient( to bottom, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 1) 100%);
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  z-index: 1;
+}
+
+.noticias-content 
+{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.noticias-date 
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.calendar-icon 
+{
+  font-size: 1.4rem;
+}
+
+.date-text 
+{
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.noticias-desc 
+{
+  font-size: 0.95rem;
+  color: #ddd;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  line-height: 1.4;
+  max-height: 4.5em;
+  overflow: hidden;
+}
+
+.noticias-card:nth-child(1) 
+{
+  background-image: url("../img/GTA6.jpg");
+}
+
+.noticias-card:nth-child(2) 
+{
+  background-image: url("../img/Silksong.jpg");
+}
+
+.noticias-card:nth-child(3) 
+{
+  background-image: url("../img/minecraft.png");
+}
+
+.noticias-card:nth-child(4) 
+{
+  background-image: url("../img/1.png");
+}
+
+.noticias-card:nth-child(5) 
+{
+  background-image: url("../img/Rocket-League-Season-20.png");
+}
+
+.noticias-card:nth-child(6) 
+{
+  background-image: url("../img/Dragonballxenoverse.avif");
+}
+
+.noticias-card 
+{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#juego1
+{
+  background-image: url("../img/Spiderman2.jpg");
+}
+
+#juego2
+{
+  background-image: url("../img/Rocket-League-Season-20.png");
+}
+
+#juego3
+{
+  background-image: url("../img/GTA6.jpg");
+}
+
+#juego4
+{
+  background-image: url("../img/GodOfWar.avif");
+}
+
+#juego5
+{
+  background-image: url("../img/Silksong.jpg");
+}
+
+#juego6
+{
+  background-image: url("../img/minecraft.png");
+}
+
+
+.footer 
+{
+  background-color: #000;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) 
+{
+  .main-title 
+  {
+    font-size: 2.4rem;
+  }
+
+  .subtitle 
+  {
+    font-size: 1.4rem;
+  }
+
+  .empresa-logo 
+  {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) 
+{
+  .main-title 
+  {
+    font-size: 2rem;
+  }
+
+  .subtitle 
+  {
+    font-size: 1.2rem;
+  }
+
+  .faq-title, .empresas-title, .section-title 
+  {
+    font-size: 1.7rem;
+  }
+
+  .noticias-grid 
+  {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .logos-track 
+  {
+    gap: 50px;
+  }
+
+  .empresa-logo 
+  {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) 
+{
+  .main-title 
+  {
+    font-size: 1.6rem;
+  }
+
+  .subtitle 
+  {
+    font-size: 1rem;
+  }
+
+  .faq-title, .empresas-title, .section-title 
+  {
+    font-size: 1.4rem;
+  }
+
+  .faq-question 
+  {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .faq-answer 
+  {
+    font-size: 0.85rem;
+  }
+
+  .empresa-logo 
+  {
+    width: 120px;
+  }
+
+  .noticias-section 
+  {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) 
+{
+  .main-title 
+  {
+    font-size: 1.4rem;
+  }
+
+  .subtitle 
+  {
+    font-size: 0.95rem;
+  }
+
+  .empresa-logo 
+  {
+    width: 100px;
+  }
+
+  .faq-question 
+  {
+    font-size: 0.85rem;
+  }
+}

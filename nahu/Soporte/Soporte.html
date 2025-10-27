@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Soporte</title>
+    <link rel="icon" href="src/img/IconoSinBorde.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="src/css/Soporte.css"/>
+    <script src="src/js/Soporte.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg border-0">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand d-flex align-items-center me-3" href="#">
+                <img src="src/img/IconoSinBorde.png" alt="GameStore Logo" class="logo"/>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Store page/storepage.html">Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../PaginaNoticias/PaginaNoticias.html">Noticias</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-circle"></i></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-cart-fill"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center text-light">
+        <div class="container">
+            <p class="subtitle mb-1">Asistencia de Teko</p>
+            <h1 class="main-title">¿En qué podemos ayudarte?</h1>
+
+            <div class="accordion search-accordion mx-auto mt-5" id="accordionSearch">
+                <div class="accordion-item bg-transparent border-0">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed bg-transparent text-light border rounded-pill px-4 py-3"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch"
+                            aria-expanded="false" aria-controls="collapseSearch">
+                            <i class="bi bi-search me-2"></i> Buscar apoyo...
+                        </button>
+                    </h2>
+                    <div id="collapseSearch" class="accordion-collapse collapse">
+                        <div class="accordion-body bg-light rounded-4 mt-3">
+                            <div class="search-suggestions text-start">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="Soporte1.html">¿No puedes acceder a mi cuenta?</a></li>
+                                    <li><a href="Soporte2.html">¿Cómo solicito un reembolso?</a></li>
+                                    <li><a href="Soporte3.html">¿Problemas al iniciar un juego?</a></li>
+                                    <li><a href="Soporte4.html">¿Error de pago con tarjeta?</a></li>
+                                    <li><a href="Soporte5.html">¿Cómo cambiar correo o contraseña?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ir-section py-4">
+        <div class="container">
+            <h3 class="ir-title mb-5">Ir a...</h3>
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#faq" class="ir-card d-block text-decoration-none rounded-4 p-3 text-light">
+                        <div class="ir-card-inner text-center">
+                            <div class="ir-title">Preguntas Frecuentes</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#noticias" class="ir-card d-block text-decoration-none rounded-4 p-3 text-light">
+                        <div class="ir-card-inner text-center">
+                            <div class="ir-title">Noticias</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#juegos" class="ir-card d-block text-decoration-none rounded-4 p-3 text-light">
+                        <div class="ir-card-inner text-center">
+                            <div class="ir-title">Juegos</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#empresas" class="ir-card d-block text-decoration-none rounded-4 p-3 text-light">
+                        <div class="ir-card-inner text-center">
+                            <div class="ir-title">Empresas</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="faq" class="preguntasfrecuentes-section py-5">
+        <div class="container">
+            <h3 class="faq-title mb-5">Preguntas Frecuentes</h3>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">Dirección de correo electrónico olvidada</button>
+                    <div class="faq-answer">
+                        <p>Podés recuperar tu correo verificando la cuenta asociada o contactando soporte con tus datos
+                            de registro.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Contraseña olvidada</button>
+                    <div class="faq-answer">
+                        <p>Ingresá a la página de recuperación de Ubisoft e introducí tu correo para restablecer tu
+                            contraseña.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Recuperar tu cuenta</button>
+                    <div class="faq-answer">
+                        <p>Si tu cuenta fue comprometida, Ubisoft puede ayudarte a recuperarla verificando tu identidad.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Autenticación en dos pasos</button>
+                    <div class="faq-answer">
+                        <p>Activá el 2FA desde los ajustes de seguridad para proteger tu cuenta de accesos no
+                            autorizados.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Reembolsos de la tienda</button>
+                    <div class="faq-answer">
+                        <p>Podés solicitar un reembolso dentro de los 14 días de la compra si no superaste las 2 horas
+                            de juego.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Control parental</button>
+                    <div class="faq-answer">
+                        <p>Desde los ajustes de cuenta podés configurar restricciones de compras y horarios para
+                            jugadores menores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="noticias" class="noticias-section py-5">
+        <div class="container">
+            <h3 class="section-title mb-4">Noticias</h3>
+            <div class="noticias-grid">
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticias-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">25 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            Nueva actualización del sistema con mejoras de rendimiento y estabilidad general.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticas-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">22 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            El esperado DLC llega en noviembre con nuevas misiones y trajes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticias-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">18 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            Se confirman detalles del lanzamiento y mejoras visuales para consolas next-gen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticias-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">15 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            El evento “Minecraft Live” presenta nuevas criaturas y biomas únicos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticias-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">10 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            Se lanza la beta abierta de la nueva plataforma de soporte técnico.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="noticias-card">
+                    <div class="overlay"></div>
+                    <div class="noticias-content">
+                        <div class="noticias-date">
+                            <i class="bi bi-calendar-event text-danger calendar-icon"></i>
+                            <span class="date-text">5 Oct 2025</span>
+                        </div>
+                        <p class="noticias-desc">
+                            Celebramos el aniversario con recompensas exclusivas para los usuarios.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="juegos" class="games-section py-5">
+        <div class="container">
+            <h3 class="section-title mb-4">Juegos</h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego1"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego2"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego3"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego4"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego5"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="game-card rounded-4" id="juego6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="empresas" class="empresas-section py-5">
+        <div class="container text-center">
+            <h3 class="empresas-title mb-4">Empresas que confían en nosotros</h3>
+
+            <p class="empresas-desc">
+                Nuestra tienda online colabora con marcas reconocidas que nos brindan sus productos y confianza.
+                Gracias a estas alianzas, ofrecemos a nuestros clientes artículos de calidad, entregas seguras
+                y promociones exclusivas. Nos enorgullece trabajar junto a empresas que comparten nuestra pasión
+                por la innovación y la experiencia digital.
+            </p>
+
+            <div class="logos-slider">
+                <div class="logos-track">
+                    <img src="src/img/FC26.png" alt="Logo 1" class="empresa-logo">
+                    <img src="src/img/1.png" alt="Logo 2" class="empresa-logo">
+                    <img src="src/img/19.png" alt="Logo 3" class="empresa-logo">
+                    <img src="src/img/3.png" alt="Logo 4" class="empresa-logo">
+                    <img src="src/img/4.png" alt="Logo 5" class="empresa-logo">
+                    <img src="src/img/9.png" alt="Logo 6" class="empresa-logo">
+
+                    <img src="src/img/13.png" alt="Logo 1" class="empresa-logo">
+                    <img src="src/img/14.png" alt="Logo 2" class="empresa-logo">
+                    <img src="src/img/12.png" alt="Logo 3" class="empresa-logo">
+                    <img src="src/img/17.png" alt="Logo 4" class="empresa-logo">
+                    <img src="src/img/18.png" alt="Logo 5" class="empresa-logo">
+                    <img src="src/img/20.png" alt="Logo 6" class="empresa-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-1 text-light">© 2025 8BIT.</p>
+            <small class="text-secondary">Desarrollado por Teko</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

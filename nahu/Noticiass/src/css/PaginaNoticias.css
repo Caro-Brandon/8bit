@@ -1,0 +1,359 @@
+body
+{
+  background-color: #15062c;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding-top: 70px;
+}
+
+a 
+{
+  text-decoration: none;
+  color: inherit;        
+  display: block;       
+}
+
+a:hover, a:visited, a:active 
+{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.icon_calendar:before 
+{
+  content: "\e023";
+}
+
+.navbar 
+{
+  background-color: #000;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3);
+}
+
+.logo 
+{
+  width: 80px;
+  height: auto;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.logo:hover 
+{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #ff2d2d);
+}
+
+.navbar .nav-link i 
+{
+  font-size: 1.1rem;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-item .nav-link 
+{
+  padding: 0.5rem 0.75rem;
+}
+
+
+.hero 
+{
+  position: relative;
+  height: 300px;
+  background-image: url("../img/banner6.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+.hero::after 
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content
+{
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  text-shadow: 0px 2px 0px #000000;
+  font-family: Verdana;
+}
+
+.hero-content h2 
+{
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  
+}
+
+.hero-content p 
+{
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.blog-grid 
+{
+  background-color: #110a16;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.grid 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+}
+
+.grid-item 
+{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  height: 250px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.grid-item.large 
+{ 
+  grid-column: span 2; grid-row: span 2; height: 520px; 
+}
+
+.grid-item.wide 
+{
+  grid-column: span 2; 
+}
+
+.grid-item.tall 
+{ 
+  grid-row: span 2; height: 520px; 
+}
+
+.grid-item:hover 
+{
+  transform: scale(1.03);
+}
+
+.overlay 
+{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.overlay p 
+{
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 5px;
+}
+
+.overlay p span 
+{
+  color: #e53637;
+  margin-right: 5px;
+}
+
+.overlay h4 
+{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.fondo1 
+{ 
+  background-image: url("../img/GTA6.jpg");
+}
+.fondo2 
+{ 
+  background-image: url("../img/FC26.png"); 
+}
+.fondo3 
+{
+  background-image: url("../img/Rocket-League-Season-20.png"); 
+}
+
+.fondo4 
+{
+  background-image: url("../img/AssassinsCreedIII.jpg");
+}
+
+.fondo5 
+{ 
+  background-image: url("../img/minecraft.png");
+}
+
+.fondo6
+{
+  background-image: url("../img/Silksong.jpg");
+}
+
+.fondo7 
+{ 
+  background-image: url("../img/Fall-Guys.jpg");
+}
+.fondo8 
+{ 
+  background-image: url("../img/CounterStrike.jfif"); 
+}
+.fondo9 
+{
+  background-image: url("../img/Fortnite.webp"); 
+}
+
+.fondo10 
+{
+  background-image: url("../img/GodOfWar.avif");
+}
+
+.fondo11
+{ 
+  background-image: url("../img/Nightmares.jpg");
+}
+
+.fondo12
+{
+  background-image: url("../img/Dragonballxenoverse.avif");
+}
+
+.fondo13
+{
+  background-image: url("../img/Spiderman2.webp");
+}
+
+.footer 
+{
+  background-color: #0a0d13;
+  border-top: 1px solid #222;
+  padding: 20px 0;
+}
+
+@media (max-width: 992px) 
+{
+  .hero 
+  {
+    height: 250px;
+  }
+
+  .hero-content h2 
+  {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p 
+  {
+    font-size: 1.2rem;
+  }
+
+  .grid-item.large, .grid-item.tall, .grid-item.wide 
+  {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) 
+{
+  .hero 
+  {
+    height: 220px;
+  }
+
+  .hero-content h2 
+  {
+    font-size: 2rem;
+  }
+
+  .hero-content p 
+  {
+    font-size: 1rem;
+  }
+
+  .grid 
+  {
+    gap: 12px;
+  }
+
+  .grid-item 
+  {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) 
+{
+  body 
+  {
+    padding-top: 50px;
+  }
+
+  .hero 
+  {
+    height: 180px;
+  }
+
+  .hero-content h2 
+  {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p 
+  {
+    font-size: 0.9rem;
+  }
+
+  .grid 
+  {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .grid-item 
+  {
+    height: 200px;
+  }
+
+  .overlay 
+  {
+    padding: 10px;
+  }
+
+  .overlay p 
+  {
+    font-size: 0.8rem;
+  }
+
+  .overlay h4 
+  {
+    font-size: 0.9rem;
+  }
+
+  .footer 
+  {
+    font-size: 0.8rem;
+    padding: 15px 0;
+  }
+}

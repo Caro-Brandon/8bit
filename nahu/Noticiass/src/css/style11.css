@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body 
+{
+  background: linear-gradient(to bottom, rgb(6, 6, 6), rgb(0, 0, 0));
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #fff;
+}
+
+.navbar 
+{
+  background-color: #000;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3);
+}
+
+.logo 
+{
+  width: 80px;
+  height: auto;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.logo:hover 
+{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #ff2d2d);
+}
+
+.navbar .nav-link i 
+{
+  font-size: 1.1rem;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-item .nav-link 
+{
+  padding: 0.5rem 0.75rem;
+}
+
+.overlay 
+{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.imagenfondo 
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: 
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(18, 21, 36, 0.9) 70%, rgb(1, 1, 1) 100%), url("../img/Nightmares3.jpg");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container 
+{
+  position: relative;
+  max-width: 900px;
+  margin: 90px auto 10px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.header h1 
+{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #8f6112;
+  text-shadow: 0 0 10px #96742a;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  font-family: 'Static';
+  margin: -900px auto 10px;
+}
+
+.header .intro 
+{
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.video-section 
+{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.video-section video 
+{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid #8f6112;
+  box-shadow: 0 0 20px rgba(200, 144, 31, 0.4);
+}
+
+.news-content p 
+{
+  font-size: 1.1rem;
+  color: #ddd;
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.Noticia-section 
+{
+
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.Noticia-section img
+{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+}
+
+.footer 
+{
+  position: relative;
+  text-align: center;
+  padding: 25px 10px;
+  background: none;
+  backdrop-filter: none;
+}
+
+.footer p 
+{
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1024px) 
+{
+  .container 
+  {
+    max-width: 95%;
+    margin: 70px auto 10px;
+    padding: 18px;
+  }
+  
+  .header h1 
+  {
+    font-size: 2rem;
+    padding: 8px 16px;
+  }
+  
+  .header .intro 
+  {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+  
+  .news-content p 
+  {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) 
+{
+  .container 
+  {
+    max-width: 92%;
+    margin: 60px auto 10px;
+    padding: 16px;
+  }
+  
+  .header h1
+  {
+    font-size: 1.8rem;
+    padding: 6px 12px;
+  }
+  
+  .header .intro 
+  {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+  }
+  
+  .news-content p 
+  {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) 
+{
+  .container 
+  {
+    max-width: 90%;
+    margin: 50px auto 10px;
+    padding: 14px;
+  }
+
+  .header h1 
+  {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+  }
+
+  .header .intro 
+  {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .news-content p 
+  {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 360px) 
+{
+  .header h1 
+  {
+    font-size: 1.3rem;
+    padding: 4px 8px;
+  }
+  
+  .header .intro 
+  {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+  
+  .news-content p 
+  {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+}
