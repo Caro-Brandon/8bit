@@ -88,18 +88,45 @@ if(empty($imagenes)) $imagenes = [$juego['imagen_portada']];
                      <h3 class="text-white fw-bold mb-0"  id="precio">$<?= htmlspecialchars($juego['precio'])?></h3>
                 </div>
                       
+                <?php
+                  $btnComprar = true; 
+                  if (isset($_SESSION['IDusuario'])) {
+                      $idUsuario = (int)$_SESSION['IDusuario'];
+                      $idJuegoInt = (int)$idJuego;
+
+                      $checkBiblioteca = $conex->query("
+                          SELECT 1 FROM biblioteca 
+                          WHERE IDusuario = $idUsuario AND idVideoJuego = $idJuegoInt
+                          LIMIT 1
+                      ");
+
+                      if ($checkBiblioteca && $checkBiblioteca->num_rows > 0) {
+                          $btnComprar = false; 
+                      }
+                  }
+                  ?>
+
                 <div class="d-flex flex-column gap-3">
                   
-                <a href="cart.php?add=<?= $idJuego ?>" 
-                  class="btn btn-success fw-bold text-white text-center w-100">
-                  Comprar
-                </a>
+                <?php if($btnComprar): ?>
+                  <a href="cart.php?add=<?= $idJuego ?>" 
+                    class="btn btn-success fw-bold text-white text-center w-100">
+                    Comprar
+                  </a>
 
-                <a href="cart.php?add=<?= $idJuego ?>" 
+                  <a href="cart.php?add=<?= $idJuego ?>" 
                   class="btn btn-danger w-100 fw-bold"
                   onclick="alert('¡Juego agregado al carrito!');">
                   <i class="bi bi-cart-fill me-2"></i>Añadir al carrito
                 </a>
+              <?php else: ?>
+                  <a href="library.php?>" 
+                    class="btn btn-primary fw-bold text-white text-center w-100">
+                    ya lo tienes disponible
+                  </a>
+              <?php endif; ?>
+
+                
                 </div>
             </div>
         </div>
