@@ -58,7 +58,7 @@ if($result->num_rows > 0){
                     <p class="text-secondary">No hay juegos en tu biblioteca.</p>
                 <?php else: ?>
                     <?php foreach($juegos as $juego): ?>
-                        <a href="store_page.php?id=<?= $juego['idVideoJuego'] ?>" style="text-decoration:none">
+                        <a href="emulator/EmulatorJS-main" style="text-decoration:none">
                             <div class="card bg-transparent estiloDeTarjeta2">
                                 <img src="<?= htmlspecialchars($juego['imagen']) ?>" class="card-img-top2" alt="<?= htmlspecialchars($juego['nombreDelJuego']) ?>">
                                 <div class="card-body">

@@ -65,8 +65,6 @@ body{
 .precio{
   font-weight: bold;
 }
-/* BOTON */
-/* Estilo gamer para botones */
 .precio-gamer { 
   box-shadow: #000;
   color: #0d79fd; 
@@ -247,14 +245,14 @@ border-color: #0d6efd;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
-  background:  url(../img/publi.png) no-repeat center center ;
+   background:  url(../img/publi.png) no-repeat center center ;
   background-size: cover; 
+  background-attachment: fixed;
+
 }
 
 
-/* Capa oscura que cubre la mitad derecha */
-.promo-contenido {
+ .promo-contenido {
   position: relative;
   width: 50%;
   height: 100%;
