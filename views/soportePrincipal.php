@@ -2,18 +2,18 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soporte</title>
     <link rel="icon" href="src/img/IconoSinBorde.png" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/Soporte.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/Soporte.css" />
     <script src="src/js/Soporte.js" defer></script>
 </head>
 
 <body>
- 
+
     <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center text-light">
         <div class="container">
             <p class="subtitle mb-1">Asistencia de Teko</p>
@@ -285,12 +285,124 @@
         </div>
     </section>
 
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="mb-1 text-light">© 2025 8BIT.</p>
-            <small class="text-secondary">Desarrollado por Teko</small>
-        </div>
-    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqs = document.querySelectorAll(".faq-item");
+            faqs.forEach(faq => {
+                const button = faq.querySelector(".faq-question");
+                button.addEventListener("click", e => {
+                    e.preventDefault();
+                    if (faq.classList.contains("active")) {
+                        faq.classList.remove("active");
+                        return;
+                    }
+                    faqs.forEach(item => item.classList.remove("active"));
+                    faq.classList.add("active");
+                });
+            });
+
+            const searchButton = document.querySelector(".accordion-button");
+            const searchCollapse = document.querySelector("#collapseSearch");
+
+            searchButton.removeAttribute("data-bs-toggle");
+            searchButton.removeAttribute("data-bs-target");
+            searchCollapse.classList.remove("collapse");
+
+            let isOpen = false;
+            searchCollapse.style.display = "none";
+
+            searchButton.addEventListener("click", e => {
+                e.preventDefault();
+
+                isOpen = !isOpen;
+
+                if (isOpen) {
+                    searchCollapse.style.display = "block";
+                    searchButton.classList.remove("collapsed");
+                    searchButton.setAttribute("aria-expanded", "true");
+                } else {
+                    searchCollapse.style.display = "none";
+                    searchButton.classList.add("collapsed");
+                    searchButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            const respuestas = {
+                "¿No puedes acceder a mi cuenta?": `
+            Verifica tu correo y contraseña. Si olvidaste tu clave, podés restablecerla pidiendo un código en tu correo electrónico para cambiarla.
+        `,
+                "¿Cómo solicito un reembolso?": `
+            Podés solicitar un reembolso dentro de los 14 días posteriores a la compra, siempre que no hayas jugado más de 2 horas. Encontrarás la opción en tu historial de compras.
+        `,
+                "¿Problemas al iniciar un juego?": `
+            Asegurate de que el juego esté completamente actualizado y que tus controladores de video estén al día. Si el problema persiste, intentá verificar los archivos desde la biblioteca.
+        `,
+                "¿Error de pago con tarjeta?": `
+            Comprobá que los datos de tu tarjeta sean correctos, que tenga fondos y que no esté vencida. Si el error continúa, probá con otro método de pago.
+        `,
+                "¿Cómo cambiar correo o contraseña?": `
+            Podés cambiar tu correo o contraseña desde la configuración de tu cuenta, en el apartado de seguridad. Recordá confirmar los cambios por correo electrónico.
+        `
+            };
+
+            const suggestionLinks = document.querySelectorAll(".search-suggestions a");
+
+            suggestionLinks.forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+
+                    const sectionsToRemove = [
+                        ".ir-section",
+                        ".preguntasfrecuentes-section",
+                        ".noticias-section",
+                        ".empresas-section",
+                        ".games-section"
+                    ];
+                    sectionsToRemove.forEach(sel => {
+                        const section = document.querySelector(sel);
+                        if (section) section.remove();
+                    });
+
+                    const pregunta = link.textContent.trim();
+                    const respuesta = respuestas[pregunta] || "No se encontró información para esta consulta.";
+
+                    const oldResponse = document.querySelector(".respuesta-section");
+                    if (oldResponse) oldResponse.remove();
+
+                    const container = document.createElement("section");
+                    container.classList.add("respuesta-section");
+                    container.style.cssText = `
+                color: #fff;
+                text-align: center;
+                padding: 60px 20px;
+                max-width: 800px;
+                margin: 40px auto 0 auto;
+                font-family: 'Poppins', sans-serif;
+            `;
+
+                    container.innerHTML = `
+                <h2 style="
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                ">${pregunta}</h2>
+                <p style="
+                    font-size: 1rem;
+                    line-height: 1.8;
+                    color: #ddd;
+                ">${respuesta}</p>
+            `;
+                    const searchContainer = document.querySelector(".accordion");
+                    searchContainer.insertAdjacentElement("afterend", container);
+                    searchCollapse.style.display = "none";
+                    searchButton.classList.add("collapsed");
+                    searchButton.setAttribute("aria-expanded", "false");
+                    isOpen = false;
+                });
+            });
+        });
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

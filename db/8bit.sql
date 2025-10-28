@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2025 a las 20:54:28
+-- Tiempo de generación: 28-10-2025 a las 05:36:26
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,7 +39,12 @@ CREATE TABLE `biblioteca` (
 
 INSERT INTO `biblioteca` (`idBiblioteca`, `IDusuario`, `idVideoJuego`) VALUES
 (1, 4, 9),
-(2, 4, 12);
+(2, 4, 12),
+(3, 4, 18),
+(4, 4, 19),
+(5, 4, 20),
+(6, 4, 21),
+(7, 4, 22);
 
 -- --------------------------------------------------------
 
@@ -101,7 +106,27 @@ INSERT INTO `imagenes_juego` (`idImagen`, `idVideoJuego`, `url`, `tipo`, `orden`
 (34, 12, 'https://http2.mlstatic.com/D_NQ_NP_725877-MLU78310841048_082024-O.webp', 'portada', 1),
 (35, 12, 'https://images.cgames.de/images/gsgp/256/super-mario-world-super-mario-advance-2-30_975774.jpg', 'galeria', 2),
 (36, 12, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqg1lFVvKX2uZuJdi-CnHL2c29IDhYjR0m4GF2WTYhTch8_QfnJoOXStbrLbi8TdnQJZQ&usqp=CAU', 'galeria', 3),
-(37, 12, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBeXtRAQreKLRQbflDnEU9Q-svDCaxxtMu0xA9HqrQswnqnSsVUxJd5eM6y_gR4RRhsLk&usqp=CAU', 'galeria', 4);
+(37, 12, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBeXtRAQreKLRQbflDnEU9Q-svDCaxxtMu0xA9HqrQswnqnSsVUxJd5eM6y_gR4RRhsLk&usqp=CAU', 'galeria', 4),
+(38, 18, 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_4/H2x1_GB_PokemonRed_esES_image1600w.jpg', 'portada', 1),
+(39, 18, 'https://m.media-amazon.com/images/M/MV5BZWY5ODVkMDgtMjNjYy00YzljLWE3NzQtYjVlMjE5Y2EzNjIyXkEyXkFqcGc@._V1_.jpg', 'galeria', 2),
+(40, 18, 'https://m.media-amazon.com/images/M/MV5BZWNlNTE1YjUtZWRmOS00ZWM4LWEwMzAtNDI2MWY0NGM1OGZmXkEyXkFqcGc@._V1_QL75_UX395_.jpg', 'galeria', 3),
+(41, 18, 'https://pm1.aminoapps.com/6154/52474485007ad7ef6a42f61e579b69ebf163a27f_hq.jpg', 'galeria', 4),
+(46, 19, 'https://scontent.faep25-1.fna.fbcdn.net/v/t1.6435-9/104483778_2461068277329649_5080057375274248651_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NtQQg3-YMzAQ7kNvwFkLfIM&_nc_oc=AdlxPTX7qFydnhqSa28QyzTY2GuXTBFRAJAJzfdy-fbhdTl2pQzzwtJenTNNOkAlovlrLLVnIpGf6q6N_T4o1_R5&_nc_zt=23&_nc_ht=scontent.faep25-1.fna&_nc_gid=4cIjeUSHuL7a_Wjh5M2nwQ&oh=00_AfeNP5UfsDlcbzuyiehd8GNGLAOGMtF_2wK4vxRc0orAbg&oe=69278B51', 'portada', 1),
+(47, 19, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsFjFInh4LGa7_6yrgbI6JUfyK5hxL6GRsvw&s', 'galeria', 2),
+(48, 19, 'https://seasidehillparadise.wordpress.com/wp-content/uploads/2022/02/portadashp.jpg', 'galeria', 3),
+(49, 19, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDP3NYx8v-tcMehGvdyTw3ITle-YFf5KZB4A&s', 'galeria', 4),
+(50, 20, 'https://e1.pxfuel.com/desktop-wallpaper/560/351/desktop-wallpaper-nfs-most-wanted-ps2-need-for-speed-most-wanted-black-edition.jpg', 'portada', 1),
+(51, 20, 'https://i.ytimg.com/vi/MfoTpg_W80s/maxresdefault.jpg', 'galeria', 2),
+(52, 20, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4sFiCzR60gx91616FGKa-ZcUIgH_j2-mHmg&s', 'galeria', 3),
+(53, 20, 'https://www.mariogba.nl/Plaatjes/GBA_spel_large/Need_for_Speed_Most_Wanted_GBA4.jpg', 'galeria', 4),
+(54, 21, 'https://assets.altarofgaming.com/wp-content/uploads/2024/01/crash-bandicoot-the-huge-adventure-game-cover-altar-of-gaming.jpg', 'portada', 1),
+(55, 21, 'https://www.crashmania.net/images/games/crash-bandicoot-the-huge-adventure/overview/1.png', 'galeria', 2),
+(56, 21, 'https://www.crashmania.net/images/games/crash-bandicoot-the-huge-adventure/screenshots/tiny-tiger-2.png', 'galeria', 3),
+(57, 21, 'https://www.crashmania.net/images/games/crash-bandicoot-the-huge-adventure/unused-content/mock-up-1-1.jpg', 'galeria', 4),
+(58, 22, 'https://cdn2.steamgriddb.com/thumb/8d8f19fe5378f786c24d183f8a0cf3bd.jpg', 'portada', 1),
+(59, 22, 'https://img.asmedia.epimg.net/resizer/v2/3J4ECKUV6RNFDPURW2IKO4CI3A.jpg?auth=f12a3d1abfd7e659b7e2dc4c1f89caf9464520d6908f882fa978f4b63199f8d7&width=360', 'galeria', 2),
+(60, 22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixIDUoGx7UQRZLUZ--lGx93PyuATXg0wrRZJIK6PJY_3__3eafdsprPZnp51BPvB2n64&usqp=CAU', 'galeria', 3),
+(61, 22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxbqgbNpY88aXs6k2lI1Fq93Pfy4XtDE4z8gRggRoSbovqlMu_ljwRh8sM6Ts-gJ-Qea0&usqp=CAU', 'galeria', 4);
 
 -- --------------------------------------------------------
 
@@ -207,7 +232,12 @@ INSERT INTO `videojuego` (`idVideoJuego`, `genero`, `descripcion`, `nombreDelJue
 (9, 'pelea', 'Mortal Kombat es un juego de lucha clásico donde varios guerreros combaten en un torneo mortal usando artes marciales y poderes especiales, famoso por su violencia y los icónicos fatalities.', 'Mortal Kombat', 100000.00, '2025-10-20', 'emulator/games/Mortal_Kombat_Europe_Beta_.sfc', ''),
 (10, 'disparos', 'Metal Slug 2 es un juego de acción de disparos de desplazamiento lateral lanzado en 1998, donde los jugadores combaten al Ejército Rebelde del General Morden y a los invasores alienígenas', 'metal slug 2', 100000.00, '2025-10-20', 'emulator/games/Metal_slug_2.sfc', ''),
 (11, 'combate', 'El juego arcade Alien vs. Predator de 1994 es un juego de lucha de desplazamiento lateral, o beat \'em up, donde hasta tres jugadores controlan a diferentes personajes, como Dutch Schaefer y la cyborg Linn Kurosawa, para luchar contra hordas de aliens', 'aliens vs predator', 100000.00, '2025-10-20', 'emulator/games/aliens_vs_depredator.sfc', ''),
-(12, 'aventura', 'El juego sigue la aventura de Mario y Luigi mientras rescatan a la Princesa Peach de Bowser en el Reino Dinosaurio', 'super mario advance 2', 50000.00, '2025-10-20', 'emulator/games/Super_Mario_Advance_2.gba', '');
+(12, 'aventura', 'El juego sigue la aventura de Mario y Luigi mientras rescatan a la Princesa Peach de Bowser en el Reino Dinosaurio', 'super mario advance 2', 50000.00, '2025-10-20', 'emulator/games/Super_Mario_Advance_2.gba', ''),
+(18, 'aventura', 'Pokémon Rojo Fuego es un videojuego de rol (RPG) para Game Boy Advance que es una versión mejorada de los juegos originales Pokémon Rojo y Pokémon Verde. Los jugadores exploran la región de Kanto para convertirse en el mejor entrenador Pokémon, ganando medallas de los líderes de gimnasio para enfrentarse a la Liga Pokémon.', 'Pokemon Rojo Fuego', 1000000.00, '2025-10-28', 'emulator/games/Pokemon_2004.gb', '1'),
+(19, 'accion', 'Sonic Advance 3 es un juego de plataformas en 2D para Game Boy Advance donde controlas a Sonic y a un amigo a la vez, cada uno con habilidades únicas, para detener al Dr. Eggman. El juego incluye siete zonas, cada una dividida en tres actos y con un jefe final. Un elemento clave es la mecánica de \"equipo\", que permite combinar las habilidades de dos personajes para explorar diferentes partes de los niveles.', 'Sonic Advance 3', 100000.00, '2025-10-28', 'emulator/games/Sonic_Advance.gba', '1'),
+(20, 'carreras', 'Need for Speed: Most wanted es un juego de carreras estilo arcade que fomenta la conducción temeraria. Los conductores intentan infringir las normas y evadir a la policía, obteniendo recompensas por ello. El juego también cuenta con una opción de chat abierto sin moderación.', 'Need for Speed: Most wanted', 1000000.00, '2025-10-28', 'emulator/games/Need_for_Speed.gba', '1'),
+(21, 'aventura', 'Crash Bandicoot: The Huge Adventure es un juego de plataformas de desplazamiento lateral para Game Boy Advance, donde Crash debe recuperar 20 cristales para detener al Dr. Neo Cortex y su rayo que empequeñece la Tierra. El juego se basa en correr, saltar y golpear a través de niveles para recolectar cristales que su hermana Coco necesita para revertir el daño planetario.', 'Crash Bandicoot: The Huge Adventure', 100000.00, '2025-10-28', 'emulator/games/Crash_Bandicoot.gba', '1'),
+(22, 'accion', 'Grand Theft Auto Advance es un juego de acción y aventura para la Game Boy Advance que sirve como precuela de Grand Theft Auto III, ambientado un año antes y centrado en el criminal Mike y su búsqueda de venganza en Liberty City. El juego incluye una jugabilidad clásica de vista cenital, misiones y vehículos, pero adaptada a las limitaciones de la consola, como la ausencia de canales de radio y diálogos de peatones.', 'Grand Theft Auto Advance', 100000.00, '2025-10-28', 'emulator/games/Gta_Advance.gba', '1');
 
 -- --------------------------------------------------------
 
@@ -229,7 +259,12 @@ INSERT INTO `video_juego` (`idVideo`, `idVideoJuego`, `url`) VALUES
 (7, 9, 'https://www.youtube.com/embed/S9uoyTMMWCg'),
 (8, 10, 'https://www.youtube.com/embed/i8Zy5BUiQf8'),
 (9, 11, 'https://www.youtube.com/embed/ySyId7TAEDU'),
-(10, 12, 'https://www.youtube.com/embed/hs81jSrhOg0');
+(10, 12, 'https://www.youtube.com/embed/hs81jSrhOg0'),
+(13, 18, 'https://www.youtube.com/embed/wgObHXprSOw'),
+(15, 19, 'https://www.youtube.com/embed/7C4hd3BfUfw'),
+(16, 20, 'https://www.youtube.com/embed/du1CCurnKq4'),
+(17, 21, 'https://www.youtube.com/embed/OQvelBebPvY'),
+(18, 22, 'https://www.youtube.com/embed/7wBBjgQk1Zk');
 
 --
 -- Índices para tablas volcadas
@@ -305,7 +340,7 @@ ALTER TABLE `video_juego`
 -- AUTO_INCREMENT de la tabla `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
@@ -323,7 +358,7 @@ ALTER TABLE `descuento`
 -- AUTO_INCREMENT de la tabla `imagenes_juego`
 --
 ALTER TABLE `imagenes_juego`
-  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `opinion`
@@ -341,13 +376,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `videojuego`
 --
 ALTER TABLE `videojuego`
-  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `video_juego`
 --
 ALTER TABLE `video_juego`
-  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas
