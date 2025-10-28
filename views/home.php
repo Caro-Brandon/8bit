@@ -253,8 +253,7 @@ $(document).ready(function(){
 });
 </script>
            
-        <!-- PROMO ESTILO UBISOFT -->
-<div class="promoUbisoft">
+ <div class="promoUbisoft">
   <div class="promo-contenido">
     <div class="promo-texto">
       <h2>8bit Noticias</h2>
@@ -265,8 +264,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<!-- FIN PROMO -->
-
+ 
    
  
       <div  class="Titulos">
