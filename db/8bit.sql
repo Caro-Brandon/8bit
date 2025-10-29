@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2025 a las 05:36:26
+-- Tiempo de generación: 29-10-2025 a las 02:03:46
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `8bit`
 --
+CREATE DATABASE IF NOT EXISTS `8bit` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `8bit`;
 
 -- --------------------------------------------------------
 
@@ -44,7 +46,21 @@ INSERT INTO `biblioteca` (`idBiblioteca`, `IDusuario`, `idVideoJuego`) VALUES
 (4, 4, 19),
 (5, 4, 20),
 (6, 4, 21),
-(7, 4, 22);
+(7, 4, 22),
+(8, 4, 23),
+(9, 4, 24),
+(10, 4, 25),
+(11, 4, 26),
+(12, 4, 27),
+(13, 4, 28),
+(14, 4, 29),
+(15, 4, 30),
+(16, 4, 31),
+(17, 4, 32),
+(18, 4, 33),
+(19, 4, 34),
+(20, 4, 35),
+(21, 4, 36);
 
 -- --------------------------------------------------------
 
@@ -126,7 +142,67 @@ INSERT INTO `imagenes_juego` (`idImagen`, `idVideoJuego`, `url`, `tipo`, `orden`
 (58, 22, 'https://cdn2.steamgriddb.com/thumb/8d8f19fe5378f786c24d183f8a0cf3bd.jpg', 'portada', 1),
 (59, 22, 'https://img.asmedia.epimg.net/resizer/v2/3J4ECKUV6RNFDPURW2IKO4CI3A.jpg?auth=f12a3d1abfd7e659b7e2dc4c1f89caf9464520d6908f882fa978f4b63199f8d7&width=360', 'galeria', 2),
 (60, 22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixIDUoGx7UQRZLUZ--lGx93PyuATXg0wrRZJIK6PJY_3__3eafdsprPZnp51BPvB2n64&usqp=CAU', 'galeria', 3),
-(61, 22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxbqgbNpY88aXs6k2lI1Fq93Pfy4XtDE4z8gRggRoSbovqlMu_ljwRh8sM6Ts-gJ-Qea0&usqp=CAU', 'galeria', 4);
+(61, 22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxbqgbNpY88aXs6k2lI1Fq93Pfy4XtDE4z8gRggRoSbovqlMu_ljwRh8sM6Ts-gJ-Qea0&usqp=CAU', 'galeria', 4),
+(62, 23, 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/12/mixcollage-28-dec-2024-07-56-pm-2935.jpg?q=50&fit=crop&w=480&h=600&dpr=1.5', 'portada', 1),
+(63, 23, 'https://i.ytimg.com/vi/K-E5qpRjFrk/maxresdefault.jpg', 'galeria', 2),
+(64, 23, 'https://oldgameshelf.com/roms/gba/fifa-2007/images/gba_fifa_2007_2.jpg', 'galeria', 3),
+(65, 23, 'https://i.ytimg.com/vi/-R9h3xm3glg/hqdefault.jpg', 'galeria', 4),
+(66, 24, 'https://assets-prd.ignimgs.com/2022/01/21/spiderman3-gba-sq-1642793342926.jpg', 'portada', 1),
+(67, 24, 'https://media.retroachievements.org/Images/034319.png', 'galeria', 2),
+(68, 24, 'https://r.mprd.se/GBA/snaps/2732.png', 'galeria', 3),
+(69, 24, 'https://comicbookvideogames.com/wp-content/uploads/2017/02/spider-man-3-hint-system.jpg', 'galeria', 4),
+(70, 25, 'https://assets.altarofgaming.com/wp-content/uploads/2021/12/pokemon-leaf-green-version-game-cover-altar-of-gaming.jpg', 'portada', 1),
+(71, 25, 'https://i.ytimg.com/vi/3zFfGXPTYQs/maxresdefault.jpg', 'galeria', 2),
+(72, 25, 'https://assets1.ignimgs.com/2004/08/31/pokemon-fireredleafgreen-20040831021007484-923327.jpg', 'galeria', 3),
+(73, 25, 'https://pm1.aminoapps.com/7938/406492c492aa50f62813d1879286c6f73b416724r1-1080-727v2_hq.jpg', 'galeria', 4),
+(74, 26, 'https://i.ytimg.com/vi/tYr3evcAtJs/mqdefault.jpg', 'portada', 1),
+(75, 26, 'https://i.imgur.com/LR12WvW.jpeg', 'galeria', 2),
+(76, 26, 'https://i.imgur.com/4w7MDFr.jpeg', 'galeria', 3),
+(77, 26, 'https://i.imgur.com/6hSds5G.jpeg', 'galeria', 4),
+(78, 27, 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_KirbyNightmareInDreamland.jpg', 'portada', 1),
+(79, 27, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYcWTSmfJ05eHyryKyFLE7yNX1-7HmlqEv3A&s', 'galeria', 2),
+(80, 27, 'https://m.media-amazon.com/images/I/51VGTFISBDL._AC_UF1000,1000_QL80_.jpg', 'galeria', 3),
+(81, 27, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjE7OQpQKKpRi4tfMcI2dxCRPIU_uxyXa-wnpX90-43mNJw-FrhUe2_M2FVRYWzdb4CZs&usqp=CAU', 'galeria', 4),
+(82, 28, 'https://media.vandal.net/m/30299/super-mario-64-cv-201542164822_1.jpg', 'portada', 1),
+(83, 28, 'https://cdn.mobygames.com/screenshots/10782573-super-mario-64-nintendo-64-going-to-the-castle.jpg', 'galeria', 2),
+(84, 28, 'https://media.revistagq.com/photos/60ec6c8854e0443ce59c77e1/master/pass/super%20mario%2064.jpeg', 'galeria', 3),
+(85, 28, 'https://dailygame.at/wp-content/uploads/2022/03/Mario-64.jpg', 'galeria', 4),
+(86, 29, 'https://i.ytimg.com/vi/VDTK9uIs71A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDozdnI0KgRh2ULMzRalEHNQUwdnA', 'portada', 1),
+(87, 29, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-uuxz-zfn3Q5CLFiPlAr00q9MmWvpYyxGRQ&s', 'galeria', 2),
+(88, 29, 'https://tcrf.net/images/4/46/ToyStory2N64-enemy2.png', 'galeria', 3),
+(89, 29, 'https://i.ytimg.com/vi/DOeJwX7BI0A/hqdefault.jpg', 'galeria', 4),
+(90, 30, 'https://i.ytimg.com/vi/5yLp7Lr9yp4/maxresdefault.jpg', 'portada', 1),
+(91, 30, 'https://www.mario64.nl/Plaatjes/N64-spel_large/F1_Racing_Championship4.jpg', 'galeria', 2),
+(92, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFXbV0eu4zBdfJ6GI5pzemn-ZonpI1dUibhDhtIEvEN9RYIwRu1lYrM-rDbLBoSt35SZg&usqp=CAU', 'galeria', 3),
+(93, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh3LjotuwJyzUb9T--3VR7K3Ch98MsE6XuxQ&s', 'galeria', 4),
+(94, 31, 'https://altarofgaming.com/wp-content/uploads/2022/01/harry-potter-and-the-sorcerers-stone-game-cover-altar-of-gaming.jpg', 'portada', 1),
+(95, 31, 'https://www.vgmuseum.com/end/gba/b/harrysor-4.png', 'galeria', 2),
+(96, 31, 'https://i.ytimg.com/vi/DzypJ2tJL2Q/maxresdefault.jpg', 'galeria', 3),
+(97, 31, 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX3dqOXo2cvNB0bHE4RZpjLvI4zzkkPGBNYysjTTA-9M9kZ4xQdoWZiCz9L3ZxjYPEXa7V6Wy9JzhaUc7YkwjIA1tSOQIYS5lSlA0Rlkh2x_MXaCZk5Bpq1UJ_R133-4jJc4TVwPNJdD5P/s1600/HPSSGBA2.jpg', 'galeria', 4),
+(98, 32, 'https://i.ytimg.com/vi/2fu2NWZL4es/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3h_ICc7E5Gvh-niMgoAGaEcaQQg', 'portada', 1),
+(99, 32, 'https://i.ytimg.com/vi/6iwcpl2-faE/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4ACwAKKAgwIABABGHIgUSgvMA8=&rs=AOn4CLAGwqTvwr_NuLjpRhQZgycjgKzr2w', 'galeria', 2),
+(100, 32, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbkWFJANBIchdbbm4c2YKtheB79gzF5l_Z1A&s', 'galeria', 3),
+(101, 32, 'https://dn721606.ca.archive.org/0/items/naruto-ninja-council/screenshot_22.png', 'galeria', 4),
+(102, 33, 'https://assets-prd.ignimgs.com/2022/02/28/ff6advance-1646091365970.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80', 'portada', 1),
+(103, 33, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5hyZFg2kJJbwPSlXPAd5s2VSeVB1jY4KjVdBJynqA9MShZTuB3pDM2FE2_xv75WMdz4&usqp=CAU', 'galeria', 2),
+(104, 33, 'https://media.retroachievements.org/Images/005283.png', 'galeria', 3),
+(105, 33, 'https://www.retroplace.com/pics/gba/ingames/60971--final-fantasy-vi-advance.png', 'galeria', 4),
+(106, 34, 'https://m.media-amazon.com/images/I/A1pm8fy2ZgL.png', 'portada', 1),
+(107, 34, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNAPWeejBs8n-0WprlT6U9I2DFVVCJBduog&s', 'galeria', 2),
+(108, 34, 'https://s.uvlist.net/l/y2011/04/83891.jpg', 'galeria', 3),
+(109, 34, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYOksZhxS5b_rgxEF02wwluk_rB0-91ds_lL9-97ObCRDIn8RsZbHdJC2qd3ICOoVS0&usqp=CAU', 'galeria', 4),
+(110, 35, 'https://www.nintendo.com/eu/media/images/10_share_images/games_15/game_boy_advance_7/SI_GBA_PokemonRuby_esES_image1600w.jpg', 'portada', 1),
+(111, 35, 'https://www.mariogba.nl/Plaatjes/GBA_spel_large/Pokemon_Ruby_Version3.png', 'galeria', 2),
+(112, 35, 'https://2.bp.blogspot.com/-MtqiitxjqAI/W64egaKZweI/AAAAAAAAn40/jQzmvx877h8lxhlPIy_yynUNr9HUbwmhACLcBGAs/w1200-h630-p-k-no-nu/pokemon-ruby.png', 'galeria', 3),
+(113, 35, 'https://m.media-amazon.com/images/I/51vBEz3dFeL._AC_UF350,350_QL80_.jpg', 'galeria', 4),
+(114, 36, 'https://cdn2.steamgriddb.com/thumb/d0683d8499a7dbd42ee1abbb938e090b.jpg', 'portada', 1),
+(115, 36, 'https://m.media-amazon.com/images/M/MV5BOTk1MDU4MmQtZjBlZC00ZmQ2LTgzYmYtZDAxZTc3NDZkMTE2XkEyXkFqcGc@._V1_.jpg', 'galeria', 2),
+(116, 36, 'https://media.retroachievements.org/Images/095165.png', 'galeria', 3),
+(117, 36, 'https://cdn.mobygames.com/screenshots/15732198-dragon-ball-z-the-legacy-of-goku-ii-game-boy-advance-did-he-surv.png', 'galeria', 4),
+(118, 37, 'https://i.ytimg.com/vi/cXdSkMfQ2Fg/mqdefault.jpg', 'portada', 1),
+(119, 37, 'https://assets2.ignimgs.com/2002/08/27/tarzan_082702_3-434962.jpg', 'galeria', 2),
+(120, 37, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeDS1SC7djbvNhc5Tk6ewWClqSrIev5-tBIzla_x6pJsEOQPOK1OmV1SpTlTKFb2d7X38&usqp=CAU', 'galeria', 3),
+(121, 37, 'https://i.ytimg.com/vi/14s8JcnguSI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCipJ9H_uZXgjvJ50JGcJNREG2Tzw', 'galeria', 4);
 
 -- --------------------------------------------------------
 
@@ -237,7 +313,22 @@ INSERT INTO `videojuego` (`idVideoJuego`, `genero`, `descripcion`, `nombreDelJue
 (19, 'accion', 'Sonic Advance 3 es un juego de plataformas en 2D para Game Boy Advance donde controlas a Sonic y a un amigo a la vez, cada uno con habilidades únicas, para detener al Dr. Eggman. El juego incluye siete zonas, cada una dividida en tres actos y con un jefe final. Un elemento clave es la mecánica de \"equipo\", que permite combinar las habilidades de dos personajes para explorar diferentes partes de los niveles.', 'Sonic Advance 3', 100000.00, '2025-10-28', 'emulator/games/Sonic_Advance.gba', '1'),
 (20, 'carreras', 'Need for Speed: Most wanted es un juego de carreras estilo arcade que fomenta la conducción temeraria. Los conductores intentan infringir las normas y evadir a la policía, obteniendo recompensas por ello. El juego también cuenta con una opción de chat abierto sin moderación.', 'Need for Speed: Most wanted', 1000000.00, '2025-10-28', 'emulator/games/Need_for_Speed.gba', '1'),
 (21, 'aventura', 'Crash Bandicoot: The Huge Adventure es un juego de plataformas de desplazamiento lateral para Game Boy Advance, donde Crash debe recuperar 20 cristales para detener al Dr. Neo Cortex y su rayo que empequeñece la Tierra. El juego se basa en correr, saltar y golpear a través de niveles para recolectar cristales que su hermana Coco necesita para revertir el daño planetario.', 'Crash Bandicoot: The Huge Adventure', 100000.00, '2025-10-28', 'emulator/games/Crash_Bandicoot.gba', '1'),
-(22, 'accion', 'Grand Theft Auto Advance es un juego de acción y aventura para la Game Boy Advance que sirve como precuela de Grand Theft Auto III, ambientado un año antes y centrado en el criminal Mike y su búsqueda de venganza en Liberty City. El juego incluye una jugabilidad clásica de vista cenital, misiones y vehículos, pero adaptada a las limitaciones de la consola, como la ausencia de canales de radio y diálogos de peatones.', 'Grand Theft Auto Advance', 100000.00, '2025-10-28', 'emulator/games/Gta_Advance.gba', '1');
+(22, 'accion', 'Grand Theft Auto Advance es un juego de acción y aventura para la Game Boy Advance que sirve como precuela de Grand Theft Auto III, ambientado un año antes y centrado en el criminal Mike y su búsqueda de venganza en Liberty City. El juego incluye una jugabilidad clásica de vista cenital, misiones y vehículos, pero adaptada a las limitaciones de la consola, como la ausencia de canales de radio y diálogos de peatones.', 'Grand Theft Auto Advance', 100000.00, '2025-10-28', 'emulator/games/Gta_Advance.gba', '1'),
+(23, 'deportes', 'FIFA 07 para Game Boy Advance (GBA) es un videojuego de fútbol desarrollado por EA Sports que ofrece una experiencia auténtica con controles intuitivos y gráficos adaptados para la consola portátil. Incluye modos como Temporada, Torneo y Partidos Amistosos, permitiendo a los jugadores elegir entre una amplia selección de equipos y ligas del mundo real.', 'Fifa 2007', 100000.00, '2025-10-28', 'emulator/games/Fifa_2007.gba', '1'),
+(24, 'accion', 'Spider-Man 3 es un beat \'em up de desplazamiento lateral en 2D, centrado en la acción y la lucha contra villanos de la película. A diferencia de otras versiones, el modo del traje negro se activa como una \"furia\" temporal al llenar una barra, perdiéndose si el jugador recibe daño.', 'Spider man 3', 100000.00, '2025-10-28', 'emulator/games/Spiderman_3.gba', '1'),
+(25, 'aventura', 'Pokémon Verde Hoja es un remake de los juegos originales de Pokémon que se lanzó para Game Boy Advance. Se ambienta en la región de Kanto e incluye gráficos y jugabilidad mejorados, la adición de nuevas islas llamadas Islas Sevii, y nuevas características como el adaptador inalámbrico para intercambiar y luchar con amigos, además de la posibilidad de obtener Pokémon de las regiones de Johto y Hoenn.', 'Pokemon Verde Hoja', 100000.00, '2025-10-28', 'emulator/games/Pokemon_2006.gba', '1'),
+(26, 'aventura', 'Pokémon Esmeralda es un videojuego de rol de 2004 para Game Boy Advance, considerado una versión mejorada y superior de Pokémon Rubí y Zafiro, y el cierre de la tercera generación Pokémon. Destaca por su historia mejorada, que une la trama del Equipo Magma y el Equipo Aqua, la incorporación del Pokémon legendario Rayquaza y la inclusión del Frente de Batalla.', 'Pokemon Esmeralda', 100000.00, '2025-10-28', 'emulator/games/Pokemon_2008.gba', '1'),
+(27, 'accion', 'Kirby: Nightmare in Dream Land es un juego de plataformas de acción para Game Boy Advance lanzado en 2002, que es un remake mejorado de Kirby\'s Adventure de NES. En él, Kirby debe recuperar la Varita Estelar del Rey DeDeDe, quien robó sus fragmentos y robó la capacidad de soñar a los habitantes de Dream Land.\r\n', 'Kirby: Nightmare in Dream Land', 100000.00, '2025-10-28', 'emulator/games/Kirby_Nightmare.gba', '1'),
+(28, 'aventura', 'Super Mario 64 es un videojuego de plataformas en 3D que marcó un hito por su innovación en el control de movimiento y la cámara en un entorno tridimensional. El objetivo del jugador es controlar a Mario para explorar el castillo de la Princesa Peach y recolectar estrellas de poder, las cuales permiten acceder a nuevos niveles. Los niveles son mundos cerrados, donde el jugador es libre de explorar y completar diversas misiones para obtener las estrellas.', 'Super Mario 64', 100000.00, '2025-10-28', 'emulator/games/Mario_64.z64', '1'),
+(29, 'accion', 'Toy Story 2: Buzz Lightyear al Rescate! es un videojuego de plataformas en tercera persona donde controlas a Buzz Lightyear para rescatar a Woody, secuestrado por un coleccionista de juguetes. El juego combina acción de plataformas con exploración de escenarios de la película, recolectando fichas de Pizza Planeta para avanzar.', 'Toy Story 2: Buzz Lightyear al Rescate!', 100000.00, '2025-10-28', 'emulator/games/Toy_Story_2.z64', '1'),
+(30, 'carreras', 'F1 Racing Championship es un simulador de carreras de Fórmula 1 para Nintendo 64 que ofrece una experiencia realista con licencias oficiales de la temporada 1999, aunque con una inteligencia artificial (IA) deficiente y algunos errores técnicos. El juego permite ajustar la configuración del coche, incluyendo la aerodinámica, los neumáticos y el combustible.', 'F1 Racing Championship', 100000.00, '2025-10-28', 'emulator/games/F1_Racing.z64', '1'),
+(31, 'aventura', 'Harry Potter y la Pieda Filosofal es un juego de aventuras y puzles en vista cenital que adapta la novela del mismo nombre. El jugador controla a Harry Potter, asistiendo a clases para aprender hechizos, resolviendo acertijos en laberintos, recolectando objetos, y participando en minijuegos como el Quidditch para salvar a Hogwarts y a la Piedra Filosofal.', 'Harry Potter y la Piedra Filosofal', 100000.00, '2025-10-28', 'emulator/games/Harry_Potter.gba', '1'),
+(32, 'aventura', 'Naruto: Ninja Council es un juego de acción y plataformas de desplazamiento lateral que sigue la historia del anime, donde puedes jugar como Naruto o Sasuke para completar misiones y derrotar enemigos. Al terminar el juego con ambos personajes, se desbloquea a Kakashi. El juego mezcla plataformas, combates de \"beat \'em up\" y la recolección de pergaminos para usar ataques de chakra.', 'Naruto Ninja Council', 70000.00, '2025-10-28', 'emulator/games/Naruto.gba', '1'),
+(33, 'aventura', 'Final Fantasy es una saga de videojuegos de rol japoneses donde cada entrega principal tiene una historia independiente, usualmente centrada en un grupo de héroes que deben luchar contra un gran enemigo para salvar el mundo. Los juegos se caracterizan por sus mundos de fantasía épica, personajes memorables, combates con magia, invocaciones y elementos recurrentes como los chocobos, moguris y naves voladoras.', 'Final Fantasy VI Advance', 90000.00, '2025-10-28', 'emulator/games/Final_Fantasy.gba', '1'),
+(34, 'carreras', 'Cars: Mater-National Championship es un videojuego de carreras de 2007, secuela de Cars: El Videojuego, donde los jugadores compiten en el primer Campeonato Mater-Nacional en Radiador Springs. El juego presenta un mundo abierto expandido de Radiador Springs, nuevos personajes internacionales, 20+ minijuegos y 7 nuevas pistas de carreras.', 'Cars Mater National Championship', 100000.00, '2025-10-29', 'emulator/games/Cars_Mater.gba', '1'),
+(35, 'aventura', 'Pokémon Rubí es un videojuego de rol para la Game Boy Advance que te permite iniciar una aventura en la región de Hoenn, capturar y entrenar Pokémon, y convertirte en el campeón de la Liga Pokémon. El juego destaca por introducir batallas dobles, nuevos Pokémon, y la región de Hoenn, además de los Concursos Pokémon como una forma alternativa de juego.', 'Pokemon Rubi', 150000.00, '2025-10-29', 'emulator/games/Pokemon_Ruby.gba', '1'),
+(36, 'aventura', 'Dragon Ball Z: The Legacy of Goku II es un videojuego de acción y aventura con elementos de rol para Game Boy Advance que narra las sagas de los Androides y Cell. Los jugadores pueden jugar como varios personajes, como Gohan, Piccolo, Vegeta, Trunks y Goku, subir de nivel, desbloquear transformaciones Super Saiyajin y completar misiones. Ofrece una experiencia más profunda que su predecesor, con una historia más compleja, combate mejorado y un mundo de juego más expansivo.', 'Dragon Ball Z: Legacy of Goku II', 120000.00, '2025-10-29', 'emulator/games/Dragonball_Z.gba', '1'),
+(37, 'accion', 'Tarzan: Return to the Jungle es un videojuego de plataformas de acción para Game Boy Advance en el que los jugadores controlan a Tarzán desde la niñez hasta la adultez. La trama gira en torno a la amenaza de la malvada Reina La y los cazadores furtivos en la jungla, quienes intentan apoderarse de la selva y robar huevos de dinosaurio.El juego presenta un gameplay de plataformas que incluye columpiarse en lianas, surfear en árboles y nadar por pantanos.', 'Tarzan: Return to the jungle', 175000.00, '2025-10-29', 'emulator/games/Tarzan.gba', '1');
 
 -- --------------------------------------------------------
 
@@ -264,7 +355,22 @@ INSERT INTO `video_juego` (`idVideo`, `idVideoJuego`, `url`) VALUES
 (15, 19, 'https://www.youtube.com/embed/7C4hd3BfUfw'),
 (16, 20, 'https://www.youtube.com/embed/du1CCurnKq4'),
 (17, 21, 'https://www.youtube.com/embed/OQvelBebPvY'),
-(18, 22, 'https://www.youtube.com/embed/7wBBjgQk1Zk');
+(18, 22, 'https://www.youtube.com/embed/7wBBjgQk1Zk'),
+(19, 23, 'https://www.youtube.com/embed/yU7hjv7zvRY'),
+(20, 24, 'https://www.youtube.com/embed/v5_yEzPf0-M'),
+(21, 25, 'https://www.youtube.com/embed/Az5aBvofoVw'),
+(22, 26, 'https://www.youtube.com/embed/5LxJEOJ4k-g'),
+(23, 27, 'https://www.youtube.com/embed/JBSyUDcs6fs'),
+(24, 28, 'https://www.youtube.com/embed/8Fk5sRwbEWI'),
+(25, 29, 'https://www.youtube.com/embed/E9y3jXpSUwI'),
+(26, 30, 'https://www.youtube.com/embed/tT5YWDGpj-w'),
+(27, 31, 'https://www.youtube.com/embed/xbOEa3tddTo'),
+(28, 32, 'https://www.youtube.com/embed/aMax1rVYxcw'),
+(29, 33, 'https://www.youtube.com/embed/cDyk9VwG3P8'),
+(30, 34, 'https://www.youtube.com/embed/2-CyuqtyusM'),
+(31, 35, 'https://www.youtube.com/embed/RJHEyUKAd7s'),
+(32, 36, 'https://www.youtube.com/embed/t7fsN6W7JGs'),
+(33, 37, 'https://www.youtube.com/embed/R66Hu68ZJ6U');
 
 --
 -- Índices para tablas volcadas
@@ -340,7 +446,7 @@ ALTER TABLE `video_juego`
 -- AUTO_INCREMENT de la tabla `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idBiblioteca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
@@ -358,7 +464,7 @@ ALTER TABLE `descuento`
 -- AUTO_INCREMENT de la tabla `imagenes_juego`
 --
 ALTER TABLE `imagenes_juego`
-  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- AUTO_INCREMENT de la tabla `opinion`
@@ -376,13 +482,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `videojuego`
 --
 ALTER TABLE `videojuego`
-  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idVideoJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `video_juego`
 --
 ALTER TABLE `video_juego`
-  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restricciones para tablas volcadas
@@ -426,6 +532,455 @@ ALTER TABLE `tipodedescuento`
 --
 ALTER TABLE `video_juego`
   ADD CONSTRAINT `video_juego_ibfk_1` FOREIGN KEY (`idVideoJuego`) REFERENCES `videojuego` (`idVideoJuego`) ON DELETE CASCADE;
+--
+-- Base de datos: `phpmyadmin`
+--
+CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `phpmyadmin`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__bookmark`
+--
+
+CREATE TABLE `pma__bookmark` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `dbase` varchar(255) NOT NULL DEFAULT '',
+  `user` varchar(255) NOT NULL DEFAULT '',
+  `label` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `query` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__central_columns`
+--
+
+CREATE TABLE `pma__central_columns` (
+  `db_name` varchar(64) NOT NULL,
+  `col_name` varchar(64) NOT NULL,
+  `col_type` varchar(64) NOT NULL,
+  `col_length` text DEFAULT NULL,
+  `col_collation` varchar(64) NOT NULL,
+  `col_isNull` tinyint(1) NOT NULL,
+  `col_extra` varchar(255) DEFAULT '',
+  `col_default` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__column_info`
+--
+
+CREATE TABLE `pma__column_info` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `column_name` varchar(64) NOT NULL DEFAULT '',
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `mimetype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `transformation` varchar(255) NOT NULL DEFAULT '',
+  `transformation_options` varchar(255) NOT NULL DEFAULT '',
+  `input_transformation` varchar(255) NOT NULL DEFAULT '',
+  `input_transformation_options` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__designer_settings`
+--
+
+CREATE TABLE `pma__designer_settings` (
+  `username` varchar(64) NOT NULL,
+  `settings_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__export_templates`
+--
+
+CREATE TABLE `pma__export_templates` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `export_type` varchar(10) NOT NULL,
+  `template_name` varchar(64) NOT NULL,
+  `template_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__favorite`
+--
+
+CREATE TABLE `pma__favorite` (
+  `username` varchar(64) NOT NULL,
+  `tables` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__history`
+--
+
+CREATE TABLE `pma__history` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL DEFAULT '',
+  `db` varchar(64) NOT NULL DEFAULT '',
+  `table` varchar(64) NOT NULL DEFAULT '',
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
+  `sqlquery` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__navigationhiding`
+--
+
+CREATE TABLE `pma__navigationhiding` (
+  `username` varchar(64) NOT NULL,
+  `item_name` varchar(64) NOT NULL,
+  `item_type` varchar(64) NOT NULL,
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__pdf_pages`
+--
+
+CREATE TABLE `pma__pdf_pages` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `page_nr` int(10) UNSIGNED NOT NULL,
+  `page_descr` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__recent`
+--
+
+CREATE TABLE `pma__recent` (
+  `username` varchar(64) NOT NULL,
+  `tables` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
+
+--
+-- Volcado de datos para la tabla `pma__recent`
+--
+
+INSERT INTO `pma__recent` (`username`, `tables`) VALUES
+('root', '[{\"db\":\"8bit\",\"table\":\"imagenes_juego\"},{\"db\":\"8bit\",\"table\":\"biblioteca\"},{\"db\":\"8bit\",\"table\":\"opinion\"},{\"db\":\"8bit\",\"table\":\"puntuacion\"}]');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__relation`
+--
+
+CREATE TABLE `pma__relation` (
+  `master_db` varchar(64) NOT NULL DEFAULT '',
+  `master_table` varchar(64) NOT NULL DEFAULT '',
+  `master_field` varchar(64) NOT NULL DEFAULT '',
+  `foreign_db` varchar(64) NOT NULL DEFAULT '',
+  `foreign_table` varchar(64) NOT NULL DEFAULT '',
+  `foreign_field` varchar(64) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__savedsearches`
+--
+
+CREATE TABLE `pma__savedsearches` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL DEFAULT '',
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `search_name` varchar(64) NOT NULL DEFAULT '',
+  `search_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__table_coords`
+--
+
+CREATE TABLE `pma__table_coords` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
+  `x` float UNSIGNED NOT NULL DEFAULT 0,
+  `y` float UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__table_info`
+--
+
+CREATE TABLE `pma__table_info` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `display_field` varchar(64) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__table_uiprefs`
+--
+
+CREATE TABLE `pma__table_uiprefs` (
+  `username` varchar(64) NOT NULL,
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL,
+  `prefs` text NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__tracking`
+--
+
+CREATE TABLE `pma__tracking` (
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `schema_snapshot` text NOT NULL,
+  `schema_sql` text DEFAULT NULL,
+  `data_sql` longtext DEFAULT NULL,
+  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') DEFAULT NULL,
+  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__userconfig`
+--
+
+CREATE TABLE `pma__userconfig` (
+  `username` varchar(64) NOT NULL,
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `config_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
+
+--
+-- Volcado de datos para la tabla `pma__userconfig`
+--
+
+INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
+('root', '2025-10-29 00:58:09', '{\"Console\\/Mode\":\"collapse\",\"lang\":\"es\"}');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__usergroups`
+--
+
+CREATE TABLE `pma__usergroups` (
+  `usergroup` varchar(64) NOT NULL,
+  `tab` varchar(64) NOT NULL,
+  `allowed` enum('Y','N') NOT NULL DEFAULT 'N'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pma__users`
+--
+
+CREATE TABLE `pma__users` (
+  `username` varchar(64) NOT NULL,
+  `usergroup` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `pma__bookmark`
+--
+ALTER TABLE `pma__bookmark`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pma__central_columns`
+--
+ALTER TABLE `pma__central_columns`
+  ADD PRIMARY KEY (`db_name`,`col_name`);
+
+--
+-- Indices de la tabla `pma__column_info`
+--
+ALTER TABLE `pma__column_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
+
+--
+-- Indices de la tabla `pma__designer_settings`
+--
+ALTER TABLE `pma__designer_settings`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indices de la tabla `pma__export_templates`
+--
+ALTER TABLE `pma__export_templates`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
+
+--
+-- Indices de la tabla `pma__favorite`
+--
+ALTER TABLE `pma__favorite`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indices de la tabla `pma__history`
+--
+ALTER TABLE `pma__history`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
+
+--
+-- Indices de la tabla `pma__navigationhiding`
+--
+ALTER TABLE `pma__navigationhiding`
+  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
+
+--
+-- Indices de la tabla `pma__pdf_pages`
+--
+ALTER TABLE `pma__pdf_pages`
+  ADD PRIMARY KEY (`page_nr`),
+  ADD KEY `db_name` (`db_name`);
+
+--
+-- Indices de la tabla `pma__recent`
+--
+ALTER TABLE `pma__recent`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indices de la tabla `pma__relation`
+--
+ALTER TABLE `pma__relation`
+  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
+  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
+
+--
+-- Indices de la tabla `pma__savedsearches`
+--
+ALTER TABLE `pma__savedsearches`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
+
+--
+-- Indices de la tabla `pma__table_coords`
+--
+ALTER TABLE `pma__table_coords`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
+
+--
+-- Indices de la tabla `pma__table_info`
+--
+ALTER TABLE `pma__table_info`
+  ADD PRIMARY KEY (`db_name`,`table_name`);
+
+--
+-- Indices de la tabla `pma__table_uiprefs`
+--
+ALTER TABLE `pma__table_uiprefs`
+  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
+
+--
+-- Indices de la tabla `pma__tracking`
+--
+ALTER TABLE `pma__tracking`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
+
+--
+-- Indices de la tabla `pma__userconfig`
+--
+ALTER TABLE `pma__userconfig`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indices de la tabla `pma__usergroups`
+--
+ALTER TABLE `pma__usergroups`
+  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
+
+--
+-- Indices de la tabla `pma__users`
+--
+ALTER TABLE `pma__users`
+  ADD PRIMARY KEY (`username`,`usergroup`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `pma__bookmark`
+--
+ALTER TABLE `pma__bookmark`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pma__column_info`
+--
+ALTER TABLE `pma__column_info`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pma__export_templates`
+--
+ALTER TABLE `pma__export_templates`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pma__history`
+--
+ALTER TABLE `pma__history`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pma__pdf_pages`
+--
+ALTER TABLE `pma__pdf_pages`
+  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pma__savedsearches`
+--
+ALTER TABLE `pma__savedsearches`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- Base de datos: `test`
+--
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

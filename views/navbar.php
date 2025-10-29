@@ -98,7 +98,7 @@
     </div>
 
     <div class="d-flex flex-column gap-2 mb-3">
-      <a href="index.html" class="btn btn-outline-light">Soporte</a>
+      <a href="soportePrincipal.php" class="btn btn-outline-light">Soporte</a>
       <a href="logout.php" class="btn btn-outline-light">Cerrar sesión</a>
     </div>
 
@@ -115,7 +115,7 @@
       <li><a class="dropdown-item text-light" href="#">Carreras</a></li>
     </ul>
      <hr>
-     <a href="home.php" class="text-white sinlinea item">Soporte</a>
+     <a href="soportePrincipal.php" class="text-white sinlinea item">Soporte</a>
      <br>
      <a href="about_us.php" class="text-white sinlinea item">8bit</a>
     
