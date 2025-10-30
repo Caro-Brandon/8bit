@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    background:  url(../img/fondo/a.png) no-repeat center center fixed;
+    background-size: cover;
+     color: white;
+     font-family: 'Georgia', serif;
+  }
+
+
+ #contenedorPadre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    
+  }
+ .Titulos{   
+  width: 90%;
+    text-align: center;
+    margin: 2rem;
+  font-weight: bold;
+  color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+.precio{
+  font-weight: bold;
+}
+.precio-gamer { 
+  box-shadow: #000;
+  color: #8e17cd; 
+  font-weight: bold;
+  text-decoration: none; 
+  font-size: 1.1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.precio-gamer:hover {
+    color: #8e17cd; 
+    text-shadow: 0 0 10px #380451;
+}
+
+.contenedorTarjetasPrincipales1{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+  
+}
+.card-img-top{
+  height: 220px; 
+  }
+div .estiloDeTarjeta1{ 
+   background: transparent;
+  max-width: 22rem; 
+  min-width: 13rem; 
+ 
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 15px; 
+  box-shadow: 20px 10px 100px rgba(0, 0, 0, 0.4); 
+ }
+
+ 
+
+ .estiloDeTarjeta1:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.03);
+  border-color: #380451;  
+  box-shadow: 0px 18px 70px  #32047c;
+}

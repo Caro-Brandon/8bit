@@ -55,8 +55,7 @@ nav {
 .precio{
   font-weight: bold;
 }
-/* BOTON */
-.precio-gamer { 
+ .precio-gamer { 
   box-shadow: #000;
   color: #8e17cd; 
   font-weight: bold;
@@ -213,144 +212,7 @@ nav {
   transform: scale(1.03);
   box-shadow: 0 0 15px rgba(72, 201, 176, 0.5);
 }
-
-.hero-leon 
-{
-  position: relative;
-  width: 100vw; 
-  height: 95vh; 
-  overflow: hidden;
-  margin: 0;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  border-radius: 0;
-}
-
-.hero-leon .hero-image 
-{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-  filter: brightness(65%);
-  transition: transform 1s ease;
-}
-
-.hero-leon .hero-overlay 
-{
-  position: absolute;
-  top: 50%;
-  left: 6%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 40px 50px;
-  max-width: 550px;
-  border-radius: 14px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(5px);
-}
-
-.hero-leon .hero-overlay h2 
-{
-  font-size: 2.3rem;
-  color: #ff2d2d;
-  margin-bottom: 20px;
-}
-
-.hero-leon .hero-overlay p 
-{
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.hero-leon .hero-overlay .quote 
-{
-  margin-top: 10px;
-  font-style: italic;
-  color: #ffb3b3;
-  font-size: 0.95rem;
-}
-
-.hero-ashley 
-{
-  position: relative;
-  width: 100vw;
-  height: 110vh;
-  overflow: hidden;
-  margin: 0;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  border-radius: 0;
-
-}
-
-.hero-ashley .hero-image 
-{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
-  filter: brightness(65%);
-  transition: transform 1s ease;
-}
-
-.hero-ashley .hero-overlay
-{
-  position: absolute;
-  top: 50%;
-  right: 6%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 40px 50px;
-  max-width: 550px;
-  border-radius: 14px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(5px);
-}
-
-.hero-ashley .hero-overlay h2 
-{
-  font-size: 2.3rem;
-  color: #ff2d2d;
-  margin-bottom: 20px;
-}
-
-.hero-ashley .hero-overlay p 
-{
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.hero-ashley .hero-overlay .quote 
-{
-  margin-top: 10px;
-  font-style: italic;
-  color: #ffb3b3;
-  font-size: 0.95rem;
-}
-
-.hero-leon 
-{
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: none;
-  margin-bottom: -100px;
-}
-
-.hero-ashley 
-{
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: none;
-  margin-top: -100px;
-}
-
+ 
 #valoracion-jugadores 
 {
   margin-left: 235px;
@@ -725,37 +587,8 @@ nav {
     background-color: transparent;
   }
 
-  .hero-leon,
-  .hero-ashley 
-  {
-    height: 90vh;
-    background-position: center top;
-    background-size: cover;
-  }
-
-  .hero-leon .hero-overlay,
-  .hero-ashley .hero-overlay 
-  {
-    position: relative;
-    margin: 25px auto;
-    padding: 22px;
-    max-width: 90%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 10px;
-  }
-
-  .hero-leon .hero-overlay h2,
-  .hero-ashley .hero-overlay h2 
-  {
-    font-size: 1.5rem;
-  }
-
-  .hero-leon .hero-overlay p,
-  .hero-ashley .hero-overlay p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
+   
+  
 
   .review-container,
   .rating-box 

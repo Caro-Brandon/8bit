@@ -44,6 +44,7 @@ include 'verifUser.php';
     require_once $section . '.php';
     ?>
   </main>
+  
 <!-- incluimos el footerLogo -->
 <?php include 'footerLogo.php'; ?>
 

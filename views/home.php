@@ -19,7 +19,7 @@ $result = $conex->query("
 SELECT v.idVideoJuego, v.nombreDelJuego, v.descripcion, v.rutaJuego, i.url AS imagen
 FROM videojuego v
 LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
-ORDER BY v.fechaDeLanzamiento DESC
+ORDER BY v.fechaDeLanzamiento ASC
 LIMIT 3
 ");
 
@@ -84,8 +84,7 @@ while(count($juegos) < 3) {
     <!-- contenedor de tarjetas -->
     <div class="contenedorTarjetasPrincipales1">
     <?php
-      // consulta 4 juegos aleatorios
-      $query = "
+       $query = "
         SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
         FROM videojuego v
         LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
@@ -103,7 +102,7 @@ while(count($juegos) < 3) {
               <img src="<?= $img ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
               <div class="card-body">
                 <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
-                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 2)) ?> pesos</span>
+                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos</span>
               </div>
             </a>
           </div>
@@ -419,7 +418,7 @@ $(document).ready(function(){
     });
     </script>
 
-  <!-- PROMO ESTILO UBISOFT -->
+  <!-- Promo -->
 <div class="promoUbisoft">
   <div class="promo-contenido">
     <div class="promo-texto">
@@ -483,8 +482,7 @@ $(document).ready(function(){
        </div>
 
        <div class="contenedorTarjetasPrincipales3">
-         <!-- div de color para la publicidad -->
-         
+          
 
         
          

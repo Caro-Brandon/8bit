@@ -67,7 +67,7 @@ body{
 }
 .precio-gamer { 
   box-shadow: #000;
-  color: #0d79fd; 
+  color: #8e17cd; 
   font-weight: bold;
   text-decoration: none; 
   font-size: 1.1rem;
@@ -76,7 +76,7 @@ body{
 }
 
 .precio-gamer:hover {
-  color: white;
+  color: #8e17cd; 
   text-shadow: 0 0 10px #380451;
 }
 

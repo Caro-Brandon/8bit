@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soporte</title>
     <link rel="icon" href="src/img/IconoSinBorde.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/Soporte.css" />
     <script src="src/js/Soporte.js" defer></script>
-</head>
-
-<body>
 
     <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center text-light">
         <div class="container">
@@ -227,11 +218,12 @@
         </div>
     </section>
 
-
-    <section id="juegos" class="games-section py-5">
+     <section id="juegos" class="games-section py-5">
         <div class="container">
             <h3 class="section-title mb-4">Juegos</h3>
+             
             <div class="row g-4">
+                <small>posibles remasters</small>
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="game-card rounded-4" id="juego1"></div>
                 </div>
@@ -267,20 +259,23 @@
 
             <div class="logos-slider">
                 <div class="logos-track">
-                    <img src="src/img/FC26.png" alt="Logo 1" class="empresa-logo">
-                    <img src="src/img/1.png" alt="Logo 2" class="empresa-logo">
-                    <img src="src/img/19.png" alt="Logo 3" class="empresa-logo">
-                    <img src="src/img/3.png" alt="Logo 4" class="empresa-logo">
-                    <img src="src/img/4.png" alt="Logo 5" class="empresa-logo">
-                    <img src="src/img/9.png" alt="Logo 6" class="empresa-logo">
-
-                    <img src="src/img/13.png" alt="Logo 1" class="empresa-logo">
-                    <img src="src/img/14.png" alt="Logo 2" class="empresa-logo">
-                    <img src="src/img/12.png" alt="Logo 3" class="empresa-logo">
-                    <img src="src/img/17.png" alt="Logo 4" class="empresa-logo">
-                    <img src="src/img/18.png" alt="Logo 5" class="empresa-logo">
-                    <img src="src/img/20.png" alt="Logo 6" class="empresa-logo">
-                </div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdM9SsM6Q-5OyUWLyQWrtMgdRtBnUnGFqOmg&s" alt="Logo 1" class="empresa-logo">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f2230f3-d395-4701-9831-457e72d51cdf/deosr79-f045a088-10c3-42f2-aa0b-1d06cc68f8e3.png/v1/fill/w_1280,h_720,q_80,strp/capcom_logo_with_sony_byline__on_screen__by_appleberries22_deosr79-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzFmMjIzMGYzLWQzOTUtNDcwMS05ODMxLTQ1N2U3MmQ1MWNkZi9kZW9zcjc5LWYwNDVhMDg4LTEwYzMtNDJmMi1hYTBiLTFkMDZjYzY4ZjhlMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8QnmdCTnUOBPtiwsbEIX-pYR4Y1l264vYHBOCi3uJAc" alt="Logo 2" class="empresa-logo">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/12/playstation_2.jpg?tf=3840x" alt="Logo 3" class="empresa-logo">
+                    <img src="https://p4.wallpaperbetter.com/wallpaper/428/818/328/minimalism-logo-atari-brands-wallpaper-preview.jpg" alt="Logo 4" class="empresa-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4At-wdHxZn7hqIXHCsldOq0PsIMrGdBjog&s" alt="Logo 5" class="empresa-logo">
+                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdM9SsM6Q-5OyUWLyQWrtMgdRtBnUnGFqOmg&s" alt="Logo 1" class="empresa-logo">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f2230f3-d395-4701-9831-457e72d51cdf/deosr79-f045a088-10c3-42f2-aa0b-1d06cc68f8e3.png/v1/fill/w_1280,h_720,q_80,strp/capcom_logo_with_sony_byline__on_screen__by_appleberries22_deosr79-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzFmMjIzMGYzLWQzOTUtNDcwMS05ODMxLTQ1N2U3MmQ1MWNkZi9kZW9zcjc5LWYwNDVhMDg4LTEwYzMtNDJmMi1hYTBiLTFkMDZjYzY4ZjhlMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8QnmdCTnUOBPtiwsbEIX-pYR4Y1l264vYHBOCi3uJAc" alt="Logo 2" class="empresa-logo">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/12/playstation_2.jpg?tf=3840x" alt="Logo 3" class="empresa-logo">
+                    <img src="https://p4.wallpaperbetter.com/wallpaper/428/818/328/minimalism-logo-atari-brands-wallpaper-preview.jpg" alt="Logo 4" class="empresa-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4At-wdHxZn7hqIXHCsldOq0PsIMrGdBjog&s" alt="Logo 5" class="empresa-logo">
+                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdM9SsM6Q-5OyUWLyQWrtMgdRtBnUnGFqOmg&s" alt="Logo 1" class="empresa-logo">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f2230f3-d395-4701-9831-457e72d51cdf/deosr79-f045a088-10c3-42f2-aa0b-1d06cc68f8e3.png/v1/fill/w_1280,h_720,q_80,strp/capcom_logo_with_sony_byline__on_screen__by_appleberries22_deosr79-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mLzFmMjIzMGYzLWQzOTUtNDcwMS05ODMxLTQ1N2U3MmQ1MWNkZi9kZW9zcjc5LWYwNDVhMDg4LTEwYzMtNDJmMi1hYTBiLTFkMDZjYzY4ZjhlMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8QnmdCTnUOBPtiwsbEIX-pYR4Y1l264vYHBOCi3uJAc" alt="Logo 2" class="empresa-logo">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/12/playstation_2.jpg?tf=3840x" alt="Logo 3" class="empresa-logo">
+                    <img src="https://p4.wallpaperbetter.com/wallpaper/428/818/328/minimalism-logo-atari-brands-wallpaper-preview.jpg" alt="Logo 4" class="empresa-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4At-wdHxZn7hqIXHCsldOq0PsIMrGdBjog&s" alt="Logo 5" class="empresa-logo">     
             </div>
         </div>
     </section>
@@ -405,6 +400,3 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
