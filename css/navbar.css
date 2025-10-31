@@ -92,10 +92,10 @@ header .search-box{
   height: 40px;
   border: none;
   outline: none;
-  border: 1px solid rgba(149, 42, 236, 0.416);
-  background-color: transparent;
+  border: 1px solid rgba(111, 35, 243, 0.416);
+  background-color: rgba(79, 14, 153, 0.531);
   border-radius: 30px;
-  color: gray;
+  color: white;
   font-size: 16px;
   text-align: center;
   }

@@ -27,8 +27,9 @@
     </div>
 
     <div class="search-box">
-      <form action="">
-        <input type="text" name="search" id="srch" placeholder="Search">
+    
+      <form method="GET" action="seach.php">
+        <input type="text" name="q" id="srch" placeholder="Search" required>
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>

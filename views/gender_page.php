@@ -4,7 +4,7 @@
   $categoria = $conex->real_escape_string($categoria);
 
    $query = "
-    SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
+    SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen, descripcion
     FROM videojuego v
     LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
     WHERE v.genero = '$categoria'
@@ -26,28 +26,35 @@
     <h2 class="text-center mb-4">Juegos de la categoría: <?= ucfirst(htmlspecialchars($categoria)) ?></h2>
 
     <div class="contenedorTarjetasPrincipales1 d-flex flex-wrap justify-content-center gap-4">
-      <?php
-      if ($result && $result->num_rows > 0):
-        while ($row = $result->fetch_assoc()):
-          $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
-      ?>
-          <div class="card estiloDeTarjeta1">
-            <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;"> 
-              <img src="<?= $img ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
-              <div class="card-body">
-                <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
-                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos arg</span>
-              </div>
-            </a>
-          </div>
-      <?php
-        endwhile;
-      else:
-        echo "<p class='text-center'>No se encontraron juegos en esta categoría.</p>";
-      endif;
-      ?>
+        <?php
+        if ($result && $result->num_rows > 0):
+            while ($row = $result->fetch_assoc()):
+                $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+                $desc = isset($row['descripcion']) ? htmlspecialchars($row['descripcion']) : '';
+                $desc_cortada = implode(' ', array_slice(explode(' ', $desc), 0, 30)) . (str_word_count($desc) > 30 ? '...ver más' : '');
+        ?>
+            <div class="card estiloDeTarjeta1">
+                <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;">
+                    <div class="img-flip">
+                        <img src="<?= $img ?>" class="front card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+                        <div class="back">
+                            <p><?= $desc_cortada ?></p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+                        <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos arg</span>
+                    </div>
+                </a>
+            </div>
+        <?php
+            endwhile;
+        else:
+            echo "<p class='text-center'>No se encontraron juegos en esta categoría.</p>";
+        endif;
+        ?>
     </div>
-  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>

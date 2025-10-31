@@ -83,36 +83,46 @@ while(count($juegos) < 3) {
 
     <!-- contenedor de tarjetas -->
     <div class="contenedorTarjetasPrincipales1">
-    <?php
-       $query = "
-        SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
-        FROM videojuego v
-        LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
-        ORDER BY RAND()
-        LIMIT 4
-      ";
-      $result = $conex->query($query);
+<?php
+   $query = "
+    SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen, descripcion
+    FROM videojuego v
+    LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+    ORDER BY RAND()
+    LIMIT 4
+  ";
+  $result = $conex->query($query);
 
-      if ($result && $result->num_rows > 0):
-        while ($row = $result->fetch_assoc()):
-          $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
-    ?>
-          <div class="card estiloDeTarjeta1">
-            <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;"> 
-              <img src="<?= $img ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
-              <div class="card-body">
-                <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
-                <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos</span>
-              </div>
-            </a>
-          </div>
-    <?php
-        endwhile;
-      else:
-        echo "<p>No se encontraron juegos.</p>";
-      endif;
-    ?>
-    </div>
+  if ($result && $result->num_rows > 0):
+    while ($row = $result->fetch_assoc()):
+      $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+?>
+<div class="card estiloDeTarjeta1">
+    <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;">
+        <div class="img-flip">
+            <img src="<?= $img ?>" class="front card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+            <div class="back">
+                <?php
+                     $desc = htmlspecialchars($row['descripcion']);
+                    $desc_cortada = implode(' ', array_slice(explode(' ', $desc), 0, 30)) . (str_word_count($desc) > 10 ? '...ver mas' : '');
+                ?>
+                <p><?= $desc_cortada ?></p>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+            <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos</span>
+        </div>
+    </a>
+</div>
+
+<?php
+    endwhile;
+  else:
+    echo "<p>No se encontraron juegos.</p>";
+  endif;
+?>
+</div>
 
 
     
