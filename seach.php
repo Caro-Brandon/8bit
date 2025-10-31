@@ -60,7 +60,7 @@ $sqlParcial = $conex->prepare("
 $sqlParcial->bind_param("ss", $like, $like);
 $sqlParcial->execute();
 $resultadoParcial = $sqlParcial->get_result();
-$section = "views/seach";
+$section = "views/search";
 require_once "views/layout.php";
 
 ?>

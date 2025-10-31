@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2025 a las 02:41:35
+-- Tiempo de generación: 31-10-2025 a las 04:11:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -263,12 +263,12 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`IDusuario`, `nombreDeUsuario`, `email`, `contraseña`, `fechaRegistro`, `saldo`, `rol`) VALUES
 (1, 'pepe', 'prueba123@prueba', 'tortaza', '2025-09-19', 0.00, 'user'),
 (3, '123', '123@123', '$2y$10$uKfEl6vcgtdWjmGbYNpvUOs7RWsVCHg6cvkCZXesLNTiFMBv4HLfu', '2025-09-19', 0.00, 'user'),
-(4, '1', '1@1', '1', '2025-09-19', 0.00, 'admin'),
+(4, '1', '1@1', '$2y$10$k5hpV5Du3tB.jT64mr.3tuv6AJDq0IsRH67K7ZCIglmmSOwK4mYJe', '2025-09-19', 0.00, 'admin'),
 (5, '4', '4@4', '4', '2025-09-19', 0.00, 'user'),
 (6, 'rodri', 'rodrigo@gmail.com', 'rodri', '2025-09-19', 0.00, 'user'),
 (7, 'prueba2', 'prueba2@2', '2', '2025-09-19', 0.00, 'user'),
 (8, 'probando', 'Probando@1', 'probando', '2025-09-20', 0.00, 'user'),
-(9, 'Messi', 'verdad@verdad', 'verdad', '2025-09-21', 0.00, 'admin'),
+(9, 'Messi', 'verdad@verdad', '$2y$10$8RWzhpH70G9VDfhHEiXpZuo3sAQPV1NlsYtt11JCvHdiabpe7zuFm', '2025-09-21', 0.00, 'admin'),
 (10, 'prueba123', '098@098', '098', '2025-09-21', 0.00, 'user'),
 (11, '1233', '122@123', '123', '2025-09-21', 0.00, 'user'),
 (12, 'queonda', 'prueba1234@prueba', 'nse', '2025-09-21', 0.00, 'user'),
@@ -283,7 +283,8 @@ INSERT INTO `usuario` (`IDusuario`, `nombreDeUsuario`, `email`, `contraseña`, `
 (21, '12', '12@12', '12', '2025-10-02', 0.00, 'user'),
 (22, 'MataAbuelas3k', '609@609', '6969', '2025-10-04', 0.00, 'user'),
 (23, 'NoLousaran', 'EstegmailNuncaLoVanAusar@gmaul.com', 'noseusa', '2025-10-20', 0.00, 'user'),
-(24, 'nuevo', 'usuarioNuevo@gmail.com', '123', '2025-10-27', 0.00, 'admin');
+(24, 'nuevo', 'usuarioNuevo@gmail.com', '$2y$10$gDJGT3TPCtjGSwDZy1X1s.2ylWhi13LYCuuqYG6EWKTH2N6VjxgW.', '2025-10-27', 0.00, 'admin'),
+(25, 'hash', 'hash@123', '$2y$10$oW1v233WIjIP06nHOdhVK.SMwJHMKLoBtme4PRpV0neonk7OHZwFO', '2025-10-31', 0.00, 'user');
 
 -- --------------------------------------------------------
 
@@ -480,7 +481,7 @@ ALTER TABLE `opinion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `videojuego`

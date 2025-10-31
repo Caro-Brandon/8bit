@@ -10,17 +10,15 @@ if(isset($_POST['nombreDeUsuario'], $_POST['email'], $_POST['contraseña'], $_PO
     $contraseña = trim($_POST['contraseña']);
     $confirmarContraseña = trim($_POST['confirmarContraseña']);
 
-     if ($contraseña !== $confirmarContraseña) {
+    if ($contraseña !== $confirmarContraseña) {
         $response["message"] = "Las contraseñas no coinciden.";
         echo json_encode($response);
         exit;
     }
 
-    // Verificar si el email ya existe
     $checkEmail = "SELECT * FROM usuario WHERE email='$email'";
     $resEmail = mysqli_query($conex, $checkEmail);
 
-    // Verificar si el nombre de usuario ya existe
     $checkUser = "SELECT * FROM usuario WHERE nombreDeUsuario='$name'";
     $resUser = mysqli_query($conex, $checkUser);
 
@@ -29,8 +27,10 @@ if(isset($_POST['nombreDeUsuario'], $_POST['email'], $_POST['contraseña'], $_PO
     } elseif (mysqli_num_rows($resUser) > 0) {
         $response["message"] = "El usuario $name ya está en uso.";
     } else {
+        $contraseñaHash = password_hash($contraseña, PASSWORD_DEFAULT);
+
         $consulta = "INSERT INTO usuario(nombreDeUsuario, email, contraseña, fechaRegistro, saldo, rol)
-                     VALUES ('$name', '$email', '$contraseña', NOW(), 0, 'user')";
+                     VALUES ('$name', '$email', '$contraseñaHash', NOW(), 0, 'user')";
         $resultado = mysqli_query($conex, $consulta);
 
         if ($resultado) {

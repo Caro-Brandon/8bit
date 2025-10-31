@@ -132,135 +132,87 @@ while(count($juegos) < 3) {
       </div>
 
       <div class="contenedorTarjetas2 owl-carousel owl-theme">
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
-        <div class="card-body">
-            <h5 class="card-title">Forza Horizon 5</h5>
-            <a href="store_page.php" class="precio-gamer">$59.99 USD</a>
-        </div>
-     </div>
+      <?php
+      $query = "
+          SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
+          FROM videojuego v
+          LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+          ORDER BY RAND()
+          LIMIT 10
+      ";
+      $result = $conex->query($query);
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Marvel_spiderman.jpg" class="card-img-top2" alt="Marvel Spiderman">
-        <div class="card-body">
-            <h5 class="card-title">Marvel Spiderman</h5>
-            <a href="store_page.php" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      if ($result && $result->num_rows > 0):
+          while($row = $result->fetch_assoc()):
+              $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+      ?>
+          <div class="card bg-transparent estiloDeTarjeta2">
+              <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;">
+                  <img src="<?= $img ?>" class="card-img-top2" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+                  <div class="card-body">
+                      <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+                      <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> USD</span>
+                  </div>
+              </a>
+          </div>
+      <?php
+          endwhile;
+      else:
+          echo "<p>No hay juegos recomendados disponibles.</p>";
+      endif;
+      ?>
+      </div>
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/thelastofus.jpg" class="card-img-top2 god" alt="The Last of Us">
-        <div class="card-body">
-            <h5 class="card-title">The Last of Us</h5>
-            <a href="store_page.php" class="precio-gamer">$49.99 USD</a>
-        </div>
-    </div>
+      <style>
+      .contenedorTarjetas2 .owl-nav button.owl-prev,
+      .contenedorTarjetas2 .owl-nav button.owl-next {
+          
+          color: white;
+          font-size: 2.5rem;  
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/gtav.jpg" class="card-img-top2" alt="GTA V">
-        <div class="card-body">
-            <h5 class="card-title">GTA V</h5>
-            <a href="juegos/RedDeadRedemption2.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      .contenedorTarjetas2 .owl-nav button.owl-prev { 
+        left: -35px;
+      }
+      .contenedorTarjetas2 .owl-nav button.owl-next { 
+        right: -35px;
+      }
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Cyberpunk2077.jpg" class="card-img-top2" alt="Cyberpunk 2077">
-        <div class="card-body">
-            <h5 class="card-title">Cyberpunk 2077</h5>
-            <a href="src/juegos/Cyber/Cyberpunk2077.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
-        <div class="card-body">
-            <h5 class="card-title">Forza Horizon 5</h5>
-            <a href="juegos/ForzaHorizon5.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      /* Ocultar texto predeterminado de Owl */
+      .contenedorTarjetas2 .owl-nav button span { display: none; }
+      </style>
+      <script>
+      $(document).ready(function(){
+        $(".contenedorTarjetas2").owlCarousel({
+          loop: false,          
+          margin: 10,           
+          nav: true,            
+          navText: ["&#10094;", "&#10095;"],  
+          dots: false,
+          mouseDrag: true,
+          touchDrag: true,
+          center: false,
+          stagePadding: 0,
+          startPosition: 0,
+          responsive:{
+              0: { items: 1 },
+              600: { items: 2 },
+              1000: { items: 3 }, 
+              1400:{ items: 4 }    
+          }
+        });
+      });
 
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Marvel_spiderman.jpg" class="card-img-top2" alt="Marvel Spiderman">
-        <div class="card-body">
-            <h5 class="card-title">Marvel Spiderman</h5>
-            <a href="juegos/MarvelSpiderman.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/thelastofus.jpg" class="card-img-top2 god" alt="The Last of Us">
-        <div class="card-body">
-            <h5 class="card-title">The Last of Us</h5>
-            <a href="juegos/GodOfWar.html" class="precio-gamer">$49.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/gtav.jpg" class="card-img-top2" alt="GTA V">
-        <div class="card-body">
-            <h5 class="card-title">GTA V</h5>
-            <a href="juegos/RedDeadRedemption2.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Cyberpunk2077.jpg" class="card-img-top2" alt="Cyberpunk 2077">
-        <div class="card-body">
-            <h5 class="card-title">Cyberpunk 2077</h5>
-            <a href="src/juegos/Cyber/Cyberpunk2077.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-</div>
-<style>
- .contenedorTarjetas2 .owl-nav button.owl-prev,
- .contenedorTarjetas2 .owl-nav button.owl-next {
-     
-     color: white;
-    font-size: 2.5rem;  
-     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
- .contenedorTarjetas2 .owl-nav button.owl-prev { 
-  left: -35px;
-}
-.contenedorTarjetas2 .owl-nav button.owl-next { 
-  right: -35px;
- }
-
- 
-
-/* Ocultar texto predeterminado de Owl */
-.contenedorTarjetas2 .owl-nav button span { display: none; }
-</style>
-<script>
-$(document).ready(function(){
-  $(".contenedorTarjetas2").owlCarousel({
-    loop: false,          
-    margin: 10,           
-    nav: true,            
-    navText: ["&#10094;", "&#10095;"], // Flechas grandes
-    dots: false,
-    mouseDrag: true,
-    touchDrag: true,
-    center: false,
-    stagePadding: 0,
-    startPosition: 0,
-    responsive:{
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 4 },
-        1400:{ items: 6 }    
-    }
-  });
-});
-</script>
+      </script>
            
  <div class="promoUbisoft">
   <div class="promo-contenido">
@@ -277,46 +229,50 @@ $(document).ready(function(){
    
  
       <div  class="Titulos">
-        <h1>Sagas</h1>
+        <h1>Juegos que podrian gustarte</h1>
       </div>
        <!-- contenedor numero3 de las tarjetas -->
        <div class="contenedorTarjetasPrincipales3">
         <!--arranca los contenedores de tarjetas -->
-        <div class="card bg-transparent estiloDeTarjeta3 ">
-          <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/godofwarsaga.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God Of War</h5>
-            </div>
-          </a>
-          </div>
+        <?php
+   $query = "
+    SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen, descripcion
+    FROM videojuego v
+    LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+    ORDER BY RAND()
+    LIMIT 4
+  ";
+  $result = $conex->query($query);
 
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-            <a href="" style="text-decoration: none; color: white;">
-            <img src="img/juegos/saga2.jpeg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">Assassin’s Creed</h5>
+  if ($result && $result->num_rows > 0):
+    while ($row = $result->fetch_assoc()):
+      $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+?>
+<div class="card estiloDeTarjeta1">
+    <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;">
+        <div class="img-flip">
+            <img src="<?= $img ?>" class="front card-img-top" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+            <div class="back">
+                <?php
+                     $desc = htmlspecialchars($row['descripcion']);
+                    $desc_cortada = implode(' ', array_slice(explode(' ', $desc), 0, 30)) . (str_word_count($desc) > 10 ? '...ver mas' : '');
+                ?>
+                <p><?= $desc_cortada ?></p>
             </div>
-            </a>
-          </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+            <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> pesos</span>
+        </div>
+    </a>
+</div>
 
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-            <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/halosaga.jpeg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">Halo</h5>     
-            </div>
-          </a>
-          </div>
-
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-          <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/juegos/godofwarsaga.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">God Of War</h5>
-            </div>
-          </a>
-          </div>
+<?php
+    endwhile;
+  else:
+    echo "<p>No se encontraron juegos.</p>";
+  endif;
+?>
 
        </div>
 
@@ -325,108 +281,86 @@ $(document).ready(function(){
       </div>
 
       <div class="contenedorTarjetas2 owl-carousel owl-theme">
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
-        <div class="card-body">
-            <h5 class="card-title">Forza Horizon 5</h5>
-            <a href="juegos/ForzaHorizon5.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      <?php
+      $query = "
+          SELECT v.idVideoJuego, v.nombreDelJuego, v.precio, i.url AS imagen
+          FROM videojuego v
+          LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+          ORDER BY RAND()
+          LIMIT 10
+      ";
+      $result = $conex->query($query);
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Marvel_spiderman.jpg" class="card-img-top2" alt="Marvel Spiderman">
-        <div class="card-body">
-            <h5 class="card-title">Marvel Spiderman</h5>
-            <a href="juegos/MarvelSpiderman.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      if ($result && $result->num_rows > 0):
+          while($row = $result->fetch_assoc()):
+              $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+      ?>
+          <div class="card bg-transparent estiloDeTarjeta2">
+              <a href="store_page.php?id=<?= $row['idVideoJuego'] ?>" style="text-decoration: none; color: white;">
+                  <img src="<?= $img ?>" class="card-img-top2" alt="<?= htmlspecialchars($row['nombreDelJuego']) ?>">
+                  <div class="card-body">
+                      <h5 class="card-title"><?= htmlspecialchars($row['nombreDelJuego']) ?></h5>
+                      <span class="precio-gamer">$<?= htmlspecialchars(number_format($row['precio'], 0)) ?> USD</span>
+                  </div>
+              </a>
+          </div>
+      <?php
+          endwhile;
+      else:
+          echo "<p>No hay juegos recomendados disponibles.</p>";
+      endif;
+      ?>
+      </div>
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/thelastofus.jpg" class="card-img-top2 god" alt="The Last of Us">
-        <div class="card-body">
-            <h5 class="card-title">The Last of Us</h5>
-            <a href="juegos/GodOfWar.html" class="precio-gamer">$49.99 USD</a>
-        </div>
-    </div>
+      <style>
+      .contenedorTarjetas2 .owl-nav button.owl-prev,
+      .contenedorTarjetas2 .owl-nav button.owl-next {
+          
+          color: white;
+          font-size: 2.5rem;  
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/gtav.jpg" class="card-img-top2" alt="GTA V">
-        <div class="card-body">
-            <h5 class="card-title">GTA V</h5>
-            <a href="juegos/RedDeadRedemption2.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      .contenedorTarjetas2 .owl-nav button.owl-prev { 
+        left: -35px;
+      }
+      .contenedorTarjetas2 .owl-nav button.owl-next { 
+        right: -35px;
+      }
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Cyberpunk2077.jpg" class="card-img-top2" alt="Cyberpunk 2077">
-        <div class="card-body">
-            <h5 class="card-title">Cyberpunk 2077</h5>
-            <a href="src/juegos/Cyber/Cyberpunk2077.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
+      
 
-     <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Forza_Horizon_5_1.jpg" class="card-img-top2" alt="Forza Horizon 5">
-        <div class="card-body">
-            <h5 class="card-title">Forza Horizon 5</h5>
-            <a href="juegos/ForzaHorizon5.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Marvel_spiderman.jpg" class="card-img-top2" alt="Marvel Spiderman">
-        <div class="card-body">
-            <h5 class="card-title">Marvel Spiderman</h5>
-            <a href="juegos/MarvelSpiderman.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/thelastofus.jpg" class="card-img-top2 god" alt="The Last of Us">
-        <div class="card-body">
-            <h5 class="card-title">The Last of Us</h5>
-            <a href="juegos/GodOfWar.html" class="precio-gamer">$49.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/gtav.jpg" class="card-img-top2" alt="GTA V">
-        <div class="card-body">
-            <h5 class="card-title">GTA V</h5>
-            <a href="juegos/RedDeadRedemption2.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-
-    <div class="card bg-transparent estiloDeTarjeta2">
-        <img src="img/juegos/Cyberpunk2077.jpg" class="card-img-top2" alt="Cyberpunk 2077">
-        <div class="card-body">
-            <h5 class="card-title">Cyberpunk 2077</h5>
-            <a href="src/juegos/Cyber/Cyberpunk2077.html" class="precio-gamer">$59.99 USD</a>
-        </div>
-    </div>
-</div>
-
-    <script>
-    $(document).ready(function(){
-      $(".contenedorTarjetas2").owlCarousel({
-        loop: false,          
-        margin: 10,           
-        nav: true,            
-        dots: false,
-        mouseDrag: true,
-        touchDrag: true,
-        center: false,
-        stagePadding: 0,
-        startPosition: 0,
-        responsive:{
-            0: { items: 1 },
-            600: { items: 2 },
-            1000: { items: 4 },
-            1400:{ items: 6 }    
-        }
+      .contenedorTarjetas2 .owl-nav button span { display: none; }
+      </style>
+      <script>
+      $(document).ready(function(){
+        $(".contenedorTarjetas2").owlCarousel({
+          loop: false,          
+          margin: 10,           
+          nav: true,            
+          navText: ["&#10094;", "&#10095;"],  
+          dots: false,
+          mouseDrag: true,
+          touchDrag: true,
+          center: false,
+          stagePadding: 0,
+          startPosition: 0,
+          responsive:{
+              0: { items: 1 },
+              600: { items: 2 },
+              1000: { items: 3 }, 
+              1400:{ items: 4 }    
+          }
+        });
       });
-    });
-    </script>
+
+      </script>
 
   <!-- Promo -->
 <div class="promoUbisoft">
@@ -443,56 +377,48 @@ $(document).ready(function(){
 <!-- FIN PROMO -->
 
 
-       <div  class="Titulos">
-        <h1>Generos mas jugados</h1>
-      </div>
-       
-      <!-- contenedor numero4 de las tarjetas -->
-        
-       <div class="contenedorTarjetasPrincipales3">
-        <!--arranca los contenedores de tarjetas -->
-        <div class="card bg-transparent estiloDeTarjeta3 ">
-          <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/generos/terror.jpg" class="card-img-top" alt="cambiar nombre"> 
-             
-            <div class="card-body">
-              <h5 class="card-title">Terror</h5>
-            </div>
-          </a>
-          </div>
+  <div class="Titulos">
+      <h1>Géneros más jugados</h1>
+  </div>
 
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-            <a href="" style="text-decoration: none; color: white;">
-            <img src="img/generos/supervivencia.jpeg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">Supervivencia</h5>
-            </div>
+    <div class="contenedorTarjetasPrincipales1 d-flex flex-wrap justify-content-center gap-4">
+    <?php
+    $query = "
+        SELECT DISTINCT genero, i.url AS imagen
+        FROM videojuego v
+        LEFT JOIN imagenes_juego i ON i.idVideoJuego = v.idVideoJuego AND i.tipo = 'portada'
+        ORDER BY RAND()
+        LIMIT 4
+    ";
+    $result = $conex->query($query);
+
+    if ($result && $result->num_rows > 0):
+        while($row = $result->fetch_assoc()):
+            $img = !empty($row['imagen']) ? htmlspecialchars($row['imagen']) : 'img/fondo/negro.jpg';
+    ?>
+        <div class="card estiloDeTarjeta1">
+            <a href="gender_page.php?id=<?= urlencode($row['genero']) ?>" style="text-decoration: none; color: white;">
+                <div class="img-flip">
+                    <img src="<?= $img ?>" class="front card-img-top" alt="<?= htmlspecialchars($row['genero']) ?>">
+                    <div class="back">
+                        <p>Explora juegos de <?= htmlspecialchars($row['genero']) ?></p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><?= htmlspecialchars($row['genero']) ?></h5>
+                </div>
             </a>
-          </div>
+        </div>
+    <?php
+        endwhile;
+    else:
+        echo "<p>No se encontraron géneros.</p>";
+    endif;
+    ?>
+    </div>
 
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-            <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/generos/pelea.jpg" class="card-img-top" alt="cambiar nombre">
-            <div class="card-body">
-              <h5 class="card-title">Pelea</h5>     
-            </div>
-          </a>
-          </div>
 
-          <div class="card bg-transparent estiloDeTarjeta3 ">
-          <a href="" style="text-decoration: none; color: white;"> 
-            <img src="img/generos/terror.jpg" class="card-img-top" alt="cambiar nombre"> 
-             
-            <div class="card-body">
-              <h5 class="card-title">Terror</h5>
-            </div>
-          </a>
-          </div>
-            
-       </div>
-
-       <div class="contenedorTarjetasPrincipales3">
-          
+           
 
         
          
